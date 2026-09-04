@@ -19,13 +19,13 @@ export default function Introduction() {
           <div className="mt-12 flex flex-wrap gap-4 justify-start">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/25 hover:bg-blue-700 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-200"
+              className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-green-600/25 hover:bg-green-700 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition-all duration-200"
             >
               Get Started
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-7 py-3.5 text-base font-semibold text-gray-700 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200"
+              className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-7 py-3.5 text-base font-semibold text-gray-700 hover:border-green-600 hover:text-green-600 hover:bg-green-50 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 transition-all duration-200"
             >
               Explore Services
             </Link>
