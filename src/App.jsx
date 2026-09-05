@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Services from './pages/Services'
+import ServicePage from './pages/ServicePage'
 import SeoPricing from './pages/SeoPricing'
 import SocialMediaPricing from './pages/SocialMediaPricing'
 import Career from './pages/Career'
@@ -28,7 +28,7 @@ export default function App() {
       <div className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/career" element={<Career />} />
            <Route path="/contact" element={<Contact />} />
           <Route path="/our-work" element={<OurWork />} />

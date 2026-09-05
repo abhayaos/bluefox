@@ -1,83 +1,72 @@
 import { Link } from 'react-router-dom'
 import {
-  FaArrowRight,
-  FaBolt,
-  FaBuilding,
   FaCalendarAlt,
-  FaCheckCircle,
-  FaCrown,
-  FaGraduationCap,
-  FaHospitalAlt,
+  FaClock,
+  FaGlobe,
+  FaLayerGroup,
+  FaMobileAlt,
+  FaPalette,
   FaPhoneAlt,
-  FaPlay,
-  FaServer,
-  FaShieldAlt,
-  FaWrench,
+  FaProjectDiagram,
+  FaSearch,
+  FaShareAlt,
+  FaPaintBrush,
+  FaPenNib,
+  FaUsers,
 } from 'react-icons/fa'
 
 const metrics = [
-  { value: '6+', label: 'Years Experience' },
-  { value: '400+', label: 'Delivered Projects' },
-  { value: '80+', label: 'Skilled Engineers' },
-  { value: '99.98%', label: 'On-Time Delivery' },
+  { value: '6+', label: 'Years Experience', icon: FaCalendarAlt },
+  { value: '400+', label: 'Delivered Projects', icon: FaProjectDiagram },
+  { value: '80+', label: 'Skilled Engineers', icon: FaUsers },
+  { value: '99.98%', label: 'On-Time Delivery', icon: FaClock },
 ]
 
-const codeLines = [
-  { prompt: true, text: 'bluefox deploy --target enterprise-erp --region ap-south-1' },
-  { check: true, text: 'microservice: auth-gateway', tag: '[online]', tagColor: 'text-emerald-400' },
-  { check: true, text: 'microservice: billing-core', tag: '[online]', tagColor: 'text-emerald-400' },
-  { check: true, text: 'database: postgres-partitioned', tag: '[synced 4 shards]', tagColor: 'text-emerald-400' },
-  { check: true, text: 'tests: automated (1,284 passed)', tag: '[green]', tagColor: 'text-emerald-400' },
-  { check: true, text: 'build: production bundle', tag: '[optimized]', tagColor: 'text-tertiary' },
-]
-
-const stack = ['React 19', 'Next.js', 'Node.js', 'Python FastAPI', 'Flutter', 'PostgreSQL', 'AWS Cloud']
-
-const trusts = [
-  { name: 'NVR Association', icon: FaBuilding },
-  { name: 'TriPary', icon: FaCrown },
-  { name: 'AceOne Group', icon: FaWrench },
-  { name: 'Itahari Medical', icon: FaHospitalAlt },
-  { name: 'Lotus Training', icon: FaGraduationCap },
+const services = [
+  { title: 'Website Design and Development In Nepal', desc: 'Highly functional & visually appealing website designed to meet your need.', icon: FaGlobe, link: '/services/website-development' },
+  { title: 'App Development in Nepal', desc: 'Innovative and user-friendly mobile application designed to engage users.', icon: FaMobileAlt, link: '/services/app-development' },
+  { title: 'System/Software Development', desc: 'System/software developed according to your business needs.', icon: FaLayerGroup, link: '/services/system-software-development' },
+  { title: 'UI/UX', desc: 'Design eye-catching UI/UX interfaces for effortless user interaction', icon: FaPalette, link: '/services/ui-ux' },
+  { title: 'Search Engine Optimization (SEO)', desc: 'Custom SEO solutions for enhanced search engine visibility and growth', icon: FaSearch, link: '/services/seo' },
+  { title: 'Social Media Marketing (SMM)', desc: 'Build a strong online presence and engage with your targeted audience', icon: FaShareAlt, link: '/services/social-media-marketing' },
+  { title: 'Graphic Design', desc: 'Designs that Speak Your Brand\u2019s Narrative and Connect with Your Audience', icon: FaPaintBrush, link: '/services/graphic-design' },
+  { title: 'Content Writing', desc: 'Engaging and meaningful content to connect with your audience', icon: FaPenNib, link: '/services/content-writing' },
 ]
 
 export default function Home() {
   return (
     <main className="flex-1">
-      {/* Centered hero */}
+      {/* lefted hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#f8f9ff] to-white">
-        <div className="max-w-4xl mx-auto px-6 pt-20 pb-14 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 border border-primary-100 text-xs font-semibold text-primary tracking-wide uppercase mb-8">
-            <FaBolt className="text-primary" size={13} />
-            Enterprise Custom Software & Digital Engineering
-          </span>
-
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-14 text-left">
           <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight text-slate-900 mb-7">
             Transform Your Vision Into A{' '}
-            <span className="relative inline-block text-primary after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-full after:h-1 after:rounded-full after:bg-gradient-to-r after:from-primary after:to-tertiary after:shadow-[0_0_16px_rgba(0,102,255,0.6)]">
+            <span className="relative inline-block text-orange-500">
               Digital Reality
+              <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-yellow-400" />
+              <span aria-hidden className="absolute left-3 -bottom-4 h-1.5 w-[88%] rotate-2 rounded-full bg-yellow-300" />
+              <span aria-hidden className="absolute inset-x-[-6px] -inset-y-1.5 -rotate-1 border-2 border-dashed border-orange-300 rounded-lg" />
+              <span aria-hidden className="absolute inset-x-[-12px] -inset-y-2.5 rotate-1 border-2 border-dotted border-yellow-300 rounded-md" />
             </span>
           </h1>
 
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
             We deliver enterprise custom software, resilient cloud architecture, cutting-edge
             mobile apps, and hyper-growth performance engineering designed to scale your
             business across borders.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+          <div className="flex flex-wrap items-center justify-start gap-4 mb-8">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary text-white px-7 py-3.5 font-semibold shadow-md shadow-primary/30 hover:bg-primary-700 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              className="inline-flex items-center rounded-full bg-orange-500 text-white px-9 py-3.5 font-semibold shadow-md shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
             >
               Let's Get Started
-              <FaArrowRight size={15} />
             </Link>
             <Link
               to="/our-work"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-7 py-3.5 font-semibold text-slate-700 hover:border-primary hover:text-primary hover:bg-primary-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              className="relative inline-flex items-center px-4 py-3.5 font-semibold text-slate-700 hover:text-primary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
-              <FaPlay size={13} />
               Discover Our Work
             </Link>
           </div>
@@ -92,144 +81,55 @@ export default function Home() {
         </div>
 
         {/* Metrics bar */}
-        <div className="max-w-5xl mx-auto px-6 pb-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 bg-white rounded-2xl border border-slate-200 shadow-xl shadow-primary/5 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6 pb-14">
+          <div className="grid grid-cols-2 lg:grid-cols-4 bg-white rounded-2xl border border-slate-200 shadow-xl shadow-primary/10 overflow-hidden">
             {metrics.map((metric, i) => (
               <div
                 key={metric.label}
-                className={`p-6 text-center border-slate-200 ${
+                className={`group flex flex-col items-center gap-3 p-6 md:p-7 text-center border-slate-200 ${
                   i === 1 || i === 3 ? 'border-l' : ''
                 } ${i >= 2 ? 'border-t lg:border-t-0 lg:border-l' : ''}`}
               >
-                <p className="font-heading text-3xl font-bold text-primary">{metric.value}</p>
-                <p className="text-sm text-slate-500 mt-1">{metric.label}</p>
+                <span className="w-11 h-11 rounded-xl bg-orange-100 text-orange-500 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                  <metric.icon size={18} />
+                </span>
+                <p className="font-heading text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+                  {metric.value}
+                </p>
+                <p className="text-sm text-slate-500 font-medium">{metric.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Terminal console */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <div className="rounded-2xl bg-[#0b1329] border border-slate-800 shadow-[0_0_80px_-20px_rgba(0,102,255,0.55)] overflow-hidden">
-          {/* Window header */}
-          <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
-            <div className="flex items-center gap-4">
-              <div className="flex gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-red-500" />
-                <span className="w-3 h-3 rounded-full bg-yellow-500" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500" />
-              </div>
-              <span className="text-xs text-slate-400 font-mono hidden md:block">
-                bluefox-core-cluster // node-ktm-01.sys
-              </span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-3 py-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                99.99% HEALTHY
-              </span>
-              <span className="hidden sm:inline-flex text-[11px] font-medium text-slate-400 bg-slate-800 border border-slate-700 rounded-full px-3 py-1">
-                PROD-ENV (Nepal/Sunsari)
-              </span>
-            </div>
-          </div>
-
-          {/* Body */}
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
-            {/* Live execution stream */}
-            <div className="p-6 md:p-8 border-b lg:border-b-0 lg:border-r border-slate-800">
-              <div className="font-mono text-[13px] leading-7">
-                {codeLines.map((line, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    {line.prompt ? (
-                      <span className="text-primary">$</span>
-                    ) : (
-                      <FaCheckCircle className="text-emerald-400 shrink-0" size={13} />
-                    )}
-                    <span className="text-slate-300">{line.text}</span>
-                    {line.tag && <span className={`ml-auto shrink-0 ${line.tagColor}`}>{line.tag}</span>}
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-7 pt-6 border-t border-slate-800">
-                <p className="text-[11px] uppercase tracking-widest text-slate-500 font-semibold mb-3">
-                  Tech Stack
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {stack.map((tech) => (
-                    <span key={tech} className="text-xs font-medium text-slate-300 bg-slate-800/80 border border-slate-700 rounded-full px-3 py-1">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Performance benchmarks */}
-            <div className="p-6 md:p-8 flex flex-col">
-              <div className="flex items-center justify-between mb-1">
-                <p className="text-sm font-semibold text-slate-300">Throughput Benchmark</p>
-                <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-2.5 py-0.5">
-                  +42.8% scale
-                </span>
-              </div>
-              <p className="font-heading text-4xl font-bold text-white mb-4">
-                128.4k <span className="text-base font-medium text-slate-400">req/sec</span>
-              </p>
-
-              <svg viewBox="0 0 200 60" className="w-full h-24 mb-6" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="spark" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#0066ff" stopOpacity="0.35" />
-                    <stop offset="100%" stopColor="#0066ff" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M0,50 C20,44 30,30 45,34 C60,38 70,48 85,42 C100,36 110,20 125,24 C140,28 150,40 165,32 C180,24 190,14 200,12 L200,60 L0,60 Z"
-                  fill="url(#spark)"
-                />
-                <path
-                  d="M0,50 C20,44 30,30 45,34 C60,38 70,48 85,42 C100,36 110,20 125,24 C140,28 150,40 165,32 C180,24 190,14 200,12"
-                  fill="none"
-                  stroke="#0066ff"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-
-              <div className="mt-auto grid grid-cols-2 gap-3">
-                <div className="rounded-xl bg-slate-800/60 border border-slate-700 p-4">
-                  <FaServer className="text-tertiary mb-2" size={16} />
-                  <p className="text-[11px] text-slate-400 font-semibold tracking-wide">UPTIME SLA</p>
-                  <p className="font-heading text-lg font-bold text-white">99.98%</p>
-                </div>
-                <div className="rounded-xl bg-slate-800/60 border border-slate-700 p-4">
-                  <FaShieldAlt className="text-tertiary mb-2" size={16} />
-                  <p className="text-[11px] text-slate-400 font-semibold tracking-wide">SECURITY SCORE</p>
-                  <p className="font-heading text-lg font-bold text-white">A+ Enterprise</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Services */}
+      <section id="services" className="max-w-6xl mx-auto px-6 pb-20">
+        <div className="flex items-center justify-center gap-4 text-primary mb-4">
+          <span className="h-px w-10 bg-primary" />
+          <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Services</p>
+          <span className="h-px w-10 bg-primary" />
         </div>
-      </section>
-
-      {/* Trust bar */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-        <p className="text-center text-[11px] font-semibold text-slate-400 tracking-[0.2em] uppercase mb-6">
-          Trusted by high-impact organizations & enterprises across Nepal
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
+          Exceptional Services For Your Business Growth
+        </h2>
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
+          Discover our wide range of digital solutions to enhance your online presence.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          {trusts.map((org) => (
-            <span
-              key={org.name}
-              className="inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-600 hover:border-primary-200 hover:text-primary hover:shadow-md transition-all duration-200"
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service) => (
+            <Link
+              key={service.title}
+              to={service.link}
+              className="group bg-white border border-slate-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300"
             >
-              <org.icon className="text-primary" size={15} />
-              {org.name}
-            </span>
+              <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
+                <service.icon className="text-primary group-hover:text-white transition-colors duration-300" size={22} />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">{service.title}</h3>
+              <p className="text-slate-600 leading-relaxed">{service.desc}</p>
+            </Link>
           ))}
         </div>
       </section>
@@ -237,7 +137,7 @@ export default function Home() {
       {/* CTA banner */}
       <section className="max-w-6xl mx-auto px-6 pb-28">
         <div className="rounded-2xl border border-primary-100 bg-gradient-to-r from-primary-50 via-white to-primary-50 px-8 md:px-12 py-10 flex flex-col lg:flex-row items-center gap-8 justify-between">
-          <div className="text-center lg:text-left">
+          <div className="text-left lg:text-left">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               Ready to engineer your next digital platform?
             </h2>
