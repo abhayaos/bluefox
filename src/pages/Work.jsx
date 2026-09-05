@@ -57,10 +57,10 @@ export default function Work() {
     <main className="flex-1 px-6 py-16">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-blue-600 font-medium text-sm tracking-wide uppercase mb-2">
+          <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">
             We Make It Happen
           </p>
-          <hr className="w-16 border-blue-600 mx-auto mb-4" />
+          <hr className="w-16 border-primary mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Working Steps We Follow</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We follow the sequential and systematic work process that results in a desirable and
@@ -76,11 +76,11 @@ export default function Work() {
               className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm"
             >
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
-                  <item.icon className="text-blue-600" size={26} />
+                <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+                  <item.icon className="text-primary" size={26} />
                 </div>
                 <div>
-                  <span className="text-sm font-bold text-blue-600">{item.step}</span>
+                  <span className="text-sm font-bold text-primary">{item.step}</span>
                   <h2 className="text-xl font-semibold text-gray-900">{item.title}</h2>
                 </div>
               </div>

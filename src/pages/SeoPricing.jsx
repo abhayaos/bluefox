@@ -279,8 +279,8 @@ export default function SeoPricing() {
     <main className="flex-1 px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-blue-600 font-medium text-sm tracking-wide uppercase mb-2">Subscription Plan</p>
-          <hr className="w-16 border-blue-600 mx-auto mb-4" />
+          <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">Subscription Plan</p>
+          <hr className="w-16 border-primary mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-gray-900 mb-4">SEO Pricing</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Choose the right SEO package to boost your search rankings and drive organic traffic to your website.
@@ -293,7 +293,7 @@ export default function SeoPricing() {
               key={p.name}
               className="flex flex-col w-full sm:w-[48%] lg:w-[23%] border border-gray-200 rounded-2xl shadow-sm overflow-hidden"
             >
-              <div className="bg-gray-900 text-white p-6 text-center">
+              <div className="bg-secondary text-white p-6 text-center">
                 <h3 className="text-xl font-semibold">{p.name}</h3>
                 <p className="text-gray-300 text-xs mt-1">{p.subtitle}</p>
                 <div className="mt-3">
@@ -305,13 +305,13 @@ export default function SeoPricing() {
               <div className="p-5">
                 {sections.map((section) => (
                   <div key={section} className="mb-5">
-                    <h4 className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-2">
+                    <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2">
                       {section}
                     </h4>
                     <ul className="flex flex-col gap-1.5">
                       {p.features[section].map((feature) => (
                         <li key={feature} className="flex items-start gap-1.5 text-xs text-gray-600 leading-snug">
-                          <FaCheck className="text-blue-600 mt-0.5 shrink-0" size={10} />
+                          <FaCheck className="text-primary mt-0.5 shrink-0" size={10} />
                           {feature}
                         </li>
                       ))}
@@ -322,7 +322,7 @@ export default function SeoPricing() {
                 <p className="text-xs text-gray-500 mb-5">{p.note}</p>
                 <Link
                   to="/contact"
-                  className="block text-center py-2.5 bg-blue-600 text-white rounded-lg font-medium text-xs hover:bg-blue-700 transition-colors"
+                  className="block text-center py-2.5 bg-primary text-white rounded-lg font-medium text-xs hover:bg-primary-700 transition-colors"
                 >
                   {p.button}
                 </Link>

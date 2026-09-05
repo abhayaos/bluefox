@@ -101,8 +101,8 @@ export default function SocialMediaPricing() {
     <main className="flex-1 px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-blue-600 font-medium text-sm tracking-wide uppercase mb-2">Subscription Plan</p>
-          <hr className="w-16 border-blue-600 mx-auto mb-4" />
+          <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">Subscription Plan</p>
+          <hr className="w-16 border-primary mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Social Media Packages</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Choose the right social media package to grow your brand and engage your audience.
@@ -119,14 +119,14 @@ export default function SocialMediaPricing() {
                 className="flex flex-col w-full sm:w-[48%] lg:w-[23%] border border-gray-200 rounded-2xl shadow-sm overflow-hidden"
               >
                 {p.bestValue && (
-                  <div className="bg-amber-100 text-amber-800 text-xs font-semibold text-center py-1.5 flex items-center justify-center gap-1">
-                    <FaStar size={10} className="fill-amber-500" />
+                  <div className="bg-primary-100 text-primary-900 text-xs font-semibold text-center py-1.5 flex items-center justify-center gap-1">
+                    <FaStar size={10} className="fill-primary" />
                     Best Value
                   </div>
                 )}
                 <div
                   className={`text-white p-6 text-center ${
-                    p.bestValue ? 'bg-amber-500' : 'bg-gray-900'
+                    p.bestValue ? 'bg-primary' : 'bg-secondary'
                   }`}
                 >
                   <h3 className="text-xl font-semibold">{p.name}</h3>
@@ -141,7 +141,7 @@ export default function SocialMediaPricing() {
                   <ul className="flex flex-col gap-1.5">
                     {shown.map((feature) => (
                       <li key={feature} className="flex items-start gap-1.5 text-xs text-gray-600 leading-snug">
-                        <FaCheck className="text-blue-600 mt-0.5 shrink-0" size={10} />
+                        <FaCheck className="text-primary mt-0.5 shrink-0" size={10} />
                         {feature}
                       </li>
                     ))}
@@ -150,7 +150,7 @@ export default function SocialMediaPricing() {
                   {p.seeMore && (
                     <button
                       onClick={() => setExpanded((prev) => ({ ...prev, [p.name]: !prev[p.name] }))}
-                      className="flex items-center gap-1 text-blue-600 text-xs font-medium mt-4 hover:text-blue-700"
+                      className="flex items-center gap-1 text-primary text-xs font-medium mt-4 hover:text-primary-700"
                     >
                       <span>{showAll ? 'See Less' : 'See More'}</span>
                       <FiChevronDown
@@ -164,8 +164,8 @@ export default function SocialMediaPricing() {
                     to="/contact"
                     className={`block text-center py-2.5 rounded-lg font-medium text-xs mt-5 transition-colors ${
                       p.bestValue
-                        ? 'bg-amber-500 text-white hover:bg-amber-600'
-                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                        ? 'bg-primary text-white hover:bg-primary-700'
+                        : 'bg-primary text-white hover:bg-primary-700'
                     }`}
                   >
                     {p.button}

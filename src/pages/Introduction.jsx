@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 export default function Introduction() {
   return (
     <main className="flex-1">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <section className="bg-gradient-to-br from-primary-50 via-white to-primary-50">
         <div className="max-w-4xl mx-auto py-24 text-left mt-5">
-          <p className="text-blue-600 font-medium text-sm tracking-wide uppercase mb-4">
+          <p className="text-primary font-medium text-sm tracking-wide uppercase mb-4">
             Welcome to Blue Fox
           </p>
           <h1 className="text-5xl font-bold text-gray-900 mt-4 mb-8">
-            Make It Possible with <span className="text-blue-600">Blue Fox</span>
+            Make It Possible with <span className="text-primary">Blue Fox</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl leading-relaxed text-left mt-4">
             Step into the future of IT solutions with Blue Fox. We offer you a wide range of
@@ -19,13 +19,13 @@ export default function Introduction() {
           <div className="mt-12 flex flex-wrap gap-4 justify-start">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-green-600/25 hover:bg-green-700 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition-all duration-200"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-700 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-200"
             >
               Get Started
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-7 py-3.5 text-base font-semibold text-gray-700 hover:border-green-600 hover:text-green-600 hover:bg-green-50 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 transition-all duration-200"
+              className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-7 py-3.5 text-base font-semibold text-gray-700 hover:border-primary hover:text-primary hover:bg-primary-50 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:ring-offset-2 transition-all duration-200"
             >
               Explore Services
             </Link>

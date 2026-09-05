@@ -121,8 +121,8 @@ export default function Services() {
     <main className="flex-1 px-6 py-16">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-blue-600 font-medium text-sm tracking-wide uppercase mb-2">Our Services</p>
-          <hr className="w-16 border-blue-600 mx-auto mb-4" />
+          <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">Our Services</p>
+          <hr className="w-16 border-primary mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-gray-900 mb-4">One Solution For All Your Digital Needs</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             From building to promoting — every service your business needs, all in one place.
@@ -138,7 +138,7 @@ export default function Services() {
                 </span>
                 <h2 className="text-xl font-semibold text-gray-900 mt-1">{service.title}</h2>
               </div>
-              <p className="text-sm text-blue-600 font-medium mb-3">{service.tagline}</p>
+              <p className="text-sm text-primary font-medium mb-3">{service.tagline}</p>
 
               <p className="text-gray-700 leading-relaxed mb-4">{service.intro}</p>
               {service.paragraphs.map((paragraph) => (

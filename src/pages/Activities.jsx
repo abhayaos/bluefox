@@ -16,7 +16,7 @@ export default function Activities() {
     <main className="flex-1 px-6 py-16">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 text-blue-600 font-medium text-sm tracking-wide uppercase">
+          <span className="inline-flex items-center gap-2 text-primary font-medium text-sm tracking-wide uppercase">
             <FaCameraRetro size={16} />
             Our Culture
           </span>
@@ -37,7 +37,7 @@ export default function Activities() {
               key={`${activity.title}-${idx}`}
               className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden"
             >
-              <div className="aspect-video bg-blue-50 flex items-center justify-center text-blue-100">
+              <div className="aspect-video bg-primary-50 flex items-center justify-center text-primary-200">
                 <FaCameraRetro size={56} />
               </div>
               <div className="p-4">

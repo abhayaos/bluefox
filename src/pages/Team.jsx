@@ -18,7 +18,7 @@ export default function Team() {
     <main className="flex-1 px-6 py-16">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 text-blue-600 font-medium text-sm tracking-wide uppercase">
+          <span className="inline-flex items-center gap-2 text-primary font-medium text-sm tracking-wide uppercase">
             <FaUsers size={16} />
             Let's Meet
           </span>
@@ -39,7 +39,7 @@ export default function Team() {
               key={member.name}
               className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 flex flex-col items-center text-center"
             >
-              <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center text-2xl font-bold text-blue-700">
+              <div className="w-20 h-20 rounded-full bg-primary-100 flex items-center justify-center text-2xl font-bold text-primary-700">
                 {member.initials}
               </div>
               <h2 className="text-lg font-semibold text-gray-900 mt-4">{member.name}</h2>
