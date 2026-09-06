@@ -45,8 +45,6 @@ export default function Home() {
               Digital Reality
               <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-primary-200" />
               <span aria-hidden className="absolute left-3 -bottom-4 h-1.5 w-[88%] rotate-2 rounded-full bg-primary-100" />
-              <span aria-hidden className="absolute inset-x-[-6px] -inset-y-1.5 -rotate-1 border-2 border-dashed border-primary/40 rounded-lg" />
-              <span aria-hidden className="absolute inset-x-[-12px] -inset-y-2.5 rotate-1 border-2 border-dotted border-primary-200 rounded-md" />
             </span>
           </h1>
 
