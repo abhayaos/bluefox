@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
+import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 
 const devServicesLinks = [
   { label: 'Website Development', to: '/services/website-development' },
@@ -28,7 +28,7 @@ const marketingLinks = [
 
 function FooterLink({ to, href, children }) {
   const base =
-    "relative inline-flex items-center text-sm text-slate-500 transition-colors duration-200 hover:text-primary before:content-[''] before:absolute before:left-0 before:-bottom-0.5 before:h-0.5 before:w-0 before:bg-primary before:transition-all before:duration-300 hover:before:w-full"
+    "relative inline-flex items-center text-sm text-[#0b7be5] transition-colors duration-200 hover:text-primary before:content-[''] before:absolute before:left-0 before:-bottom-0.5 before:h-0.5 before:w-0 before:bg-primary before:transition-all before:duration-300 hover:before:w-full"
   if (href) {
     return (
       <a href={href} className={base}>
@@ -47,31 +47,32 @@ export default function Footer() {
   return (
     <footer className="bg-[#f8f9ff] text-slate-500 border-t border-slate-200">
       {/* Top banner */}
-      <div className="bg-primary">
-        <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
-          <div className="md:max-w-xl">
-            <h2 className="font-heading text-2xl md:text-[2rem] font-bold leading-snug mb-3 flex items-center gap-4">
-              <hr className="self-stretch w-1.5 border-0 rounded-full bg-gradient-to-b from-white via-primary-200 to-white/40" />
-              <span className="bg-gradient-to-r from-white via-primary-100 to-primary-200 bg-clip-text text-transparent">
-                Let's connect and transform your vision into a digital reality.
+      <div className="bg-[#e0f1f2]">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-10">
+          <div className="md:max-w-2xl">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold leading-snug mb-4 flex items-center gap-5">
+              <span className="w-2 self-stretch rounded-full bg-gradient-to-b from-primary via-primary-200 to-white/40" />
+              <span className="text-gray-900">
+                Let's connect and{' '}
+                <span className="text-[#0b7be5]">transform your vision into a digital reality.</span>
               </span>
             </h2>
-            <p className="text-white/70 text-sm md:text-base">
+            <p className="text-slate-600 text-base md:text-lg">
               We are available from 9:00 AM to 6:00 PM, Monday to Friday.
             </p>
           </div>
-          <div className="md:border-l md:border-white/25 md:pl-10">
-            <div className="flex items-center gap-4">
-              <span className="w-12 h-12 rounded-xl bg-white/10 border border-white/25 flex items-center justify-center shrink-0">
-                <FaPhoneAlt className="text-white" size={18} />
+          <div className="md:border-l md:border-slate-300 md:pl-10">
+            <div className="flex items-center gap-5">
+              <span className="w-14 h-14 rounded-2xl bg-white border border-slate-300 flex items-center justify-center shrink-0">
+                <FaPhoneAlt className="text-primary" size={22} />
               </span>
               <div>
-                <p className="text-xs uppercase tracking-widest text-white/70 mb-1">
+                <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">
                   Reach out now!
                 </p>
                 <a
                   href="tel:+9779817303073"
-                  className="block font-heading text-2xl md:text-3xl font-bold text-white hover:text-white/90 transition-colors"
+                  className="block font-heading text-3xl md:text-5xl font-bold text-primary hover:text-primary-700 transition-colors"
                 >
                   9817303073
                 </a>
@@ -154,21 +155,46 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <hr className="border-slate-200" />
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 py-6 text-sm">
-          <a href="#" className="text-slate-500 hover:text-primary transition-colors">
+          <a href="#" className="text-[#0b7be5] hover:text-primary transition-colors">
             FAQ
           </a>
-          <a href="#" className="text-slate-500 hover:text-primary transition-colors">
+          <span className="text-slate-300">|</span>
+          <a href="#" className="text-[#0b7be5] hover:text-primary transition-colors">
             Terms & Condition
           </a>
-          <a href="#" className="text-slate-500 hover:text-primary transition-colors">
+          <span className="text-slate-300">|</span>
+          <a href="#" className="text-[#0b7be5] hover:text-primary transition-colors">
             Privacy Policy
           </a>
         </div>
         <hr className="border-slate-200" />
-        <div className="py-6 text-left">
-          <p className="text-sm text-slate-500">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-6 rounded-2xl bg-[#0b7be5] px-8 py-6">
+          <p className="text-sm font-medium text-white">
             © 2024 Blue Fox Pvt Ltd. All Rights Reserved.
           </p>
+          <div className="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+            >
+              <FaFacebookF size={16} />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+            >
+              <FaInstagram size={16} />
+            </a>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+            >
+              <FaLinkedinIn size={16} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

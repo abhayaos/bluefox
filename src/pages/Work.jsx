@@ -54,37 +54,50 @@ const steps = [
 
 export default function Work() {
   return (
-    <main className="flex-1 px-6 py-16">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">
-            We Make It Happen
-          </p>
-          <hr className="w-16 border-primary mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Working Steps We Follow</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+    <main className="flex-1 mb-16">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#f1f7fd]">
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-left">
+          <div className="flex items-center gap-4 text-primary mb-4">
+            <span className="h-px w-10 bg-primary" />
+            <p className="text-xs font-bold tracking-[0.25em] uppercase">We Make It Happen</p>
+          </div>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4 max-w-3xl">
+            Working Steps We{' '}
+            <span className="relative inline-block text-primary">
+              Follow
+              <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-primary-200" />
+            </span>
+          </h1>
+          <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
             We follow the sequential and systematic work process that results in a desirable and
             meaningful output. The series of patterns describe how something goes from being undone
             to done.
           </p>
         </div>
+      </section>
 
-        <div className="flex flex-col gap-10">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid gap-x-16 lg:grid-cols-2">
           {steps.map((item) => (
-            <div
-              key={item.title}
-              className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
-                  <item.icon className="text-primary" size={26} />
+            <div key={item.title} className="group relative border-t border-slate-200 py-9 transition-colors duration-300 hover:border-[#0b7be5]">
+              <div className="flex gap-6">
+                <div className="relative flex w-14 shrink-0 flex-col items-center">
+                  <span className="z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/15 bg-white text-primary transition-colors duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
+                    <item.icon size={20} />
+                  </span>
+                  <span className="mt-3 font-heading text-xs font-bold tracking-widest text-primary">
+                    {item.step}
+                  </span>
                 </div>
-                <div>
-                  <span className="text-sm font-bold text-primary">{item.step}</span>
-                  <h2 className="text-xl font-semibold text-gray-900">{item.title}</h2>
+
+                <div className="flex-1">
+                  <h2 className="font-heading text-2xl font-semibold text-slate-900 transition-colors duration-300 group-hover:text-[#0b7be5]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-lg text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed mt-4">{item.desc}</p>
             </div>
           ))}
         </div>

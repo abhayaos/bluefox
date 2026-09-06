@@ -26,8 +26,6 @@ export default function Introduction() {
             <span className="relative inline-block text-primary">
               Blue Fox
               <span aria-hidden className="absolute left-0 -bottom-2 h-2.5 w-full -rotate-1 rounded-[50%] bg-primary-200" />
-              <span aria-hidden className="absolute inset-x-[-8px] -inset-y-2 -rotate-2 border-2 border-dashed border-primary/30 rounded-lg" />
-              <span aria-hidden className="absolute inset-x-[-14px] -inset-y-3 rotate-1 border-2 border-dotted border-primary-200 rounded-md" />
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl leading-relaxed text-left">

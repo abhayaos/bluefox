@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { FiChevronDown, FiMenu, FiX } from 'react-icons/fi'
+import { FiChevronDown } from 'react-icons/fi'
 
 const aboutItems = [
   {
@@ -151,74 +151,89 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen((prev) => !prev)}
-              className="lg:hidden p-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label="Toggle menu"
+              className="lg:hidden flex items-center justify-center px-5 h-11 rounded-full bg-primary text-white text-sm font-semibold transition-colors hover:bg-primary-700"
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             >
-              {mobileOpen ? <FiX size={26} /> : <FiMenu size={26} />}
+              {mobileOpen ? 'Close' : 'Menu'}
             </button>
           </div>
         </div>
 
         {mobileOpen && (
-          <div className="lg:hidden border-t border-slate-200 bg-white px-6 py-4 flex flex-col gap-3 max-h-[80vh] overflow-y-auto">
-            <a href="/" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
-              Home
-            </a>
+          <div className="lg:hidden fixed inset-0 z-[999]">
+            <div className="absolute inset-0 bg-black/50" onClick={closeMobile} />
 
-            <button
-              onClick={() => setMobileAbout((prev) => !prev)}
-              className="flex items-center justify-between text-gray-700 font-medium hover:text-primary transition-colors"
-            >
-              About
-              <FiChevronDown className={`transition-transform duration-200 ${mobileAbout ? 'rotate-180' : ''}`} />
-            </button>
-            {mobileAbout && (
-              <div className="flex flex-col gap-2 pl-4">
-                {aboutItems.map((item) => (
-                  <a key={item.title} href={item.link} onClick={closeMobile} className="text-gray-600 text-sm hover:text-primary transition-colors">
-                    {item.title}
-                  </a>
-                ))}
+            <div className="absolute inset-y-0 left-0 flex w-full flex-col bg-white shadow-2xl animate-slide-in-left">
+              <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+                <span className="font-heading text-lg font-bold text-gray-900">Blue Fox</span>
+                <button
+                  onClick={closeMobile}
+                  className="flex h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-700"
+                  aria-label="Close menu"
+                >
+                  Close
+                </button>
               </div>
-            )}
 
-            <button
-              onClick={() => setMobileServices((prev) => !prev)}
-              className="flex items-center justify-between text-gray-700 font-medium hover:text-primary transition-colors"
-            >
-              Services
-              <FiChevronDown className={`transition-transform duration-200 ${mobileServices ? 'rotate-180' : ''}`} />
-            </button>
-            {mobileServices && (
-              <div className="flex flex-col gap-2 pl-4">
-                {servicesItems.map((item) => (
-                  <a key={item.title} href={item.link} onClick={closeMobile} className="text-gray-600 text-sm hover:text-primary transition-colors">
-                    {item.title}
-                  </a>
-                ))}
+              <div className="flex flex-col gap-3 overflow-y-auto px-6 py-5">
+                <a href="/" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
+                  Home
+                </a>
+
+                <button
+                  onClick={() => setMobileAbout((prev) => !prev)}
+                  className="flex items-center justify-between text-gray-700 font-medium hover:text-primary transition-colors"
+                >
+                  About
+                </button>
+                {mobileAbout && (
+                  <div className="flex flex-col gap-2 pl-4">
+                    {aboutItems.map((item) => (
+                      <a key={item.title} href={item.link} onClick={closeMobile} className="text-gray-600 text-sm hover:text-primary transition-colors">
+                        {item.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
+                <button
+                  onClick={() => setMobileServices((prev) => !prev)}
+                  className="flex items-center justify-between text-gray-700 font-medium hover:text-primary transition-colors"
+                >
+                  Services
+                </button>
+                {mobileServices && (
+                  <div className="flex flex-col gap-2 pl-4">
+                    {servicesItems.map((item) => (
+                      <a key={item.title} href={item.link} onClick={closeMobile} className="text-gray-600 text-sm hover:text-primary transition-colors">
+                        {item.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
+                <a href="/pricing/seo" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
+                  Pricing
+                </a>
+                <a href="/our-work" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
+                  Portfolio
+                </a>
+                <a href="/career" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
+                  Career
+                </a>
+                <a href="/contact" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
+                  Contact
+                </a>
+
+                <a
+                  href="/contact"
+                  onClick={closeMobile}
+                  className="mt-2 px-5 py-2.5 rounded-full bg-transparent border-2 border-[#0b7be5] text-[#0b7be5] text-center font-semibold active:bg-[#0b7be5] active:text-white"
+                >
+                  Quick Enquiry
+                </a>
               </div>
-            )}
-
-            <a href="/pricing/seo" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
-              Pricing
-            </a>
-            <a href="/our-work" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
-              Portfolio
-            </a>
-            <a href="/career" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
-              Career
-            </a>
-            <a href="/contact" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
-              Contact
-            </a>
-
-            <a
-              href="/contact"
-              onClick={closeMobile}
-              className="mt-2 px-5 py-2.5 rounded-full bg-transparent border-2 border-[#0b7be5] text-[#0b7be5] text-center font-semibold active:bg-[#0b7be5] active:text-white"
-            >
-              Quick Enquiry
-            </a>
+            </div>
           </div>
         )}
       </nav>
