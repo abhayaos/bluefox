@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
+import { FiChevronDown } from 'react-icons/fi'
 
 const sections = [
   'Initial Website Analysis',
@@ -274,65 +276,91 @@ const plans = [
   },
 ]
 
+const COLLAPSED_PER_SECTION = 2
+
 export default function SeoPricing() {
+  const [expanded, setExpanded] = useState({})
+
   return (
     <main className="flex-1 px-6 py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">Subscription Plan</p>
-          <hr className="w-16 border-primary mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">SEO Pricing</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Choose the right SEO package to boost your search rankings and drive organic traffic to your website.
-          </p>
+        <div className="flex items-center justify-center gap-4 text-primary mb-4">
+          <span className="h-px w-10 bg-primary" />
+          <p className="text-xs font-bold tracking-[0.25em] uppercase">Subscription Plan</p>
+          <span className="h-px w-10 bg-primary" />
         </div>
+        <h1 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
+          SEO Pricing
+        </h1>
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
+          Choose the right SEO package to boost your search rankings and drive organic traffic to your website.
+        </p>
 
-        <div className="flex flex-wrap gap-6 justify-center items-start">
-          {plans.map((p) => (
-            <div
-              key={p.name}
-              className="flex flex-col w-full sm:w-[48%] lg:w-[23%] border border-gray-200 rounded-2xl shadow-sm overflow-hidden"
-            >
-              <div className="bg-secondary text-white p-6 text-center">
-                <h3 className="text-xl font-semibold">{p.name}</h3>
-                <p className="text-gray-300 text-xs mt-1">{p.subtitle}</p>
-                <div className="mt-3">
-                  <span className="text-3xl font-bold">{p.price}</span>
-                  {p.period && <span className="text-gray-300 text-sm"> {p.period}</span>}
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {plans.map((p) => {
+            const showAll = expanded[p.name]
+            return (
+              <div
+                key={p.name}
+                className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
+              >
+                <div className="rounded-t-3xl bg-gradient-to-br from-primary to-primary-700 p-6 text-center text-white">
+                  <h3 className="text-xl font-semibold">{p.name}</h3>
+                  <p className="text-primary-100 text-xs mt-1">{p.subtitle}</p>
+                  <div className="mt-3">
+                    <span className="text-4xl font-bold">{p.price}</span>
+                    {p.period && <span className="text-primary-100 text-sm"> {p.period}</span>}
+                  </div>
+                </div>
+
+                <div className="flex flex-1 flex-col p-6">
+                  {sections.map((section) => {
+                    const items = showAll
+                      ? p.features[section]
+                      : p.features[section].slice(0, COLLAPSED_PER_SECTION)
+                    return (
+                      <div key={section} className="mb-5">
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-[#0b7be5] mb-2">
+                          {section}
+                        </h4>
+                        <ul className="flex flex-col gap-1.5">
+                          {items.map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex items-start gap-2 text-[13px] text-slate-600 leading-snug"
+                            >
+                              <FaCheck className="text-[#0b7be5] mt-0.5 shrink-0" size={11} />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )
+                  })}
+
+                  <button
+                    onClick={() => setExpanded((prev) => ({ ...prev, [p.name]: !prev[p.name] }))}
+                    className="flex items-center gap-1 text-[#0b7be5] text-xs font-semibold mt-auto mb-4 hover:underline"
+                  >
+                    <span>{showAll ? 'See Less' : 'Read More'}</span>
+                    <FiChevronDown className={`transition-transform ${showAll ? 'rotate-180' : ''}`} size={13} />
+                  </button>
+
+                  <p className="text-xs text-slate-500 mb-4">{p.note}</p>
+                  <Link
+                    to="/contact"
+                    className="block text-center rounded-full py-3 bg-[#0b7be5] text-white text-sm font-semibold transition-colors hover:bg-primary-700"
+                  >
+                    {p.button}
+                  </Link>
                 </div>
               </div>
-
-              <div className="p-5">
-                {sections.map((section) => (
-                  <div key={section} className="mb-5">
-                    <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2">
-                      {section}
-                    </h4>
-                    <ul className="flex flex-col gap-1.5">
-                      {p.features[section].map((feature) => (
-                        <li key={feature} className="flex items-start gap-1.5 text-xs text-gray-600 leading-snug">
-                          <FaCheck className="text-primary mt-0.5 shrink-0" size={10} />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-
-                <p className="text-xs text-gray-500 mb-5">{p.note}</p>
-                <Link
-                  to="/contact"
-                  className="block text-center py-2.5 bg-primary text-white rounded-lg font-medium text-xs hover:bg-primary-700 transition-colors"
-                >
-                  {p.button}
-                </Link>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-sm text-gray-500">
+        <div className="mt-12 text-center">
+          <p className="text-sm text-slate-500">
             *Note: All of the above packages are exclusive of VAT.
             <br />
             Contract: Minimum 6 months.

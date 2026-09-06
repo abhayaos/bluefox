@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Services from './pages/Services'
 import WebsiteDevelopment from './pages/services/WebsiteDevelopment'
 import AppDevelopment from './pages/services/AppDevelopment'
 import SystemSoftwareDevelopment from './pages/services/SystemSoftwareDevelopment'
@@ -37,6 +38,7 @@ export default function App() {
       <div className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/services/website-development" element={<WebsiteDevelopment />} />
           <Route path="/services/app-development" element={<AppDevelopment />} />
           <Route path="/services/system-software-development" element={<SystemSoftwareDevelopment />} />

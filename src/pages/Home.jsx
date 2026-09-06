@@ -166,8 +166,8 @@ const metrics = [
 ]
 
 const services = [
-  { avtar:'webdev', title: 'Website Design and Development In Nepal', desc: 'Highly functional & visually appealing website designed to meet your need.', link: '/services/website-development' },
-  { avtar: "appdev", title: 'App Development in Nepal', desc: 'Innovative and user-friendly mobile application designed to engage users.', link: '/services/app-development' },
+  { avtar:'webdev', title: 'Website Development', desc: 'Highly functional & visually appealing website designed to meet your need.', link: '/services/website-development' },
+  { avtar: "appdev", title: 'App Development', desc: 'Innovative and user-friendly mobile application designed to engage users.', link: '/services/app-development' },
   { avtar:"systemdev", title: 'System/Software Development', desc: 'System/software developed according to your business needs.', link: '/services/system-software-development' },
   { avtar:"uiux", title: 'UI/UX', desc: 'Design eye-catching UI/UX interfaces for effortless user interaction', link: '/services/ui-ux' },
   { avtar:"seo", title: 'Search Engine Optimization (SEO)', desc: 'Custom SEO solutions for enhanced search engine visibility and growth', link: '/services/seo' },
@@ -258,7 +258,10 @@ export default function Home() {
           Exceptional Services For Your Business Growth
         </h2>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
-          Discover our wide range of digital solutions to enhance your online presence.
+          Discover our wide range of digital solutions to enhance your online presence.{' '}
+          <Link to="/services" className="font-semibold text-[#0b7be5] hover:underline">
+            See all
+          </Link>
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

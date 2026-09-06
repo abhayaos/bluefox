@@ -1,50 +1,109 @@
-import { FaUsers } from 'react-icons/fa'
+import { useState } from 'react'
+import { FaUsers, FaFacebookF, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
 
 const members = [
-  { name: 'Bipin Chapagain', role: 'CEO', initials: 'BC' },
-  { name: 'Sandesh Paudel', role: 'CTO', initials: 'SP' },
-  { name: 'Binaya Marahatha', role: 'Full Stack & Flutter Developer', initials: 'BM' },
-  { name: 'Abdullah Al Mridul', role: 'Full Stack Developer (Bangladesh)', initials: 'AM' },
-  { name: 'Rohan Karki', role: 'Frontend Developer', initials: 'RK' },
-  { name: 'Bharat Chaudhary', role: 'Frontend Developer', initials: 'BC' },
-  { name: 'Bijay Giri', role: 'Flutter Developer', initials: 'BG' },
-  { name: 'Bipesh Karki', role: 'React Native', initials: 'BK' },
-  { name: 'Manish Karki', role: 'Admin Officer', initials: 'MK' },
-  { name: 'Anjana Chaudhary', role: 'Accountant', initials: 'AC' },
+  {
+    name: 'John Doe',
+    role: 'CEO',
+    category: 'Leadership',
+    initials: 'JD',
+  },
+  {
+    name: 'Jane Smith',
+    role: 'CTO',
+    category: 'Leadership',
+    initials: 'JS',
+  },
+  {
+    name: 'David Lee',
+    role: 'Lead Developer',
+    category: 'Development',
+    initials: 'DL',
+  },
 ]
 
+const categories = ['All', 'Leadership', 'Development']
+
+const socials = [
+  { icon: FaFacebookF, label: 'Facebook', href: '#' },
+  { icon: FaLinkedinIn, label: 'LinkedIn', href: '#' },
+  { icon: FaEnvelope, label: 'Email', href: 'mailto:bluefoxpvtltd@gmail.com' },
+]
+
+function MemberCard({ member, index }) {
+  return (
+    <div
+      className="group relative h-80 overflow-hidden rounded-3xl border-2 border-transparent bg-[#f3d0b5] transition-all duration-300 hover:border-[#0b7be5] hover:shadow-xl hover:shadow-primary/10 animate-slide-in-left"
+      style={{ animationDelay: `${index * 120}ms` }}
+    >
+      <div className="flex h-full flex-col items-center justify-center px-6 text-center">
+        <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white text-3xl font-bold text-[#0b7be5] shadow-md">
+          {member.initials}
+        </div>
+        <h2 className="text-xl font-semibold text-slate-900">{member.name}</h2>
+        <p className="mt-1 text-sm font-medium text-slate-600">{member.role}</p>
+      </div>
+
+      {/* Social box slides up from bottom on hover */}
+      <div className="absolute inset-x-0 bottom-0 translate-y-full bg-[#0b7be5] p-5 text-white transition-transform duration-300 ease-out group-hover:translate-y-0">
+        <p className="mb-3 text-sm font-semibold">Connect with {member.name.split(' ')[0]}</p>
+        <div className="flex items-center justify-center gap-3">
+          {socials.map(({ icon: Icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-all duration-200 hover:scale-110"
+            >
+              <Icon size={14} />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Team() {
+  const [active, setActive] = useState('All')
+  const visible = active === 'All' ? members : members.filter((m) => m.category === active)
+
   return (
     <main className="flex-1 px-6 py-16">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="inline-flex items-center gap-2 text-primary font-medium text-sm tracking-wide uppercase">
             <FaUsers size={16} />
             Let's Meet
           </span>
-          <h1 className="text-4xl font-bold text-gray-900 mt-2 mb-4">
+          <h1 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">
             Our awesome team of talented people
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             We have highly experienced professionals who are looking forward to turn your business
-            problem into future possibilities through digital transformation. Our team comprises of
-            qualified, skilled and tactful individuals who are passionate to provide quality output
-            for clients.
+            problem into future possibilities through digital transformation.
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {members.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 flex flex-col items-center text-center"
+        <div className="flex items-center justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActive(category)}
+              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 ${
+                active === category
+                  ? 'bg-[#0b7be5] text-white shadow-md shadow-primary/30'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:border-[#0b7be5] hover:text-[#0b7be5]'
+              }`}
             >
-              <div className="w-20 h-20 rounded-full bg-primary-100 flex items-center justify-center text-2xl font-bold text-primary-700">
-                {member.initials}
-              </div>
-              <h2 className="text-lg font-semibold text-gray-900 mt-4">{member.name}</h2>
-              <p className="text-sm text-gray-500 mt-1">{member.role}</p>
-            </div>
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((member, index) => (
+            <MemberCard key={member.name} member={member} index={index} />
           ))}
         </div>
       </div>

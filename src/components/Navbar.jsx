@@ -33,6 +33,11 @@ const servicesItems = [
   { title: 'Social Media Marketing', desc: 'Campaigns that build engaged audiences.', link: '/services/social-media-marketing' },
 ]
 
+const pricingItems = [
+  { title: 'SEO Pricing', desc: 'Standard, Professional & Premium SEO packages.', link: '/pricing/seo' },
+  { title: 'Social Media Pricing', desc: 'Social media plans tailored to your budget.', link: '/pricing/social-media' },
+]
+
 function NavLink({ to, children }) {
   return (
     <a
@@ -78,16 +83,20 @@ function Dropdown({ items }) {
 export default function Navbar() {
   const [aboutOpen, setAboutOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [pricingOpen, setPricingOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileAbout, setMobileAbout] = useState(false)
   const [mobileServices, setMobileServices] = useState(false)
+  const [mobilePricing, setMobilePricing] = useState(false)
   const aboutRef = useRef(null)
   const servicesRef = useRef(null)
+  const pricingRef = useRef(null)
 
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (aboutRef.current && !aboutRef.current.contains(e.target)) setAboutOpen(false)
       if (servicesRef.current && !servicesRef.current.contains(e.target)) setServicesOpen(false)
+      if (pricingRef.current && !pricingRef.current.contains(e.target)) setPricingOpen(false)
     }
     document.addEventListener('pointerdown', handleClickOutside)
     return () => document.removeEventListener('pointerdown', handleClickOutside)
@@ -110,31 +119,70 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-7">
               <NavLink to="/">Home</NavLink>
 
-              <div ref={aboutRef} className="relative">
+              <div
+                ref={aboutRef}
+                className="relative"
+                onMouseEnter={() => {
+                  setServicesOpen(false)
+                  setPricingOpen(false)
+                  setAboutOpen(true)
+                }}
+                onMouseLeave={() => setAboutOpen(false)}
+              >
                 <DropdownButton
                   label="About"
                   open={aboutOpen}
                   onClick={() => {
                     setServicesOpen(false)
-                    setAboutOpen((prev) => !prev)
+                    setAboutOpen(true)
                   }}
                 />
                 {aboutOpen && <Dropdown items={aboutItems} />}
               </div>
 
-              <div ref={servicesRef} className="relative">
+              <div
+                ref={servicesRef}
+                className="relative"
+                onMouseEnter={() => {
+                  setAboutOpen(false)
+                  setPricingOpen(false)
+                  setServicesOpen(true)
+                }}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
                 <DropdownButton
                   label="Services"
                   open={servicesOpen}
                   onClick={() => {
                     setAboutOpen(false)
-                    setServicesOpen((prev) => !prev)
+                    setServicesOpen(true)
                   }}
                 />
                 {servicesOpen && <Dropdown items={servicesItems} />}
               </div>
 
-              <NavLink to="/pricing/seo">Pricing</NavLink>
+              <div
+                ref={pricingRef}
+                className="relative"
+                onMouseEnter={() => {
+                  setAboutOpen(false)
+                  setServicesOpen(false)
+                  setPricingOpen(true)
+                }}
+                onMouseLeave={() => setPricingOpen(false)}
+              >
+                <DropdownButton
+                  label="Pricing"
+                  open={pricingOpen}
+                  onClick={() => {
+                    setAboutOpen(false)
+                    setServicesOpen(false)
+                    setPricingOpen(true)
+                  }}
+                />
+                {pricingOpen && <Dropdown items={pricingItems} />}
+              </div>
+
               <NavLink to="/our-work">Portfolio</NavLink>
               <NavLink to="/career">Career</NavLink>
               <NavLink to="/contact">Contact</NavLink>
@@ -212,9 +260,22 @@ export default function Navbar() {
                   </div>
                 )}
 
-                <a href="/pricing/seo" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
+                <button
+                  onClick={() => setMobilePricing((prev) => !prev)}
+                  className="flex items-center justify-between text-gray-700 font-medium hover:text-primary transition-colors"
+                >
                   Pricing
-                </a>
+                </button>
+                {mobilePricing && (
+                  <div className="flex flex-col gap-2 pl-4">
+                    {pricingItems.map((item) => (
+                      <a key={item.title} href={item.link} onClick={closeMobile} className="text-gray-600 text-sm hover:text-primary transition-colors">
+                        {item.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
                 <a href="/our-work" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
                   Portfolio
                 </a>
