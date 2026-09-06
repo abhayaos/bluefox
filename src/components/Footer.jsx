@@ -51,8 +51,8 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="md:max-w-xl">
             <h2 className="font-heading text-2xl md:text-[2rem] font-bold leading-snug mb-3 flex items-center gap-4">
-              <hr className="self-stretch w-1.5 border-0 rounded-full bg-gradient-to-b from-white via-tertiary to-white/40" />
-              <span className="bg-gradient-to-r from-white via-[#dce9ff] to-tertiary bg-clip-text text-transparent">
+              <hr className="self-stretch w-1.5 border-0 rounded-full bg-gradient-to-b from-white via-primary-200 to-white/40" />
+              <span className="bg-gradient-to-r from-white via-primary-100 to-primary-200 bg-clip-text text-transparent">
                 Let's connect and transform your vision into a digital reality.
               </span>
             </h2>

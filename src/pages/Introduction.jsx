@@ -25,9 +25,9 @@ export default function Introduction() {
             Make It Possible with{' '}
             <span className="relative inline-block text-primary">
               Blue Fox
-              <span aria-hidden className="absolute left-0 -bottom-2 h-2.5 w-full -rotate-1 rounded-[50%] bg-yellow-300/70" />
+              <span aria-hidden className="absolute left-0 -bottom-2 h-2.5 w-full -rotate-1 rounded-[50%] bg-primary-200" />
               <span aria-hidden className="absolute inset-x-[-8px] -inset-y-2 -rotate-2 border-2 border-dashed border-primary/30 rounded-lg" />
-              <span aria-hidden className="absolute inset-x-[-14px] -inset-y-3 rotate-1 border-2 border-dotted border-tertiary/40 rounded-md" />
+              <span aria-hidden className="absolute inset-x-[-14px] -inset-y-3 rotate-1 border-2 border-dotted border-primary-200 rounded-md" />
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl leading-relaxed text-left">
@@ -150,7 +150,7 @@ export default function Introduction() {
               <p className="font-heading text-4xl md:text-5xl font-bold text-gray-900">
                 {stat.value}
               </p>
-              <p className="text-tertiary mt-2 font-medium">{stat.label}</p>
+              <p className="text-primary mt-2 font-medium">{stat.label}</p>
             </div>
           ))}
         </div>

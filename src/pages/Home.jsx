@@ -41,12 +41,12 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 pt-20 pb-14 text-left">
           <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight text-slate-900 mb-7">
             Transform Your Vision Into A{' '}
-            <span className="relative inline-block text-orange-500">
+            <span className="relative inline-block text-primary">
               Digital Reality
-              <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-yellow-400" />
-              <span aria-hidden className="absolute left-3 -bottom-4 h-1.5 w-[88%] rotate-2 rounded-full bg-yellow-300" />
-              <span aria-hidden className="absolute inset-x-[-6px] -inset-y-1.5 -rotate-1 border-2 border-dashed border-orange-300 rounded-lg" />
-              <span aria-hidden className="absolute inset-x-[-12px] -inset-y-2.5 rotate-1 border-2 border-dotted border-yellow-300 rounded-md" />
+              <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-primary-200" />
+              <span aria-hidden className="absolute left-3 -bottom-4 h-1.5 w-[88%] rotate-2 rounded-full bg-primary-100" />
+              <span aria-hidden className="absolute inset-x-[-6px] -inset-y-1.5 -rotate-1 border-2 border-dashed border-primary/40 rounded-lg" />
+              <span aria-hidden className="absolute inset-x-[-12px] -inset-y-2.5 rotate-1 border-2 border-dotted border-primary-200 rounded-md" />
             </span>
           </h1>
 
@@ -59,7 +59,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-start gap-4 mb-8">
             <Link
               to="/contact"
-              className="inline-flex items-center rounded-full bg-orange-500 text-white px-9 py-3.5 font-semibold shadow-md shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              className="inline-flex items-center rounded-full bg-primary text-white px-9 py-3.5 font-semibold shadow-md shadow-primary/30 hover:bg-primary-700 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
             >
               Let's Get Started
             </Link>
@@ -90,10 +90,10 @@ export default function Home() {
                   i === 1 || i === 3 ? 'border-l' : ''
                 } ${i >= 2 ? 'border-t lg:border-t-0 lg:border-l' : ''}`}
               >
-                <span className="w-11 h-11 rounded-xl bg-orange-100 text-orange-500 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                <span className="w-11 h-11 rounded-xl bg-primary-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <metric.icon size={18} />
                 </span>
-                <p className="font-heading text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+                <p className="font-heading text-3xl font-bold bg-gradient-to-r from-primary to-primary-200 bg-clip-text text-transparent">
                   {metric.value}
                 </p>
                 <p className="text-sm text-slate-500 font-medium">{metric.label}</p>

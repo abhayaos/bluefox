@@ -25,12 +25,12 @@ export default function NotFound() {
       <div
         aria-hidden
         style={{ '--float-x': '16px', '--float-rotate': '8deg' }}
-        className="pointer-events-none absolute -bottom-28 -right-20 h-96 w-96 rounded-full bg-tertiary/20 blur-3xl animate-float-slow"
+        className="pointer-events-none absolute -bottom-28 -right-20 h-96 w-96 rounded-full bg-primary/20 blur-3xl animate-float-slow"
       />
       <div
         aria-hidden
         style={{ '--float-x': '28px' }}
-        className="pointer-events-none absolute top-1/4 right-1/4 h-40 w-40 rounded-full bg-yellow-300/25 blur-2xl animate-float"
+        className="pointer-events-none absolute top-1/4 right-1/4 h-40 w-40 rounded-full bg-primary-100/50 blur-2xl animate-float"
       />
 
       {/* status pill */}
@@ -51,15 +51,15 @@ export default function NotFound() {
         style={{ transform: `translate(${tilt.x}px, ${tilt.y}px)` }}
       >
         <div className="animate-spin-slow absolute -inset-8 rounded-full border-2 border-dashed border-primary/30" />
-        <div className="animate-sway absolute -inset-14 rounded-full border-2 border-dotted border-tertiary/40" />
-        <div className="absolute -inset-24 rounded-full bg-gradient-to-br from-primary/10 to-tertiary/10 blur-xl" />
+        <div className="animate-sway absolute -inset-14 rounded-full border-2 border-dotted border-primary/30" />
+        <div className="absolute -inset-24 rounded-full bg-gradient-to-br from-primary/10 to-primary-100/40 blur-xl" />
       </div>
 
       <h1
         className="relative z-10 mb-8 font-heading text-[8rem] font-bold leading-none select-none md:text-[11rem]"
         style={{ transform: `translate(${tilt.x * 1.4}px, ${tilt.y * 1.4}px)` }}
       >
-        <span className="animate-gradient-x bg-gradient-to-r from-primary via-tertiary to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
+        <span className="animate-gradient-x bg-gradient-to-r from-primary via-primary-400 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
           404
         </span>
       </h1>

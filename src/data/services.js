@@ -2,7 +2,7 @@ const services = [
   {
     slug: 'website-development',
     title: 'Website Development',
-    tagline: 'Specialized custom website development services.',
+    tagline: 'Highly functional and visually appealing website designed to meet your needs.',
     intro: 'Crafting Digital Excellence: Elevate Your Online Presence with Innovative Website Development Solutions. Tailored Designs, Seamless Functionality, and Future-Ready Technology – Your Journey to Success Starts Here!',
     category: 'Development',
     paragraphs: [
