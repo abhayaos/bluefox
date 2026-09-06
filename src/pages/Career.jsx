@@ -60,16 +60,13 @@ export default function Career() {
             dynamic environment.
           </p>
 
-          <div className="mt-10 grid gap-4 max-w-3xl sm:grid-cols-3">
+          <div className="mt-8 flex flex-wrap gap-x-10 gap-y-6">
             {highlights.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary">
-                  <item.icon size={18} />
+              <div key={item.title} className="flex flex-col items-center gap-2 text-center">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-primary-100 bg-primary-50 text-primary">
+                  <item.icon size={15} />
                 </span>
-                <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+                <h3 className="text-sm font-medium text-slate-900">{item.title}</h3>
               </div>
             ))}
           </div>

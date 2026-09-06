@@ -143,7 +143,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="/contact"
-                className="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold shadow-md shadow-primary/30 hover:bg-primary-700 hover:-translate-y-0.5 transition-all duration-200"
+                className="px-5 py-2.5 rounded-full bg-transparent border-2 border-[#eef1fb] text-[#0b7be5] text-sm font-semibold transition-all duration-200 hover:bg-[#eef1fb] hover:border-[#0b7be5] active:bg-[#0b7be5] active:text-white"
               >
                 Quick Enquiry
               </a>
@@ -215,7 +215,7 @@ export default function Navbar() {
             <a
               href="/contact"
               onClick={closeMobile}
-              className="mt-2 px-5 py-2.5 rounded-full bg-primary text-white text-center font-semibold shadow-md shadow-primary/30"
+              className="mt-2 px-5 py-2.5 rounded-full bg-transparent border-2 border-[#0b7be5] text-[#0b7be5] text-center font-semibold active:bg-[#0b7be5] active:text-white"
             >
               Quick Enquiry
             </a>
