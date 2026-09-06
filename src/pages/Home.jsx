@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa'
 
 import webdev from '../assets/home/Website_developlent.svg'
-import appdev from '../assets/home/App_development.svg'
+import appdev from '../assets/home/App_Development.svg'
 import systemdev from '../assets/home/Programmer-amico.svg'
 import uiux from '../assets/home/UI_UX.svg'
 import seo from '../assets/home/SEO_analytics_team-amico.svg'
