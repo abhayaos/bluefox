@@ -520,10 +520,10 @@ const sections = (
             <div className="mb-5 flex w-full items-center justify-center rounded-xl bg-primary-50/60 py-4">
               <img src={item.img} alt={item.title} className="w-36 h-36 object-contain" />
             </div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors duration-300">
+            <h3 className="text-2xl font-semibold text-slate-900 mb-2 group-hover:text-black transition-colors duration-300">
               {item.title}
             </h3>
-            <p className="text-base text-slate-600 leading-relaxed group-hover:text-primary-900 transition-colors duration-300">
+            <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
               {item.desc}
             </p>
           </a>
