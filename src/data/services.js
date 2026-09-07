@@ -78,8 +78,8 @@ const services = [
   {
     slug: 'graphic-design',
     title: 'Graphic Design',
-    tagline: 'Designs that speak your brand’s narrative and connect with your audience.',
-    intro: 'Elevate your brand with captivating logos and comprehensive branding solutions with the best graphic design services from Blue Fox. Our creative brilliance is ideal for transforming your ideas into visual masterpieces.',
+    tagline: 'Designs that speak louder than words',
+    intro: 'Elevate your brand with captivating logos and comprehensive branding solutions with the best graphic design services from Blue Fox. Our creative brilliance is ideal for transforming your ideas into visual masterpieces with tailored designs for your digital needs.',
     category: 'Marketing',
     paragraphs: [
       'Our services include Branding, Flyer and Brochure design, Motion Graphics and Animation, Social Media Banners, Illustrations, and Print Designs.',

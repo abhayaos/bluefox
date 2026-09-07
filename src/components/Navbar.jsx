@@ -31,6 +31,7 @@ const servicesItems = [
   { title: 'UI/UX Design', desc: 'Interfaces that are intuitive and beautiful.', link: '/services/ui-ux' },
   { title: 'SEO', desc: 'Search visibility engineered for growth.', link: '/services/seo' },
   { title: 'Social Media Marketing', desc: 'Campaigns that build engaged audiences.', link: '/services/social-media-marketing' },
+  { title: 'Graphic Design', desc: 'Logos and branding that speak for you.', link: '/services/graphic-design' },
 ]
 
 const pricingItems = [
