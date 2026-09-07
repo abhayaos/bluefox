@@ -17,7 +17,7 @@ import smm from '../assets/home/Mobile_Marketing-pana.svg'
 import graphicdesign from '../assets/home/Website_Creator-pana.svg'
 import contentwriting from '../assets/home/Content Writing.svg'
 
-import heroImg from '../assets/hero/Nerd-amico.svg'
+import heroImg from '../assets/hero/Nerd.gif'
 
 import nvaImg from '../assets/home/nva.png'
 import imImg from '../assets/home/im.png'

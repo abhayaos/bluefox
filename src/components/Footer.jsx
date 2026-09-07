@@ -152,50 +152,33 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto">
-        <hr className="border-slate-200" />
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 py-6 text-sm">
-          <a href="#" className="text-[#0b7be5] hover:text-primary transition-colors">
-            FAQ
-          </a>
-          <span className="text-slate-300">|</span>
-          <a href="#" className="text-[#0b7be5] hover:text-primary transition-colors">
-            Terms & Condition
-          </a>
-          <span className="text-slate-300">|</span>
-          <a href="#" className="text-[#0b7be5] hover:text-primary transition-colors">
-            Privacy Policy
-          </a>
-        </div>
-        <hr className="border-slate-200" />
-        <div className="mt-8 flex w-full flex-wrap items-center justify-between gap-6 bg-[#0b7be5] py-4">
-          <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-6">
-            <p className="text-sm font-medium text-white">
-              © 2024 Blue Fox Pvt Ltd. All Rights Reserved.
-            </p>
-            <div className="flex items-center gap-3">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
-              >
-                <FaFacebookF size={14} />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
-              >
-                <FaInstagram size={14} />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
-              >
-                <FaLinkedinIn size={14} />
-              </a>
-            </div>
+      <div className="mt-8 flex w-full flex-wrap items-center justify-between gap-6 bg-[#0b7be5] py-4">
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-6">
+          <p className="text-sm font-medium text-white">
+            © 2024 Blue Fox Pvt Ltd. All Rights Reserved.
+          </p>
+          <div className="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+            >
+              <FaFacebookF size={11} />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+            >
+              <FaInstagram size={11} />
+            </a>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+            >
+              <FaLinkedinIn size={11} />
+            </a>
           </div>
         </div>
       </div>

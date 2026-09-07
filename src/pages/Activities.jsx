@@ -1,14 +1,22 @@
 import { FaCameraRetro } from 'react-icons/fa'
+import blueFoxAnn from '../assets/activities/blue-fox-ann.jpeg'
+import iicQ from '../assets/activities/iic-q.jpeg'
+import iicQuest1 from '../assets/activities/iic-quest1.jpeg'
+import acesOpen from '../assets/activities/aces-open.jpeg'
+import uiUx from '../assets/activities/ui-ux.jpeg'
+import acesIntern from '../assets/activities/aces-intern.jpeg'
+import techFestClose from '../assets/activities/tech-fest-close.jpeg'
+import acesTech from '../assets/activities/aces-tech.jpeg'
 
 const activities = [
-  { title: 'Blue Fox Anniversary' },
-  { title: 'IIC Quest 2024' },
-  { title: 'IIC Quest 2024' },
-  { title: 'Aces Tech Fest 7.0' },
-  { title: 'Sushma Godawari College UX/UI Workshop' },
-  { title: 'Aces Intern Fest 7.0' },
-  { title: 'Aces Tech Fest 7.0 Closing' },
-  { title: 'Aces Tech Fest 7.0' },
+  { title: 'Blue Fox Anniversary', img: blueFoxAnn },
+  { title: 'IIC Quest 2024', img: iicQ },
+  { title: 'IIC Quest 2024', img: iicQuest1 },
+  { title: 'Aces Tech Fest 7.0', img: acesOpen },
+  { title: 'Sushma Godawari College UX/UI Workshop', img: uiUx },
+  { title: 'Aces Intern Fest 7.0', img: acesIntern },
+  { title: 'Aces Tech Fest 7.0 Closing', img: techFestClose },
+  { title: 'Aces Tech Fest 7.0', img: acesTech },
 ]
 
 export default function Activities() {
@@ -37,8 +45,12 @@ export default function Activities() {
               key={`${activity.title}-${idx}`}
               className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden"
             >
-              <div className="aspect-video bg-primary-50 flex items-center justify-center text-primary-200">
-                <FaCameraRetro size={56} />
+              <div className="aspect-video bg-primary-50 overflow-hidden">
+                <img
+                  src={activity.img}
+                  alt={activity.title}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="p-4">
                 <h2 className="text-lg font-semibold text-gray-900">{activity.title}</h2>
