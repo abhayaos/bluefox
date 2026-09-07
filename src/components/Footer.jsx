@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
+import worldMap from '../assets/world-map-dots.svg'
 
 const devServicesLinks = [
   { label: 'Website Development', to: '/services/website-development' },
@@ -62,20 +63,28 @@ export default function Footer() {
             </p>
           </div>
           <div className="md:border-l md:border-slate-300 md:pl-8">
-            <div className="flex items-center gap-4">
-              <span className="w-12 h-12 rounded-2xl bg-white border border-slate-300 flex items-center justify-center shrink-0">
-                <FaPhoneAlt className="text-primary" size={18} />
-              </span>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">
-                  Reach out now!
-                </p>
-                <a
-                  href="tel:+9779817303073"
-                  className="block font-heading text-3xl md:text-4xl font-bold text-primary hover:text-primary-700 transition-colors"
-                >
-                  9817303073
-                </a>
+            <div className="relative">
+              <img
+                src={worldMap}
+                alt=""
+                aria-hidden
+                className="absolute inset-0 h-full w-full object-cover rounded-2xl"
+              />
+              <div className="relative z-10 flex items-center gap-4">
+                <span className="w-12 h-12 rounded-2xl bg-white border border-slate-300 flex items-center justify-center shrink-0">
+                  <FaPhoneAlt className="text-primary" size={18} />
+                </span>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">
+                    Reach out now!
+                  </p>
+                  <a
+                    href="tel:+9779817303073"
+                    className="block font-heading text-3xl md:text-4xl font-bold text-primary hover:text-primary-700 transition-colors"
+                  >
+                    9817303073
+                  </a>
+                </div>
               </div>
             </div>
           </div>

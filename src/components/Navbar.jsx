@@ -62,7 +62,7 @@ function DropdownButton({ label }) {
   )
 }
 
-function Dropdown({ items, grid }) {
+function Dropdown({ items, grid, plain }) {
   return (
     <div className="absolute top-full left-0 pt-2 invisible opacity-0 translate-y-1 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 z-50">
       <div className={`bg-white border border-slate-200 rounded-xl shadow-xl p-3 ${grid ? 'grid w-[34rem] grid-cols-2 gap-2' : 'w-80'}`}>
@@ -70,11 +70,11 @@ function Dropdown({ items, grid }) {
           <a
             key={item.title}
             href={item.link}
-            className="group/opt flex items-start gap-3 p-3 rounded-lg hover:bg-primary-50 hover:translate-x-1 transition-all duration-200"
+            className={`group/opt flex items-start gap-3 p-3 rounded-lg transition-all duration-200 ${plain ? '' : 'hover:bg-primary-50 hover:translate-x-1'}`}
           >
             <div>
               <p className="font-medium text-gray-900 text-sm transition-colors duration-200 group-hover/opt:text-[#52a1ec]">{item.title}</p>
-              <p className="text-gray-500 text-xs mt-0.5 transition-colors duration-200 group-hover/opt:text-[#52a1ec]">{item.desc}</p>
+              <p className={`text-gray-500 text-xs mt-0.5 transition-colors duration-200 ${plain ? '' : 'group-hover/opt:text-[#52a1ec]'}`}>{item.desc}</p>
             </div>
           </a>
         ))}
@@ -111,7 +111,7 @@ export default function Navbar() {
 
               <div className="relative group">
                 <DropdownButton label="Services" />
-                <Dropdown items={servicesItems} grid />
+                <Dropdown items={servicesItems} grid plain />
               </div>
 
               <div className="relative group">

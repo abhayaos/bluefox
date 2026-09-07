@@ -43,17 +43,15 @@ export default function Activities() {
           {activities.map((activity, idx) => (
             <div
               key={`${activity.title}-${idx}`}
-              className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden"
+              className="group relative aspect-video overflow-hidden rounded-2xl border border-gray-200 bg-primary-50 shadow-sm"
             >
-              <div className="aspect-video bg-primary-50 overflow-hidden">
-                <img
-                  src={activity.img}
-                  alt={activity.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h2 className="text-lg font-semibold text-gray-900">{activity.title}</h2>
+              <img
+                src={activity.img}
+                alt={activity.title}
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-x-0 bottom-0 flex items-center justify-center bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <h2 className="text-lg font-semibold text-white">{activity.title}</h2>
               </div>
             </div>
           ))}

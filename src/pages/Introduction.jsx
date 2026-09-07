@@ -1,4 +1,5 @@
-import { FaCogs, FaTrophy, FaPuzzlePiece, FaUserTie, FaCalendarCheck, FaHeadset, FaMountain, FaBullseye } from 'react-icons/fa'
+import { FaQuoteLeft, FaCogs, FaTrophy, FaPuzzlePiece, FaUserTie, FaCalendarCheck, FaHeadset, FaMountain, FaBullseye } from 'react-icons/fa'
+import mdImage from '../assets/md.jpg'
 
 const stats = [
   { value: '80+', label: 'Team Members' },
@@ -134,6 +135,56 @@ export default function Introduction() {
                   Website is the most reliable tool for digital marketing which is even suggested
                   by legal authorities in the case of Nepal.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MD message */}
+      <section className="bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-4 text-primary mb-4">
+            <span className="h-px w-10 bg-primary" />
+            <p className="text-xs font-bold tracking-[0.25em] uppercase">Message from the Managing Director</p>
+            <span className="h-px w-10 bg-primary" />
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">
+            A Note From Our Leadership
+          </h2>
+
+          <div className="grid lg:grid-cols-[auto_1fr] gap-10 items-center rounded-2xl bg-gradient-to-br from-[#f8f9ff] via-white to-[#eef2ff] p-8 md:p-12">
+            <div className="mx-auto lg:mx-0">
+              <div className="group relative mx-auto lg:w-72">
+                <span className="absolute -top-6 -right-6 z-0 h-32 w-32 rounded-full bg-primary/10" />
+                <span className="absolute -bottom-6 -left-6 z-0 h-28 w-28 rounded-full bg-[#a9d6ff]/50" />
+                <img
+                  src={mdImage}
+                  alt="Mitra Thapa Magar, Managing Director, Blue Fox Pvt. Ltd."
+                  className="relative z-10 rounded-2xl object-cover shadow-xl shadow-primary/10 transition-all duration-300 group-hover:grayscale group-hover:brightness-75 lg:w-full"
+                />
+                <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-center justify-center rounded-b-2xl bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="font-heading text-lg font-bold text-white">Mitra Thapa Magar</p>
+                  <p className="mt-0.5 text-xs text-[#a9d6ff]">Managing Director, Blue Fox Pvt. Ltd.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-left">
+              <FaQuoteLeft className="text-primary/30 mb-4" size={36} />
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
+                At Blue Fox, we believe great design and smart technology should work hand in hand.
+                Our mission is to help businesses think digitally — building brands, websites, and
+                experiences that truly stand out. I'm proud of the work our team delivers every day,
+                and grateful for the trust our clients place in us. As we grow, our commitment stays
+                the same: honest work, built to last.
+              </p>
+              <div className="flex items-center gap-3">
+                <span className="h-12 w-1 rounded-full bg-primary" />
+                <div>
+                  <p className="font-heading text-xl font-bold text-slate-900">Mitra Thapa Magar</p>
+                  <p className="text-primary font-medium">Managing Director, Blue Fox Pvt. Ltd.</p>
+                </div>
               </div>
             </div>
           </div>
