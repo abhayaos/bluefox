@@ -17,6 +17,8 @@ import smm from '../assets/home/Mobile_Marketing-pana.svg'
 import graphicdesign from '../assets/home/Website_Creator-pana.svg'
 import contentwriting from '../assets/home/Content Writing.svg'
 
+import heroImg from '../assets/hero/Nerd-amico.svg'
+
 import nvaImg from '../assets/home/nva.png'
 import imImg from '../assets/home/im.png'
 import aceomeImg from '../assets/home/aceome.png'
@@ -184,43 +186,51 @@ export default function Home() {
     <main className="flex-1">
       {/* lefted hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#f8f9ff] to-white">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-14 text-left">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight text-slate-900 mb-7">
-            Transform Your Vision Into A{' '}
-            <span className="relative inline-block text-primary">
-              Digital Reality
-              <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-primary-200" />
-              <span aria-hidden className="absolute left-3 -bottom-4 h-1.5 w-[88%] rotate-2 rounded-full bg-primary-100" />
-            </span>
-          </h1>
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-14">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="text-left">
+              <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight text-slate-900 mb-7">
+                Transform Your Vision Into A{' '}
+                <span className="relative inline-block text-primary">
+                  Digital Reality
+                  <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-primary-200" />
+                  <span aria-hidden className="absolute left-3 -bottom-4 h-1.5 w-[88%] rotate-2 rounded-full bg-primary-100" />
+                </span>
+              </h1>
 
-          <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
-            We deliver enterprise custom software, resilient cloud architecture, cutting-edge
-            mobile apps, and hyper-growth performance engineering designed to scale your
-            business across borders.
-          </p>
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
+                We deliver enterprise custom software, resilient cloud architecture, cutting-edge
+                mobile apps, and hyper-growth performance engineering designed to scale your
+                business across borders.
+              </p>
 
-          <div className="flex flex-wrap items-center justify-start gap-4 mb-8">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-primary text-white px-9 py-3.5 font-semibold shadow-md shadow-primary/30 hover:bg-primary-700 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
-            >
-              Let's Get Started
-            </Link>
-            <Link
-              to="/our-work"
-              className="relative inline-flex items-center px-4 py-3.5 font-semibold text-slate-700 hover:text-primary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Discover Our Work
-            </Link>
-          </div>
+              <div className="flex flex-wrap items-center justify-start gap-4 mb-8">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center rounded-full bg-primary text-white px-9 py-3.5 font-semibold shadow-md shadow-primary/30 hover:bg-primary-700 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                >
+                  Let's Get Started
+                </Link>
+                <Link
+                  to="/our-work"
+                  className="relative inline-flex items-center px-4 py-3.5 font-semibold text-slate-700 hover:text-primary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  Discover Our Work
+                </Link>
+              </div>
 
-          <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-2.5 shadow-sm">
-            <span className="text-[10px] font-bold text-slate-400 tracking-widest">INSTANT CONSULTATION</span>
-            <a href="tel:+9779817303073" className="flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-              <FaPhoneAlt size={12} />
-              +977 9817303073
-            </a>
+              <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-2.5 shadow-sm">
+                <span className="text-[10px] font-bold text-slate-400 tracking-widest">INSTANT CONSULTATION</span>
+                <a href="tel:+9779817303073" className="flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                  <FaPhoneAlt size={12} />
+                  +977 9817303073
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <img src={heroImg} alt="Blue Fox hero illustration" className="w-full max-w-lg object-contain" />
+            </div>
           </div>
         </div>
 

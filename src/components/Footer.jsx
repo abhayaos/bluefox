@@ -48,7 +48,7 @@ export default function Footer() {
     <footer className="bg-[#f8f9ff] text-slate-500 border-t border-slate-200">
       {/* Top banner */}
       <div className="bg-[#e0f1f2]">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-10">
+        <div className="max-w-6xl mx-auto py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-10">
           <div className="md:max-w-2xl">
             <h2 className="font-heading text-3xl md:text-5xl font-bold leading-snug mb-4 flex items-center gap-5">
               <span className="w-2 self-stretch rounded-full bg-gradient-to-b from-primary via-primary-200 to-white/40" />
@@ -84,7 +84,7 @@ export default function Footer() {
 
       <hr className="border-slate-200" />
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Development services */}
           <div>
@@ -152,7 +152,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto">
         <hr className="border-slate-200" />
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 py-6 text-sm">
           <a href="#" className="text-[#0b7be5] hover:text-primary transition-colors">
