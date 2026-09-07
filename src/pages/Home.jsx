@@ -189,7 +189,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 pt-20 pb-14">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="text-left">
-              <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight text-slate-900 mb-7">
+              <h1 className="font-heading text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 mb-7">
                 Transform Your Vision Into A{' '}
                 <span className="relative inline-block text-primary">
                   Digital Reality
@@ -264,7 +264,7 @@ export default function Home() {
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Services</p>
           <span className="h-px w-10 bg-primary" />
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
+        <h2 className="font-heading text-3xl md:text-5xl 2xl:text-6xl font-bold text-slate-900 text-center mb-4">
           Exceptional Services For Your Business Growth
         </h2>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
@@ -299,7 +299,7 @@ export default function Home() {
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Expertise</p>
           <span className="h-px w-10 bg-primary" />
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
+        <h2 className="font-heading text-3xl md:text-5xl 2xl:text-6xl font-bold text-slate-900 text-center mb-4">
           Technologies We Rely On to Achieve Success
         </h2>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
@@ -346,7 +346,7 @@ export default function Home() {
           <p className="text-xs font-bold tracking-[0.25em] uppercase">How We Work</p>
           <span className="h-px w-10 bg-primary" />
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
+        <h2 className="font-heading text-3xl md:text-5xl 2xl:text-6xl font-bold text-slate-900 text-center mb-4">
           Enjoy seamless service with our easy steps!
         </h2>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
@@ -381,7 +381,7 @@ export default function Home() {
               <span className="h-px w-10 bg-primary" />
               <p className="text-xs font-bold tracking-[0.25em] uppercase">Who we are</p>
             </div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 leading-snug mb-5">
+            <h2 className="font-heading text-3xl md:text-5xl 2xl:text-6xl font-bold text-slate-900 leading-snug mb-5">
               We are a top IT company in Nepal, committed to providing comprehensive digital solutions to enhance your online presence.
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
@@ -426,7 +426,7 @@ export default function Home() {
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Testimonials</p>
           <span className="h-px w-10 bg-primary" />
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center">
+        <h2 className="font-heading text-3xl md:text-5xl 2xl:text-6xl font-bold text-slate-900 text-center">
           What Our Clients Says
         </h2>
       </section>
@@ -438,7 +438,7 @@ export default function Home() {
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Valued Partners</p>
           <span className="h-px w-10 bg-primary" />
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">
+        <h2 className="font-heading text-3xl md:text-5xl 2xl:text-6xl font-bold text-slate-900 text-center mb-12">
           Trusted by Top-Rated Companies
         </h2>
 

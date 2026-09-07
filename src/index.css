@@ -95,6 +95,18 @@ body {
   font-family: var(--font-body);
 }
 
+@media (min-width: 1280px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 125%;
+  }
+}
+
 .phone-input .PhoneInput {
   display: flex;
   width: 100%;

@@ -70,11 +70,11 @@ function Dropdown({ items, grid }) {
           <a
             key={item.title}
             href={item.link}
-            className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary-50 hover:translate-x-1 transition-all duration-200"
+            className="group/opt flex items-start gap-3 p-3 rounded-lg hover:bg-primary-50 hover:translate-x-1 transition-all duration-200"
           >
             <div>
-              <p className="font-medium text-gray-900 text-sm">{item.title}</p>
-              <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
+              <p className="font-medium text-gray-900 text-sm transition-colors duration-200 group-hover/opt:text-[#52a1ec]">{item.title}</p>
+              <p className="text-gray-500 text-xs mt-0.5 transition-colors duration-200 group-hover/opt:text-[#52a1ec]">{item.desc}</p>
             </div>
           </a>
         ))}

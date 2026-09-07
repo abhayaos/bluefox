@@ -126,11 +126,19 @@ export default function Footer() {
           <div>
             <h3 className="text-gray-900 font-semibold mb-5 font-heading">Corporate Contact</h3>
             <ul className="flex flex-col gap-4">
-              <li className="flex items-center gap-3">
-                <FaMapMarkerAlt className="text-primary shrink-0" size={16} />
+              <li className="flex items-start gap-3">
+                <FaMapMarkerAlt className="text-primary shrink-0 mt-0.5" size={16} />
                 <span className="text-sm">
-                  Itahari-6, Paruhang Chowk,
+                  <span className="block font-medium text-gray-900">Main Office:</span>
+                  Itahari-6, Sky Plaza, 2nd Floor,
                   <br /> Nepal
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaMapMarkerAlt className="text-primary shrink-0 mt-0.5" size={16} />
+                <span className="text-sm">
+                  <span className="block font-medium text-gray-900">Branch Office:</span>
+                  Dharan, Nepal
                 </span>
               </li>
               <li className="flex items-center gap-3">
