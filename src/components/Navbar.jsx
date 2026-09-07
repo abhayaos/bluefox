@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
+import logo from '../assets/logo.svg'
 
 const aboutItems = [
   {
@@ -43,65 +44,50 @@ function NavLink({ to, children }) {
   return (
     <a
       href={to}
-      className="relative py-1 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-gray-900 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+      className="relative py-1 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-[#52a1ec] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
     >
       {children}
     </a>
   )
 }
 
-function DropdownButton({ label, open, onClick }) {
+function DropdownButton({ label }) {
   return (
     <button
-      onClick={onClick}
-      className="flex items-center gap-1 py-1 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-gray-900"
+      className="flex items-center gap-1 py-1 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-[#52a1ec]"
     >
       {label}
-      <FiChevronDown className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      <FiChevronDown className="transition-transform duration-200 group-hover:rotate-180" />
     </button>
   )
 }
 
-function Dropdown({ items }) {
+function Dropdown({ items, grid }) {
   return (
-    <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-slate-200 rounded-xl shadow-xl p-3 z-50">
-      {items.map((item) => (
-        <a
-          key={item.title}
-          href={item.link}
-          className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary-50 hover:translate-x-1 transition-all duration-200"
-        >
-          <div>
-            <p className="font-medium text-gray-900 text-sm">{item.title}</p>
-            <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
-          </div>
-        </a>
-      ))}
+    <div className="absolute top-full left-0 pt-2 invisible opacity-0 translate-y-1 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 z-50">
+      <div className={`bg-white border border-slate-200 rounded-xl shadow-xl p-3 ${grid ? 'grid w-[34rem] grid-cols-2 gap-2' : 'w-80'}`}>
+        {items.map((item) => (
+          <a
+            key={item.title}
+            href={item.link}
+            className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary-50 hover:translate-x-1 transition-all duration-200"
+          >
+            <div>
+              <p className="font-medium text-gray-900 text-sm">{item.title}</p>
+              <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   )
 }
 
 export default function Navbar() {
-  const [aboutOpen, setAboutOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const [pricingOpen, setPricingOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileAbout, setMobileAbout] = useState(false)
   const [mobileServices, setMobileServices] = useState(false)
   const [mobilePricing, setMobilePricing] = useState(false)
-  const aboutRef = useRef(null)
-  const servicesRef = useRef(null)
-  const pricingRef = useRef(null)
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (aboutRef.current && !aboutRef.current.contains(e.target)) setAboutOpen(false)
-      if (servicesRef.current && !servicesRef.current.contains(e.target)) setServicesOpen(false)
-      if (pricingRef.current && !pricingRef.current.contains(e.target)) setPricingOpen(false)
-    }
-    document.addEventListener('pointerdown', handleClickOutside)
-    return () => document.removeEventListener('pointerdown', handleClickOutside)
-  }, [])
 
   const closeMobile = () => setMobileOpen(false)
 
@@ -112,76 +98,25 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between gap-6 py-3.5">
             <a href="/" className="flex items-center gap-3 shrink-0">
-              <span className="leading-tight">
-                <span className="block text-lg font-bold text-gray-900 font-heading">Blue Fox</span>
-              </span>
+              <img src={logo} alt="Blue Fox" className="h-10 w-auto" />
             </a>
 
             <div className="hidden lg:flex items-center gap-7">
               <NavLink to="/">Home</NavLink>
 
-              <div
-                ref={aboutRef}
-                className="relative"
-                onMouseEnter={() => {
-                  setServicesOpen(false)
-                  setPricingOpen(false)
-                  setAboutOpen(true)
-                }}
-                onMouseLeave={() => setAboutOpen(false)}
-              >
-                <DropdownButton
-                  label="About"
-                  open={aboutOpen}
-                  onClick={() => {
-                    setServicesOpen(false)
-                    setAboutOpen(true)
-                  }}
-                />
-                {aboutOpen && <Dropdown items={aboutItems} />}
+              <div className="relative group">
+                <DropdownButton label="About" />
+                <Dropdown items={aboutItems} />
               </div>
 
-              <div
-                ref={servicesRef}
-                className="relative"
-                onMouseEnter={() => {
-                  setAboutOpen(false)
-                  setPricingOpen(false)
-                  setServicesOpen(true)
-                }}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <DropdownButton
-                  label="Services"
-                  open={servicesOpen}
-                  onClick={() => {
-                    setAboutOpen(false)
-                    setServicesOpen(true)
-                  }}
-                />
-                {servicesOpen && <Dropdown items={servicesItems} />}
+              <div className="relative group">
+                <DropdownButton label="Services" />
+                <Dropdown items={servicesItems} grid />
               </div>
 
-              <div
-                ref={pricingRef}
-                className="relative"
-                onMouseEnter={() => {
-                  setAboutOpen(false)
-                  setServicesOpen(false)
-                  setPricingOpen(true)
-                }}
-                onMouseLeave={() => setPricingOpen(false)}
-              >
-                <DropdownButton
-                  label="Pricing"
-                  open={pricingOpen}
-                  onClick={() => {
-                    setAboutOpen(false)
-                    setServicesOpen(false)
-                    setPricingOpen(true)
-                  }}
-                />
-                {pricingOpen && <Dropdown items={pricingItems} />}
+              <div className="relative group">
+                <DropdownButton label="Pricing" />
+                <Dropdown items={pricingItems} />
               </div>
 
               <NavLink to="/our-work">Portfolio</NavLink>
@@ -214,7 +149,9 @@ export default function Navbar() {
 
             <div className="absolute inset-y-0 left-0 flex w-full flex-col bg-white shadow-2xl animate-slide-in-left">
               <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
-                <span className="font-heading text-lg font-bold text-gray-900">Blue Fox</span>
+                <span className="flex h-11 items-center">
+                  <img src={logo} alt="Blue Fox" className="h-9 w-auto" />
+                </span>
                 <button
                   onClick={closeMobile}
                   className="flex h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-700"

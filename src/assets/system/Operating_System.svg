@@ -1,0 +1,125 @@
+<svg class="animated" id="freepik_stories-operating-system" viewBox="0 0 750 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    svg#freepik_stories-operating-system:not(.animated) .animable {opacity: 0;}
+    svg#freepik_stories-operating-system.animated #freepik--background-complete--inject-2 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}
+    svg#freepik_stories-operating-system.animated #freepik--Shadows--inject-2 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}
+    svg#freepik_stories-operating-system.animated #freepik--Floor--inject-2 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}
+    svg#freepik_stories-operating-system.animated #freepik--Device--inject-2 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}
+    svg#freepik_stories-operating-system.animated #freepik--Windows--inject-2 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}
+    svg#freepik_stories-operating-system.animated #freepik--Plant--inject-2 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}
+    svg#freepik_stories-operating-system.animated #freepik--Character--inject-2 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}
+    @keyframes slideRight {0% {opacity: 0; transform: translateX(30px);} 100% {opacity: 1; transform: translateX(0);}}
+    @keyframes slideUp {0% {opacity: 0; transform: translateY(30px);} 100% {opacity: 1; transform: translateY(0);}}
+  </style>
+  <defs>
+    <linearGradient id="freepik--background-complete--inject-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F2F7FF"/>
+    </linearGradient>
+    <linearGradient id="freepik--Device--inject-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#259FFA"/>
+      <stop offset="1" stop-color="#0B7BE5"/>
+    </linearGradient>
+    <linearGradient id="freepik--Device--inject-2-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8F6FF"/>
+      <stop offset="1" stop-color="#D6EEFF"/>
+    </linearGradient>
+  </defs>
+  <g id="freepik--background-complete--inject-2" class="animable" style="transform-origin: 0px 0px;">
+    <rect id="freepik--background-complete--inject-6" x="0" y="0" width="750" height="500" fill="url(#freepik--background-complete--inject-2)"/>
+    <circle id="freepik--background-complete--inject-7" cx="610" cy="95" r="14" fill="#C9E8FF"/>
+    <circle id="freepik--background-complete--inject-8" cx="125" cy="395" r="10" fill="#C9E8FF"/>
+    <circle id="freepik--background-complete--inject-9" cx="665" cy="370" r="7" fill="#C9E8FF"/>
+    <circle id="freepik--background-complete--inject-10" cx="90" cy="120" r="8" fill="#C9E8FF"/>
+    <path id="freepik--background-complete--inject-11" d="M255,105C252.8,105 251,106.8,251,109C251,111.2,252.8,113,255,113C257.2,113,259,111.2,259,109C259,106.8,257.2,105,255,105Z" fill="#C9E8FF"/>
+    <path id="freepik--background-complete--inject-12" d="M285,420C282.8,420,281,421.8,281,424C281,426.2,282.8,428,285,428C287.2,428,289,426.2,289,424C289,421.8,287.2,420,285,420Z" fill="#C9E8FF"/>
+    <path id="freepik--background-complete--inject-13" d="M116,265C113.8,265,112,266.8,112,269C112,271.2,113.8,273,116,273C118.2,273,120,271.2,120,269C120,266.8,118.2,265,116,265Z" fill="#C9E8FF"/>
+    <path id="freepik--background-complete--inject-14" d="M690,230C687.8,230,686,231.8,686,234C686,236.2,687.8,238,690,238C692.2,238,694,236.2,694,234C694,231.8,692.2,230,690,230Z" fill="#C9E8FF"/>
+  </g>
+  <g id="freepik--Shadows--inject-2" class="animable" style="transform-origin: 0px 0px;">
+    <ellipse id="freepik--Shadows--inject-5" cx="375" cy="435" rx="230" ry="22" fill="#A4C8ED" opacity="0.35"/>
+  </g>
+  <g id="freepik--Floor--inject-2" class="animable" style="transform-origin: 0px 0px;">
+    <path id="freepik--Floor--inject-3" d="M188,435L340,435L340,448L188,436Z" fill="#D3EBFF"/>
+    <path id="freepik--Floor--inject-4" d="M562,435L410,435L410,448L562,436Z" fill="#D3EBFF"/>
+  </g>
+  <g id="freepik--Device--inject-2" class="animable" style="transform-origin: 0px 0px;">
+    <g id="Device-left">
+      <g id="freepik--Device--inject-6">
+        <rect id="Device-whole" x="185" y="180" width="180" height="250" rx="22" fill="url(#freepik--Device--inject-2)" transform="rotate(-8,275,305)"/>
+        <rect id="Device-screen" x="198" y="196" width="154" height="192" rx="10" fill="url(#freepik--Device--inject-2-2)" transform="rotate(-8,275,292)"/>
+        <rect id="Device-camera" x="276" y="188" width="7" height="5" rx="2.5" fill="#259FFA" transform="rotate(-8,280,190)"/>
+        <rect id="Device-button" x="268" y="418" width="14" height="3" rx="1.5" fill="#7BC8FF" transform="rotate(-8,275,420)"/>
+        <rect id="Device-speaker" x="252" y="423" width="46" height="3" rx="1.5" fill="#57B4FB" opacity="0.5" transform="rotate(-8,275,425)"/>
+      </g>
+      <g id="System-icons" fill="#259FFA">
+        <circle id="icon-folder" cx="244" cy="248" r="18" fill="#259FFA" opacity="0.15"/>
+        <circle id="icon-files" cx="261" cy="268" r="18" fill="#0B7BE5" opacity="0.15"/>
+        <circle id="icon-server" cx="228" cy="270" r="18" fill="#259FFA" opacity="0.15"/>
+        <rect id="icon-folder-body" x="235" y="238" width="17" height="13" rx="2" fill="#259FFA"/>
+        <rect id="icon-folder-tab" x="235" y="238" width="17" height="4" rx="2" fill="#259FFA"/>
+        <rect id="icon-files-rect-1" x="256" y="258" width="10" height="13" rx="1.5" fill="#0B7BE5"/>
+        <rect id="icon-files-rect-2" x="253" y="262" width="10" height="13" rx="1.5" fill="#0B7BE5"/>
+        <rect id="icon-server-rect" x="222" y="258" width="12" height="14" rx="2" fill="#259FFA"/>
+        <circle id="icon-server-dot" cx="228" cy="265" r="1.5" fill="#FFFFFF"/>
+        <circle id="icon-server-dot-2" cx="228" cy="270" r="1.5" fill="#FFFFFF"/>
+      </g>
+    </g>
+    <g id="Device-right">
+      <g id="freepik--Device--inject-7">
+        <rect id="Device-whole-right" x="510" y="150" width="130" height="260" rx="22" fill="#EAF4FF" stroke="#259FFA" stroke-width="2" transform="rotate(10,575,280)"/>
+        <rect id="Device-screen-right" x="520" y="164" width="110" height="200" rx="10" fill="#FFFFFF" transform="rotate(10,575,264)"/>
+        <rect id="Device-camera-right" x="573" y="156" width="6" height="4" rx="2" fill="#259FFA" transform="rotate(10,576,158)"/>
+        <rect id="Device-button-right" x="567" y="398" width="13" height="2.5" rx="1.25" fill="#259FFA" transform="rotate(10,575,400)"/>
+      </g>
+      <g id="Code-icon" fill="#259FFA">
+        <path id="Code-left" d="M541,244L548,254L541,264" fill="none" stroke="#259FFA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(10,545,254)"/>
+        <path id="Code-right" d="M561,244L568,244L568,264L561,264" fill="none" stroke="#0B7BE5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="rotate(10,564,254)"/>
+        <path id="Code-mid" d="M552,244L557,244L552,264L557,264" fill="none" stroke="#259FFA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(10,555,254)"/>
+      </g>
+      <g id="Floating-windows">
+        <rect id="window-1" x="555" y="120" width="22" height="18" rx="3" fill="#259FFA" opacity="0.85" transform="rotate(8,566,129)"/>
+        <line id="window-1-line" x1="559" y1="125" x2="573" y2="125" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+        <rect id="window-2" x="600" y="340" width="16" height="13" rx="2.5" fill="#0B7BE5" opacity="0.85" transform="rotate(6,608,346)"/>
+        <line id="window-2-line" x1="603" y1="344" x2="613" y2="344" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+        <rect id="window-3" x="520" y="330" width="13" height="10" rx="2" fill="#259FFA" opacity="0.7" transform="rotate(-6,526,335)"/>
+        <line id="window-3-line" x1="523" y1="334" x2="530" y2="334" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+      </g>
+    </g>
+  </g>
+  <g id="freepik--Windows--inject-2" class="animable" style="transform-origin: 0px 0px;">
+    <rect id="Selector" x="320" y="262" width="40" height="36" rx="4" fill="#FFFFFF" stroke="#259FFA" stroke-width="2"/>
+    <rect id="Selector-top" x="320" y="262" width="40" height="10" rx="4" fill="#259FFA"/>
+    <rect id="Selector-dot-1" x="344" y="283" width="3" height="3" rx="1.5" fill="#259FFA" opacity="0.65"/>
+    <rect id="Selector-dot-2" x="337" y="283" width="3" height="3" rx="1.5" fill="#259FFA" opacity="0.65"/>
+    <rect id="Selector-dot-3" x="330" y="283" width="3" height="3" rx="1.5" fill="#259FFA" opacity="0.65"/>
+  </g>
+  <g id="freepik--Plant--inject-2" class="animable" style="transform-origin: 0px 0px;">
+    <g id="Plant-pot">
+      <path id="pot-body" d="M120,418L133,418L128,395L117,395Z" fill="#259FFA" opacity="0.85"/>
+      <path id="pot-rim" d="M114,392L128,392L125,386L119,386Z" fill="#0B7BE5"/>
+    </g>
+    <g id="Plant-leaves" stroke="#259FFA" stroke-width="3" stroke-linecap="round">
+      <path id="leaf-1" d="M122,390C118,375 120,362 127,352" fill="none"/>
+      <path id="leaf-2" d="M122,390C128,376 136,368 142,360" fill="none"/>
+      <path id="leaf-3" d="M122,390C115,378 108,372 104,362" fill="none"/>
+      <path id="leaf-4" d="M122,390C124,380 132,374 138,368" fill="none"/>
+    </g>
+  </g>
+  <g id="freepik--Character--inject-2" class="animable" style="transform-origin: 0px 0px;">
+    <g id="Character">
+      <path id="Character-body" d="M403,285C403,245 435,215 470,215C505,215 537,245 537,285L537,395C537,405 529,412 519,412L421,412C411,412 403,405 403,395Z" fill="#0B7BE5"/>
+      <path id="Character-shirt" d="M430,412L410,412C402,412 395,406 395,397L395,340L470,340L470,385C470,398 459,410 446,412L430,412Z" fill="#259FFA"/>
+      <path id="Character-face" d="M470,215C450,215 435,230 435,250L435,272C435,279 440,285 448,285L492,285C500,285 505,279 505,272L505,250C505,230 490,215 470,215Z" fill="#FFD9BE"/>
+      <circle id="Character-eye-l" cx="456" cy="250" r="4" fill="#2B3A55"/>
+      <circle id="Character-eye-r" cx="484" cy="250" r="4" fill="#2B3A55"/>
+      <path id="Character-smile" d="M458,262C464,268 476,268 482,262" fill="none" stroke="#2B3A55" stroke-width="2.5" stroke-linecap="round"/>
+      <path id="Character-hair" d="M440,232C443,218 455,210 470,210C485,210 497,218 500,232C495,228 488,226 485,226C486,230 482,234 478,233C476,226 463,226 461,233C457,234 453,230 454,226C445,229 440,228 440,232Z" fill="#3A2B2B"/>
+      <rect id="Character-chin" x="452" y="270" width="36" height="3" rx="1.5" fill="#FFD9BE" opacity="0.5"/>
+      <path id="Character-arm-l" d="M403,310L385,345C381,353 386,360 394,355L408,330" fill="#0B7BE5"/>
+      <path id="Character-arm-r" d="M537,310L555,345C559,353 554,360 546,355L532,330" fill="#0B7BE5"/>
+      <circle id="Character-hand-l" cx="388" cy="352" r="6" fill="#FFD9BE"/>
+      <circle id="Character-hand-r" cx="552" cy="352" r="6" fill="#FFD9BE"/>
+    </g>
+  </g>
+</svg>

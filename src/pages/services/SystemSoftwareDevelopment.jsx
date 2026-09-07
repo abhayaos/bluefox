@@ -13,6 +13,7 @@ import seoImg from '../../assets/home/SEO_analytics_team-amico.svg'
 import smmImg from '../../assets/home/Mobile_Marketing-pana.svg'
 import graphicImg from '../../assets/home/Website_Creator-pana.svg'
 import contentImg from '../../assets/home/Content Writing.svg'
+import systemHero from '../../assets/system/Operating_System.svg'
 
 const service = services.find((s) => s.slug === 'system-software-development')
 
@@ -360,6 +361,6 @@ const sections = (
 
 export default function SystemSoftwareDevelopment() {
   return (
-    <ServiceLayout service={service} showDetails={false} features={features} after={sections} />
+    <ServiceLayout service={service} showDetails={false} features={features} heroImage={systemHero} after={sections} />
   )
 }

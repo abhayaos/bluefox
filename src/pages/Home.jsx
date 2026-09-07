@@ -359,13 +359,13 @@ export default function Home() {
               key={step.number}
               className="group rounded-2xl bg-[#eef1fb] p-8 transition-colors duration-300 hover:bg-[#a9d6ff]"
             >
-              <span className="font-heading text-5xl font-bold text-[#0b7be5] transition-colors duration-300 group-hover:text-white">
+              <span className="font-heading text-5xl font-bold text-[#0b7be5]">
                 {step.number}
               </span>
-              <h3 className="mt-4 text-xl font-semibold text-slate-900 mb-3 transition-colors duration-300 group-hover:text-white">
+              <h3 className="mt-4 text-xl font-semibold text-slate-900 mb-3">
                 {step.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed transition-colors duration-300 group-hover:text-white">
+              <p className="text-slate-600 leading-relaxed">
                 {step.desc}
               </p>
             </div>

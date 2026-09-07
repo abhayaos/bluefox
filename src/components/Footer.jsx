@@ -61,10 +61,10 @@ export default function Footer() {
               We are available from 9:00 AM to 6:00 PM, Monday to Friday.
             </p>
           </div>
-          <div className="md:border-l md:border-slate-300 md:pl-10">
-            <div className="flex items-center gap-5">
-              <span className="w-14 h-14 rounded-2xl bg-white border border-slate-300 flex items-center justify-center shrink-0">
-                <FaPhoneAlt className="text-primary" size={22} />
+          <div className="md:border-l md:border-slate-300 md:pl-8">
+            <div className="flex items-center gap-4">
+              <span className="w-12 h-12 rounded-2xl bg-white border border-slate-300 flex items-center justify-center shrink-0">
+                <FaPhoneAlt className="text-primary" size={18} />
               </span>
               <div>
                 <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">
@@ -72,7 +72,7 @@ export default function Footer() {
                 </p>
                 <a
                   href="tel:+9779817303073"
-                  className="block font-heading text-3xl md:text-5xl font-bold text-primary hover:text-primary-700 transition-colors"
+                  className="block font-heading text-3xl md:text-4xl font-bold text-primary hover:text-primary-700 transition-colors"
                 >
                   9817303073
                 </a>
@@ -168,32 +168,34 @@ export default function Footer() {
           </a>
         </div>
         <hr className="border-slate-200" />
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-6 rounded-2xl bg-[#0b7be5] px-8 py-6">
-          <p className="text-sm font-medium text-white">
-            © 2024 Blue Fox Pvt Ltd. All Rights Reserved.
-          </p>
-          <div className="flex items-center gap-3">
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
-            >
-              <FaFacebookF size={16} />
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
-            >
-              <FaInstagram size={16} />
-            </a>
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
-            >
-              <FaLinkedinIn size={16} />
-            </a>
+        <div className="mt-8 flex w-full flex-wrap items-center justify-between gap-6 bg-[#0b7be5] py-4">
+          <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-6">
+            <p className="text-sm font-medium text-white">
+              © 2024 Blue Fox Pvt Ltd. All Rights Reserved.
+            </p>
+            <div className="flex items-center gap-3">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+              >
+                <FaFacebookF size={14} />
+              </a>
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+              >
+                <FaInstagram size={14} />
+              </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-transform duration-200 hover:scale-110"
+              >
+                <FaLinkedinIn size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
