@@ -53,7 +53,7 @@ const services = [
     slug: 'seo',
     title: 'Search Engine Optimization (SEO)',
     tagline: 'Custom SEO solutions for enhanced search engine visibility and growth.',
-    intro: 'Tired of pouring time and money into a website that no one visits? Blue Fox, the leading SEO agency in Nepal, will fix your online visibility issues and send customers your way. Contact us for free counseling.',
+    intro: 'Tired of pouring time and money into a website that no one visits? Blue Fox, the leading SEO agency in Nepal, will fix your online visibility issues and send customers your way. Our team of SEO experts in Nepal knows how to get you ranking high and gain an edge. Contact us for free counseling.',
     category: 'Marketing',
     paragraphs: [
       'We provide SEO for Travel and Trekking, E-Commerce, Hospitals and Healthcare, and Educational institutes, along with tailored solutions for any industry.',

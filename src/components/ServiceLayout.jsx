@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaComments } from 'react-icons/fa'
 
-export default function ServiceLayout({ service, showDetails = true, features = [], after }) {
+export default function ServiceLayout({ service, showDetails = true, showCta = true, features = [], after }) {
   return (
     <main className="flex-1">
       {/* Hero */}
@@ -60,15 +60,17 @@ export default function ServiceLayout({ service, showDetails = true, features = 
             </p>
           ))}
 
-          <div className="mt-12 text-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700"
-            >
-              Get Started
-              <FaArrowRight size={15} />
-            </Link>
-          </div>
+          {showCta && (
+            <div className="mt-12 text-center">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700"
+              >
+                Get Started
+                <FaArrowRight size={15} />
+              </Link>
+            </div>
+          )}
         </section>
       )}
     </main>
