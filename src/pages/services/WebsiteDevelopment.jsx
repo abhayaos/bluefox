@@ -1,6 +1,6 @@
 import ServiceLayout from '../../components/ServiceLayout'
 import services from '../../data/services'
-import { FaThumbsUp, FaMedal, FaMousePointer } from 'react-icons/fa'
+import { FaThumbsUp, FaMedal, FaMousePointer, FaCheck, FaCogs, FaHandshake, FaLightbulb, FaClock } from 'react-icons/fa'
 import htmlImg from '../../assets/web-dev/html.png'
 import cssImg from '../../assets/web-dev/css.png'
 import reactImg from '../../assets/web-dev/react.png'
@@ -32,6 +32,29 @@ const features = [
     icon: FaMousePointer,
     title: 'Interactive Interface',
     desc: 'Create an engaging interface for a optimal user experience.',
+  },
+]
+
+const whyChooseUs = [
+  {
+    icon: FaCogs,
+    title: 'Robust Functionality',
+    desc: 'We create high-quality websites with advanced features and seamless performance for an exceptional user experience.',
+  },
+  {
+    icon: FaHandshake,
+    title: 'Client-Centric Approach',
+    desc: 'Our client-centric website solutions address unique needs, reflecting your vision with meticulous design precision.',
+  },
+  {
+    icon: FaLightbulb,
+    title: 'Innovative Website Design',
+    desc: 'Infusing creativity, we transform concepts into reality with user-friendly interfaces, and robust functionality.',
+  },
+  {
+    icon: FaClock,
+    title: 'Timely Website Delivery',
+    desc: 'We value time, ensuring your website projects meet deadlines seamlessly and establish a swift online presence.',
   },
 ]
 
@@ -73,6 +96,41 @@ const roadmap = [
 
 const sections = (
   <>
+    <section className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+      <div className="flex items-center justify-center gap-4 text-primary mb-4">
+        <span className="h-px w-10 bg-primary" />
+        <p className="text-xs font-bold tracking-[0.25em] uppercase">Why Choose Us</p>
+        <span className="h-px w-10 bg-primary" />
+      </div>
+      <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
+        We help you expand your business through tech
+      </h2>
+      <p className="text-slate-600 text-lg max-w-3xl mx-auto text-center mb-12">
+        We have a team of highly skilled website designers and developers who can provide you with
+        the website of your choice. As a leading website development company in Nepal, we offer
+        exceptional and responsive website design and development services. Some of our additional
+        perks are as follows:
+      </p>
+
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {whyChooseUs.map((perk) => (
+          <div
+            key={perk.title}
+            className="group rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-lg"
+          >
+            <div className="mb-5 flex items-center gap-3">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
+                <perk.icon size={22} />
+              </span>
+              <FaCheck className="text-[#0b7be5]" size={14} />
+            </div>
+            <h3 className="font-heading text-lg font-semibold text-slate-900 mb-3">{perk.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{perk.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
     <section className="max-w-6xl mx-auto px-6 pt-20 pb-16">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
