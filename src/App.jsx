@@ -24,6 +24,7 @@ import Activities from './pages/Activities'
 import NotFound from './pages/NotFound'
 import Contact from './pages/Contact'
 import OurWork from './pages/OurWork'
+import WhatsAppFloat from './components/WhatsAppFloat'
 
 export default function App() {
   const { pathname } = useLocation()
@@ -62,6 +63,7 @@ export default function App() {
         </Routes>
       </div>
       <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }
