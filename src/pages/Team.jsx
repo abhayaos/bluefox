@@ -2,6 +2,7 @@ import { FaUsers, FaFacebookF, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
 import mdImage from '../assets/about/md.jpg'
 import bdImage from '../assets/about/bd.jpg'
 import abhayaImage from '../assets/about/abhaya.jfif'
+import anmolImage from '../assets/about/anmol.jpg'
 
 const members = [
   {
@@ -12,7 +13,7 @@ const members = [
   {
     name: 'Anmol Budhathoki',
     role: 'CEO',
-    initials: 'AB',
+    img: anmolImage,
   },
   {
     name: 'Bipin Chapagain',

@@ -23,6 +23,7 @@ import Activities from './pages/Activities'
 import NotFound from './pages/NotFound'
 import Contact from './pages/Contact'
 import OurWork from './pages/OurWork'
+import Karobar from './pages/Karobar'
 import WhatsAppFloat from './components/WhatsAppFloat'
 
 export default function App() {
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="/about/our-activities" element={<Activities />} />
           <Route path="/pricing/seo" element={<SeoPricing />} />
           <Route path="/pricing/social-media" element={<SocialMediaPricing />} />
+          <Route path="/products/karobar" element={<Karobar />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
