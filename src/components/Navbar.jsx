@@ -119,7 +119,7 @@ export default function Navbar() {
                 <Dropdown items={pricingItems} />
               </div>
 
-              <NavLink to="/our-work">Portfolio</NavLink>
+              <NavLink to="/our-work">Our Work</NavLink>
               <NavLink to="/career">Career</NavLink>
               <NavLink to="/contact">Contact</NavLink>
             </div>
