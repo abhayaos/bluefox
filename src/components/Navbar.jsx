@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import logo from '../assets/logo.svg'
+import QuickEnquiryModal from './QuickEnquiryModal'
 
 const aboutItems = [
   {
@@ -88,6 +89,7 @@ export default function Navbar() {
   const [mobileAbout, setMobileAbout] = useState(false)
   const [mobileServices, setMobileServices] = useState(false)
   const [mobilePricing, setMobilePricing] = useState(false)
+  const [enquiryOpen, setEnquiryOpen] = useState(false)
 
   const closeMobile = () => setMobileOpen(false)
 
@@ -125,12 +127,12 @@ export default function Navbar() {
             </div>
 
             <div className="hidden lg:flex items-center gap-4">
-              <a
-                href="/contact"
+              <button
+                onClick={() => setEnquiryOpen(true)}
                 className="px-5 py-2.5 rounded-full bg-transparent border-2 border-[#eef1fb] text-[#0b7be5] text-sm font-semibold transition-all duration-200 hover:bg-[#eef1fb] hover:border-[#0b7be5] active:bg-[#0b7be5] active:text-white"
               >
                 Quick Enquiry
-              </a>
+              </button>
             </div>
 
             <button
@@ -224,18 +226,22 @@ export default function Navbar() {
                   Contact
                 </a>
 
-                <a
-                  href="/contact"
-                  onClick={closeMobile}
+                <button
+                  onClick={() => {
+                    closeMobile()
+                    setEnquiryOpen(true)
+                  }}
                   className="mt-2 px-5 py-2.5 rounded-full bg-transparent border-2 border-[#0b7be5] text-[#0b7be5] text-center font-semibold active:bg-[#0b7be5] active:text-white"
                 >
                   Quick Enquiry
-                </a>
+                </button>
               </div>
             </div>
           </div>
         )}
       </nav>
+
+      <QuickEnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} />
     </>
   )
 }
