@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
-import worldMap from '../assets/world-map-dots.svg'
+import worldMap from '../assets/footer/world-map-dots.svg'
 
 const devServicesLinks = [
   { label: 'Website Development', to: '/services/website-development' },
@@ -23,7 +23,6 @@ const marketingLinks = [
   { label: 'Social Media Marketing (SMM)', to: '/services/social-media-marketing' },
   { label: 'Graphic Design', to: '/services/graphic-design' },
   { label: 'Content Writing', to: '/services/content-writing' },
-  { label: 'Pay Per Click', to: '/services/pay-per-click' },
   { label: 'Digital Marketing', to: '/services/digital-marketing' },
 ]
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
-import logo from '../assets/logo.svg'
+import logo from '../assets/brand/logo.svg'
 import QuickEnquiryModal from './QuickEnquiryModal'
 
 const aboutItems = [
@@ -34,11 +34,17 @@ const servicesItems = [
   { title: 'SEO', desc: 'Search visibility engineered for growth.', link: '/services/seo' },
   { title: 'Social Media Marketing', desc: 'Campaigns that build engaged audiences.', link: '/services/social-media-marketing' },
   { title: 'Graphic Design', desc: 'Logos and branding that speak for you.', link: '/services/graphic-design' },
+  { title: 'Content Writing', desc: 'Compelling content that connects with your audience.', link: '/services/content-writing' },
 ]
 
 const pricingItems = [
   { title: 'SEO Pricing', desc: 'Standard, Professional & Premium SEO packages.', link: '/pricing/seo' },
   { title: 'Social Media Pricing', desc: 'Social media plans tailored to your budget.', link: '/pricing/social-media' },
+]
+
+const productsItems = [
+  { title: 'Karobar', desc: 'Our business management solution.', link: '/products/karobar' },
+  { title: 'Blue Fox Quiz', desc: 'An interactive quiz platform by Blue Fox.', link: '/products/blue-fox-quiz' },
 ]
 
 function NavLink({ to, children }) {
@@ -89,6 +95,7 @@ export default function Navbar() {
   const [mobileAbout, setMobileAbout] = useState(false)
   const [mobileServices, setMobileServices] = useState(false)
   const [mobilePricing, setMobilePricing] = useState(false)
+  const [mobileProducts, setMobileProducts] = useState(false)
   const [enquiryOpen, setEnquiryOpen] = useState(false)
 
   const closeMobile = () => setMobileOpen(false)
@@ -123,6 +130,12 @@ export default function Navbar() {
 
               <NavLink to="/our-work">Our Work</NavLink>
               <NavLink to="/career">Career</NavLink>
+
+              <div className="relative group">
+                <DropdownButton label="Products" />
+                <Dropdown items={productsItems} />
+              </div>
+
               <NavLink to="/contact">Contact</NavLink>
             </div>
 
@@ -222,6 +235,23 @@ export default function Navbar() {
                 <a href="/career" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
                   Career
                 </a>
+
+                <button
+                  onClick={() => setMobileProducts((prev) => !prev)}
+                  className="flex items-center justify-between text-gray-700 font-medium hover:text-primary transition-colors"
+                >
+                  Products
+                </button>
+                {mobileProducts && (
+                  <div className="flex flex-col gap-2 pl-4">
+                    {productsItems.map((item) => (
+                      <a key={item.title} href={item.link} onClick={closeMobile} className="text-gray-600 text-sm hover:text-primary transition-colors">
+                        {item.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
                 <a href="/contact" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
                   Contact
                 </a>

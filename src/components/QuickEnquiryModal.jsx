@@ -14,7 +14,6 @@ const serviceOptions = [
   'Graphic Design',
   'Digital Marketing',
   'Content Writing',
-  'Pay Per Click',
 ]
 
 export default function QuickEnquiryModal({ open, onClose }) {
@@ -207,9 +206,9 @@ export default function QuickEnquiryModal({ open, onClose }) {
                 <FaMapMarkerAlt size={16} />
               </span>
               <div>
-                <p className="text-sm text-white/70">Office Address</p>
-                <p className="text-base font-semibold text-white">
-                  Itahari-6, Paruhang Chowk,
+                <p className="text-white/70 text-sm">Office Address</p>
+                <p className="text-white font-semibold text-base">
+                  Itahari-6, Sky Plaza, 2nd Floor,
                   <br /> Nepal
                 </p>
               </div>

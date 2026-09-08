@@ -12,7 +12,6 @@ import Seo from './pages/services/Seo'
 import SocialMediaMarketing from './pages/services/SocialMediaMarketing'
 import GraphicDesign from './pages/services/GraphicDesign'
 import ContentWriting from './pages/services/ContentWriting'
-import PayPerClick from './pages/services/PayPerClick'
 import DigitalMarketing from './pages/services/DigitalMarketing'
 import SeoPricing from './pages/SeoPricing'
 import SocialMediaPricing from './pages/SocialMediaPricing'
@@ -48,7 +47,6 @@ export default function App() {
           <Route path="/services/social-media-marketing" element={<SocialMediaMarketing />} />
           <Route path="/services/graphic-design" element={<GraphicDesign />} />
           <Route path="/services/content-writing" element={<ContentWriting />} />
-          <Route path="/services/pay-per-click" element={<PayPerClick />} />
           <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/career" element={<Career />} />
            <Route path="/contact" element={<Contact />} />

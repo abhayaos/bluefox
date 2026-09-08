@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PhoneInput from 'react-phone-number-input'
 import flags from 'react-phone-number-input/flags'
 import 'react-phone-number-input/style.css'
+import contactHero from '../assets/contact/Contact us-cuate.svg'
 
 function Contact() {
   const [form, setForm] = useState({
@@ -30,15 +31,12 @@ function Contact() {
 
   return (
     <section className="flex-1 bg-white py-20">
-      <div className="max-w-3xl mx-auto px-6">
-        <h2 className="mb-10 text-center text-4xl font-bold text-gray-900">
-          Contact Us
-        </h2>
-
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-3xl bg-[#f1f7fd] p-8 md:p-10 shadow-sm"
-        >
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-3xl bg-[#f1f7fd] p-8 md:p-10 shadow-sm"
+          >
           <h3 className="font-heading text-2xl font-semibold text-gray-900 mb-1">
             Get In Touch
           </h3>
@@ -126,7 +124,12 @@ function Contact() {
             Submit
           </button>
         </form>
+
+        <div className="hidden lg:flex justify-center">
+          <img src={contactHero} alt="Contact us" className="w-full max-w-lg object-contain" />
+        </div>
       </div>
+    </div>
     </section>
   )
 }

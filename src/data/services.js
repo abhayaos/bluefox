@@ -100,19 +100,6 @@ const services = [
     ],
   },
   {
-    slug: 'pay-per-click',
-    title: 'Pay Per Click (PPC)',
-    tagline: 'Optimized pay-per-click campaigns.',
-    intro: 'Ignite your brand’s potential with the best PPC marketing services from Blue Fox! Pay only for the clicks that matter and guarantee a budget-friendly campaign. Utilize real-time analytics and strategic management for superior Return on Investment.',
-    category: 'Marketing',
-    paragraphs: [
-      'We offer Keyword Research and Analysis, Ad Copy Creation and Optimization, Campaign Strategy and Planning, Landing Page Optimization, and Ad Extension and Format expertise.',
-      'Our campaigns are built to Maximize ROI, Increase Traffic, Boost Brand Awareness, Generate Leads, and Promote Sales.',
-      'We follow a clear workflow of Strategy, Planning, Execution, and Optimization, driven by data for continuous improvement.',
-      'Why choose us? Strategic PPC Management with White Hat methods, Strategic Keyword Bidding, Conversion Focused Campaigns, and Data-Driven Results.',
-    ],
-  },
-  {
     slug: 'digital-marketing',
     title: 'Digital Marketing',
     tagline: 'Designing digital paths that echo with audiences.',

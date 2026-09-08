@@ -285,8 +285,8 @@ export default function Home() {
               <div className="w-full flex items-center justify-center mb-5 py-4 rounded-xl bg-primary-50/60">
                 <img src={serviceImages[service.avtar]} alt={service.title} className="w-36 h-36 object-contain" />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-              <p className="text-base text-slate-600 leading-relaxed group-hover:text-primary-900 transition-colors duration-300">{service.desc}</p>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-2">{service.title}</h3>
+              <p className="text-base text-slate-600 leading-relaxed">{service.desc}</p>
             </Link>
           ))}
         </div>

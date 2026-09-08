@@ -13,6 +13,7 @@ import awsImg from '../../assets/cloud/aws.png'
 import gcpImg from '../../assets/cloud/googlecloud.png'
 import dockerImg from '../../assets/cloud/docker.png'
 import mongoImg from '../../assets/database/mongo.png'
+import webHero from '../../assets/services/Web devices-pana.svg'
 
 const service = services.find((s) => s.slug === 'website-development')
 
@@ -196,5 +197,5 @@ const sections = (
 )
 
 export default function WebsiteDevelopment() {
-  return <ServiceLayout service={service} showDetails={false} features={features} after={sections} />
+  return <ServiceLayout service={service} showDetails={false} features={features} heroImage={webHero} after={sections} />
 }

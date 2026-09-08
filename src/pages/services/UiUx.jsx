@@ -13,6 +13,7 @@ import seoImg from '../../assets/home/SEO_analytics_team-amico.svg'
 import smmImg from '../../assets/home/Mobile_Marketing-pana.svg'
 import graphicImg from '../../assets/home/Website_Creator-pana.svg'
 import contentImg from '../../assets/home/Content Writing.svg'
+import uiuxHero from '../../assets/services/UI-UX differences-rafiki.svg'
 
 const service = services.find((s) => s.slug === 'ui-ux')
 
@@ -61,7 +62,6 @@ const otherServices = [
   { title: 'Social Media Marketing (SMM)', desc: 'Build a strong online presence and engage with your targeted audience', link: '/services/social-media-marketing', img: smmImg },
   { title: 'Graphic Design', desc: 'Designs that Speak Your Brand\u2019s Narrative and Connect with Your Audience', link: '/services/graphic-design', img: graphicImg },
   { title: 'Content Writing', desc: 'Engaging and meaningful content to connect with your audience', link: '/services/content-writing', img: contentImg },
-  { title: 'Pay Per Click', desc: 'Maximize your ROI and drive targeted traffic to your digital assets', link: '/services/pay-per-click', img: seoImg },
 ]
 
 const partnerships = [
@@ -302,6 +302,6 @@ const sections = (
 
 export default function UiUx() {
   return (
-    <ServiceLayout service={service} showDetails={false} features={features} after={sections} />
+    <ServiceLayout service={service} showDetails={false} features={features} heroImage={uiuxHero} after={sections} />
   )
 }

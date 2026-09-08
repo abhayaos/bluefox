@@ -1,5 +1,5 @@
 import { FaQuoteLeft, FaCogs, FaTrophy, FaPuzzlePiece, FaUserTie, FaCalendarCheck, FaHeadset, FaMountain, FaBullseye } from 'react-icons/fa'
-import mdImage from '../assets/md.jpg'
+import mdImage from '../assets/about/md.jpg'
 
 const stats = [
   { value: '80+', label: 'Team Members' },

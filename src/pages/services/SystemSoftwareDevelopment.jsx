@@ -85,7 +85,6 @@ const otherServices = [
   { title: 'Social Media Marketing (SMM)', desc: 'Build a strong online presence and engage with your targeted audience', link: '/services/social-media-marketing', img: smmImg },
   { title: 'Graphic Design', desc: 'Designs that Speak Your Brand\u2019s Narrative and Connect with Your Audience', link: '/services/graphic-design', img: graphicImg },
   { title: 'Content Writing', desc: 'Engaging and meaningful content to connect with your audience', link: '/services/content-writing', img: contentImg },
-  { title: 'Pay Per Click', desc: 'Maximize your ROI and drive targeted traffic to your digital assets', link: '/services/pay-per-click', img: seoImg },
 ]
 
 const partnerships = [

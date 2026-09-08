@@ -1,28 +1,30 @@
-import { useState } from 'react'
 import { FaUsers, FaFacebookF, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
+import mdImage from '../assets/about/md.jpg'
+import bdImage from '../assets/about/bd.jpg'
+import abhayaImage from '../assets/about/abhaya.jfif'
 
 const members = [
   {
-    name: 'John Doe',
+    name: 'Mitra Thapa Magar',
+    role: 'Managing Director',
+    img: mdImage,
+  },
+  {
+    name: 'Anmol Budhathoki',
     role: 'CEO',
-    category: 'Leadership',
-    initials: 'JD',
+    initials: 'AB',
   },
   {
-    name: 'Jane Smith',
-    role: 'CTO',
-    category: 'Leadership',
-    initials: 'JS',
+    name: 'Bipin Chapagain',
+    role: 'BDO',
+    img: bdImage,
   },
   {
-    name: 'David Lee',
-    role: 'Lead Developer',
-    category: 'Development',
-    initials: 'DL',
+    name: 'Abhaya Bikram Shahi',
+    role: 'Full Stack Developer',
+    img: abhayaImage,
   },
 ]
-
-const categories = ['All', 'Leadership', 'Development']
 
 const socials = [
   { icon: FaFacebookF, label: 'Facebook', href: '#' },
@@ -33,27 +35,39 @@ const socials = [
 function MemberCard({ member, index }) {
   return (
     <div
-      className="group relative h-80 overflow-hidden rounded-3xl border-2 border-transparent bg-[#f3d0b5] transition-all duration-300 hover:border-[#0b7be5] hover:shadow-xl hover:shadow-primary/10 animate-slide-in-left"
+      className="group relative h-80 overflow-hidden rounded-3xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-[#0b7be5] hover:shadow-xl hover:shadow-primary/10 animate-slide-in-left"
       style={{ animationDelay: `${index * 120}ms` }}
     >
-      <div className="flex h-full flex-col items-center justify-center px-6 text-center">
-        <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white text-3xl font-bold text-[#0b7be5] shadow-md">
-          {member.initials}
+      {/* Top accent */}
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-primary via-[#52a1ec] to-primary-200" />
+
+      <div className="flex h-full flex-col items-center justify-center px-6 pt-4 text-center">
+        <div className="relative mb-5">
+          <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-[#eef1fb] text-4xl font-bold text-primary ring-4 ring-[#eef1fb] transition-colors duration-300 group-hover:ring-[#a9d6ff]">
+            {member.img ? (
+              <img src={member.img} alt={member.name} className="h-full w-full object-cover" />
+            ) : (
+              member.initials
+            )}
+          </div>
+          <span className="absolute inset-0 -z-10 rounded-full bg-primary/10 blur-sm" />
         </div>
-        <h2 className="text-xl font-semibold text-slate-900">{member.name}</h2>
-        <p className="mt-1 text-sm font-medium text-slate-600">{member.role}</p>
+        <h2 className="font-heading text-xl font-semibold text-slate-900">{member.name}</h2>
+        <span className="mt-2 inline-flex items-center rounded-full bg-primary-50 px-4 py-1 text-xs font-semibold tracking-wide text-primary uppercase">
+          {member.role}
+        </span>
       </div>
 
       {/* Social box slides up from bottom on hover */}
       <div className="absolute inset-x-0 bottom-0 translate-y-full bg-[#0b7be5] p-5 text-white transition-transform duration-300 ease-out group-hover:translate-y-0">
-        <p className="mb-3 text-sm font-semibold">Connect with {member.name.split(' ')[0]}</p>
+        <p className="mb-3 text-sm font-semibold text-center">Connect with {member.name.split(' ')[0]}</p>
         <div className="flex items-center justify-center gap-3">
           {socials.map(({ icon: Icon, label, href }) => (
             <a
               key={label}
               href={href}
               aria-label={label}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-all duration-200 hover:scale-110"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0b7be5] transition-all duration-200 hover:scale-110 hover:bg-primary-50"
             >
               <Icon size={14} />
             </a>
@@ -65,9 +79,6 @@ function MemberCard({ member, index }) {
 }
 
 export default function Team() {
-  const [active, setActive] = useState('All')
-  const visible = active === 'All' ? members : members.filter((m) => m.category === active)
-
   return (
     <main className="flex-1 px-6 py-16">
       <div className="max-w-5xl mx-auto">
@@ -85,24 +96,8 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActive(category)}
-              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 ${
-                active === category
-                  ? 'bg-[#0b7be5] text-white shadow-md shadow-primary/30'
-                  : 'bg-white text-slate-600 border border-slate-200 hover:border-[#0b7be5] hover:text-[#0b7be5]'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((member, index) => (
+          {members.map((member, index) => (
             <MemberCard key={member.name} member={member} index={index} />
           ))}
         </div>

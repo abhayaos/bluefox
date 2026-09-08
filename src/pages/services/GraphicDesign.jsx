@@ -11,6 +11,7 @@ import uiuxImg from '../../assets/home/UI_UX.svg'
 import seoImg from '../../assets/home/SEO_analytics_team-amico.svg'
 import smmImg from '../../assets/home/Mobile_Marketing-pana.svg'
 import contentImg from '../../assets/home/Content Writing.svg'
+import designerGirl from '../../assets/graphic/Designer_Girl.svg'
 
 const service = services.find((s) => s.slug === 'graphic-design')
 
@@ -103,7 +104,6 @@ const otherServices = [
   { title: 'Search Engine Optimization (SEO)', desc: 'Custom SEO solutions for enhanced search engine visibility and growth', link: '/services/seo', img: seoImg },
   { title: 'Social Media Marketing (SMM)', desc: 'Build a strong online presence and engage with your targeted audience', link: '/services/social-media-marketing', img: smmImg },
   { title: 'Content Writing', desc: 'Engaging and meaningful content to connect with your audience', link: '/services/content-writing', img: contentImg },
-  { title: 'Pay Per Click', desc: 'Maximize your ROI and drive targeted traffic to your digital assets', link: '/services/pay-per-click', img: seoImg },
 ]
 
 const partnerships = [
@@ -330,5 +330,5 @@ const sections = (
 )
 
 export default function GraphicDesign() {
-  return <ServiceLayout service={service} showDetails={false} features={features} after={sections} />
+  return <ServiceLayout service={service} showDetails={false} features={features} heroImage={designerGirl} after={sections} />
 }

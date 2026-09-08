@@ -5,6 +5,7 @@ import services from '../../data/services'
 import nvaImg from '../../assets/home/nva.png'
 import imImg from '../../assets/home/im.png'
 import aceomeImg from '../../assets/home/aceome.png'
+import seoHero from '../../assets/services/SEO-pana.svg'
 
 const service = services.find((s) => s.slug === 'seo')
 
@@ -294,5 +295,5 @@ const sections = (
 )
 
 export default function Seo() {
-  return <ServiceLayout service={service} showDetails={false} after={sections} />
+  return <ServiceLayout service={service} showDetails={false} heroImage={seoHero} after={sections} />
 }

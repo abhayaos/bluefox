@@ -7,6 +7,7 @@ import services from '../../data/services'
 import nvaImg from '../../assets/home/nva.png'
 import imImg from '../../assets/home/im.png'
 import aceomeImg from '../../assets/home/aceome.png'
+import socialMediaHero from '../../assets/services/Social media-bro.svg'
 
 const service = services.find((s) => s.slug === 'social-media-marketing')
 
@@ -549,5 +550,5 @@ const sections = (
 )
 
 export default function SocialMediaMarketing() {
-  return <ServiceLayout service={service} showDetails={false} after={sections} />
+  return <ServiceLayout service={service} showDetails={false} heroImage={socialMediaHero} after={sections} />
 }

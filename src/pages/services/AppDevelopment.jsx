@@ -18,6 +18,7 @@ import uiuxImg from '../../assets/home/UI_UX.svg'
 import seoImg from '../../assets/home/SEO_analytics_team-amico.svg'
 import smmImg from '../../assets/home/Mobile_Marketing-pana.svg'
 import graphicImg from '../../assets/home/Website_Creator-pana.svg'
+import mobileHero from '../../assets/services/Mobile development-pana.svg'
 import contentImg from '../../assets/home/Content Writing.svg'
 
 const service = services.find((s) => s.slug === 'app-development')
@@ -39,6 +40,82 @@ const features = [
     desc: 'Create an engaging interface for a optimal user experience.',
   },
 ]
+
+const stackTabs = [
+  {
+    id: 'frontend',
+    label: 'Frontend',
+    items: [
+      { name: 'Flutter', img: flutterImg },
+      { name: 'Dart', img: dartImg },
+      { name: 'Kotlin', img: kotlinImg },
+      { name: 'Swift', img: swiftImg },
+    ],
+  },
+  {
+    id: 'cross-platform',
+    label: 'Cross Platform',
+    items: [{ name: 'React Native', img: nativeImg }],
+  },
+  {
+    id: 'publishing',
+    label: 'Publishing',
+    items: [{ name: 'App Store', img: appstoreImg }],
+  },
+]
+
+function TechnologyStack() {
+  const [activeTab, setActiveTab] = useState('frontend')
+  const currentStackTab = stackTabs.find((tab) => tab.id === activeTab)
+
+  return (
+    <section className="max-w-6xl mx-auto px-6 pt-10 pb-20">
+      <div className="flex items-center justify-center gap-4 text-primary mb-4">
+        <span className="h-px w-10 bg-primary" />
+        <p className="text-xs font-bold tracking-[0.25em] uppercase">Technology Stack</p>
+        <span className="h-px w-10 bg-primary" />
+      </div>
+      <h2 className="font-heading text-3xl md:text-5xl font-bold text-slate-900 text-center mb-4">
+        Technology Stack
+      </h2>
+      <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
+        Technology we Work with in App Development
+      </p>
+
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        <aside className="lg:w-64 shrink-0 flex lg:flex-col gap-3 overflow-x-auto lg:overflow-visible">
+          {stackTabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`whitespace-nowrap text-left px-5 py-3.5 rounded-xl font-semibold transition-colors duration-200 ${
+                activeTab === tab.id
+                  ? 'bg-[#0b7be5] text-white'
+                  : 'bg-white text-slate-700 hover:bg-[#eef1fb]'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </aside>
+
+        <div className="flex-1 rounded-2xl bg-[#eef1fb] p-4 md:p-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+            {currentStackTab.items.map((item) => (
+              <div
+                key={item.name}
+                className="flex flex-col items-center gap-3 rounded-xl bg-white p-4 md:p-5 text-center"
+              >
+                <img src={item.img} alt={item.name} className="h-10 w-10 md:h-12 md:w-12 object-contain" />
+                <span className="text-xs md:text-sm font-semibold text-slate-700">{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 const industries = [
   {
@@ -313,7 +390,6 @@ const otherServices = [
   { title: 'Social Media Marketing (SMM)', desc: 'Build a strong online presence and engage with your targeted audience', link: '/services/social-media-marketing', img: smmImg },
   { title: 'Graphic Design', desc: 'Designs that Speak Your Brand\u2019s Narrative and Connect with Your Audience', link: '/services/graphic-design', img: graphicImg },
   { title: 'Content Writing', desc: 'Engaging and meaningful content to connect with your audience', link: '/services/content-writing', img: contentImg },
-  { title: 'Pay Per Click', desc: 'Maximize your ROI and drive targeted traffic to your digital assets', link: '/services/pay-per-click', img: seoImg },
 ]
 
 const partnerships = [
@@ -358,61 +434,7 @@ const sections = (
       </div>
     </section>
 
-    <section className="max-w-6xl mx-auto px-6 pt-10 pb-20">
-      <div className="flex items-center justify-center gap-4 text-primary mb-4">
-        <span className="h-px w-10 bg-primary" />
-        <p className="text-xs font-bold tracking-[0.25em] uppercase">Technology Stack</p>
-        <span className="h-px w-10 bg-primary" />
-      </div>
-      <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-3">
-        Technology Stack
-      </h2>
-      <p className="text-slate-600 text-lg text-center mb-12">
-        Technology we Work with in App Development
-      </p>
-
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
-        <div className="rounded-2xl bg-white p-8 text-left">
-          <h3 className="font-heading text-xl font-semibold text-slate-700 mb-6">Frontend</h3>
-          <div className="flex flex-wrap gap-4">
-            {[flutterImg, dartImg, kotlinImg, swiftImg].map((img, j) => (
-              <div
-                key={j}
-                className="flex h-16 w-20 items-center justify-center rounded-xl border border-slate-100 bg-[#f8f9ff] p-3"
-              >
-                <img src={img} alt={`Frontend technology ${j + 1}`} className="max-h-full max-w-full object-contain" />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-2xl bg-white p-8 text-left">
-          <h3 className="font-heading text-xl font-semibold text-slate-700 mb-6">Cross Platform</h3>
-          <div className="flex flex-wrap gap-4">
-            {[nativeImg].map((img, j) => (
-              <div
-                key={j}
-                className="flex h-16 w-20 items-center justify-center rounded-xl border border-slate-100 bg-[#f8f9ff] p-3"
-              >
-                <img src={img} alt="Cross platform technology" className="max-h-full max-w-full object-contain" />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-2xl bg-white p-8 text-left">
-          <h3 className="font-heading text-xl font-semibold text-slate-700 mb-6">Publishing</h3>
-          <div className="flex flex-wrap gap-4">
-            {[appstoreImg].map((img, j) => (
-              <div
-                key={j}
-                className="flex h-16 w-20 items-center justify-center rounded-xl border border-slate-100 bg-[#f8f9ff] p-3"
-              >
-                <img src={img} alt="Publishing platform" className="max-h-full max-w-full object-contain" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+    <TechnologyStack />
 
     <section className="bg-[#a9d6ff]">
       <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
@@ -573,6 +595,6 @@ const sections = (
 
 export default function AppDevelopment() {
   return (
-    <ServiceLayout service={service} showCta={false} showDetails={false} features={features} after={sections} />
+    <ServiceLayout service={service} showCta={false} showDetails={false} features={features} heroImage={mobileHero} after={sections} />
   )
 }
