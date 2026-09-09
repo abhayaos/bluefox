@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation, Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -26,6 +26,19 @@ import OurWork from './pages/OurWork'
 import Karobar from './pages/Karobar'
 import WhatsAppFloat from './components/WhatsAppFloat'
 
+function PageLayout() {
+  return (
+    <>
+      <Navbar />
+      <div className="flex-1">
+        <Outlet />
+      </div>
+      <Footer />
+      <WhatsAppFloat />
+    </>
+  )
+}
+
 export default function App() {
   const { pathname } = useLocation()
 
@@ -35,9 +48,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Navbar />
-      <div className="flex-1">
-        <Routes>
+      <Routes>
+        <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/website-development" element={<WebsiteDevelopment />} />
@@ -59,11 +71,9 @@ export default function App() {
           <Route path="/pricing/seo" element={<SeoPricing />} />
           <Route path="/pricing/social-media" element={<SocialMediaPricing />} />
           <Route path="/products/karobar" element={<Karobar />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-      <Footer />
-      <WhatsAppFloat />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   )
 }
