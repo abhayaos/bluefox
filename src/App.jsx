@@ -24,6 +24,7 @@ import NotFound from './pages/NotFound'
 import Contact from './pages/Contact'
 import OurWork from './pages/OurWork'
 import Karobar from './pages/Karobar'
+import BlueFoxQuiz from './pages/BlueFoxQuiz'
 import WhatsAppFloat from './components/WhatsAppFloat'
 
 function PageLayout() {
@@ -72,6 +73,7 @@ export default function App() {
           <Route path="/pricing/social-media" element={<SocialMediaPricing />} />
           <Route path="/products/karobar" element={<Karobar />} />
         </Route>
+        <Route path="/products/blue-fox-quiz" element={<BlueFoxQuiz />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
