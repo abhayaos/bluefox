@@ -146,7 +146,8 @@ export default function Footer() {
                 <FaMapMarkerAlt className="text-primary shrink-0 mt-0.5" size={16} />
                 <span className="text-sm">
                   <span className="block font-medium text-gray-900">Branch Office:</span>
-                  Dharan, Nepal
+                  Dharan 15 Sadan Road / Everest Line,
+                  <br /> Meru Complex
                 </span>
               </li>
               <li className="flex items-center gap-3">
