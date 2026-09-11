@@ -27,6 +27,7 @@ export default function QuickEnquiryModal({ open, onClose }) {
     message: '',
   })
   const [status, setStatus] = useState('idle')
+  const [errorDetail, setErrorDetail] = useState('')
 
   if (!open) return null
 
@@ -61,6 +62,7 @@ export default function QuickEnquiryModal({ open, onClose }) {
       setForm({ name: '', email: '', phone: '', service: '', message: '' })
     } catch (err) {
       setStatus('error')
+      setErrorDetail(err?.text || err?.message || `${err?.status || 'Unknown'} error`)
     }
   }
 
@@ -185,6 +187,11 @@ export default function QuickEnquiryModal({ open, onClose }) {
             {status === 'error' && (
               <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
                 Something went wrong while sending your enquiry. Please try again.
+                {errorDetail && (
+                  <span className="mt-1 block font-normal text-red-600/80">
+                    Error: {errorDetail}
+                  </span>
+                )}
               </p>
             )}
             {status === 'error-not-configured' && (

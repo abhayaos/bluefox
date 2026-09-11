@@ -8,14 +8,12 @@ import {
   FaUserCog,
   FaImage,
   FaBell,
-  FaGooglePlay,
-  FaApple,
-  FaGlobe,
-  FaCheck,
   FaWhatsapp,
+  FaCheck,
+  FaTag,
+  FaCopy,
 } from 'react-icons/fa'
-import { FiChevronDown } from 'react-icons/fi'
-import karobarHero from '../assets/services/Mobile development-pana.svg'
+import karobarHero from '../assets/hero-karobar.jpg'
 
 const highlights = [
   {
@@ -84,166 +82,9 @@ const previews = [
   { title: 'Inventory in Real Time', desc: 'Know exactly what is on the shelf.' },
   { title: 'Reports & Insights', desc: 'A clear view of business performance.' },
 ]
-
-const faqs = [
-  {
-    q: 'What is Karobar and who can use the App?',
-    body: [
-      {
-        t: 'p',
-        text: 'Karobar is an all-in-one business management app built for Nepali entrepreneurs. It is designed for small and medium businesses — shops, traders, travel agencies, and more — helping you manage accounting and inventory without being a finance expert.',
-      },
-    ],
-  },
-  {
-    q: 'What features does Karobar offer?',
-    body: [
-      {
-        t: 'ul',
-        items: [
-          'Record sales, purchases & expenses',
-          'Manage customer and supplier ledgers',
-          'Real-time inventory tracking',
-          'Business reports and insights',
-          'Desktop web version',
-          'Multi-staff access control',
-          'Bill image uploads',
-          'Payment reminders via WhatsApp & SMS',
-        ],
-      },
-    ],
-  },
-  {
-    q: 'How can I start using the Karobar app?',
-    body: [
-      {
-        t: 'p',
-        text: 'Download Karobar from the Google Play Store or Apple App Store, or open the web version in your browser. Create your free account, add your business details, and start recording transactions right away.',
-      },
-    ],
-  },
-  {
-    q: 'Is my data safe with the Karobar App?',
-    body: [
-      {
-        t: 'p',
-        text: 'Yes. Karobar keeps your financial records secure with encrypted data storage and proper access controls, so only you and the staff you authorize can view sensitive information.',
-      },
-    ],
-  },
-  {
-    q: 'Is Karobar available on mobile and desktop?',
-    body: [
-      {
-        t: 'p',
-        text: 'Yes. Karobar is available as a mobile app on Android and iOS, plus a web version you can use from any computer — so you can manage your business wherever you are.',
-      },
-    ],
-  },
-  {
-    q: 'Do I need to have accounting knowledge to use Karobar?',
-    body: [
-      {
-        t: 'p',
-        text: 'No. Karobar is designed to be simple and intuitive, handling the calculations, tax summaries, and transaction entries for you. Even with minimal technical knowledge, anyone can manage their books with ease.',
-      },
-    ],
-  },
-  {
-    q: 'Can I use the app offline?',
-    body: [
-      {
-        t: 'p',
-        text: 'Yes. Karobar works online and offline, so your business keeps running smoothly even in areas with poor internet connectivity.',
-      },
-    ],
-  },
-]
-
-const storeLinks = [
-  {
-    icon: FaGooglePlay,
-    title: 'Google Play',
-    sub: 'Download on the',
-    href: 'https://play.google.com/store/apps/details?id=com.bytecaretech.merokarobar',
-  },
-  {
-    icon: FaApple,
-    title: 'App Store',
-    sub: 'Download on the',
-    href: 'https://apps.apple.com/np/app/karobar/id1566107724',
-  },
-  {
-    icon: FaGlobe,
-    title: 'Web Version',
-    sub: 'Use on desktop',
-    href: 'https://my.karobarapp.com',
-  },
-]
-
-function Faq() {
-  const [open, setOpen] = useState(null)
-
-  return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-4">
-      {faqs.map((faq, i) => {
-        const isOpen = open === i
-        return (
-          <div key={faq.q} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <button
-              onClick={() => setOpen(isOpen ? null : i)}
-              aria-expanded={isOpen}
-              className={`flex w-full items-center justify-between gap-4 p-5 text-left font-semibold text-slate-900 transition-colors duration-200 hover:text-[#0b7be5] ${
-                isOpen ? 'text-[#0b7be5]' : ''
-              }`}
-            >
-              <span>{faq.q}</span>
-              <FiChevronDown
-                className={`shrink-0 text-[#0b7be5] transition-transform duration-300 ${
-                  isOpen ? 'rotate-180' : ''
-                }`}
-                size={18}
-              />
-            </button>
-            <div
-              className={`grid transition-all duration-300 ease-out ${
-                isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-              }`}
-            >
-              <div className="overflow-hidden">
-                <div className="border-t border-slate-100 p-5 text-slate-600 leading-relaxed">
-                  {faq.body.map((block, j) => {
-                    if (block.t === 'ul') {
-                      return (
-                        <ul key={j} className="mb-3 list-disc space-y-1 pl-5">
-                          {block.items.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                      )
-                    }
-                    if (block.t === 'ol') {
-                      return (
-                        <ol key={j} className="mb-3 list-decimal space-y-1 pl-5">
-                          {block.items.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ol>
-                      )
-                    }
-                    return <p key={j}>{block.text}</p>
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      })}
-    </div>
-  )
-}
-
 export default function Karobar() {
+  const [couponCopied, setCouponCopied] = useState(false)
+
   return (
     <main className="flex-1">
       {/* Hero */}
@@ -265,33 +106,13 @@ export default function Karobar() {
                 Easily track sales, manage expenses, maintain ledgers, control inventory &amp; more —
                 so you can focus on growing your business.
               </p>
-
-              <div className="flex flex-wrap gap-4">
-                {storeLinks.map((link) => (
-                  <a
-                    key={link.title}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-6 py-3 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
-                  >
-                    <link.icon size={22} className="text-[#0b7be5]" />
-                    <span className="text-left">
-                      <span className="block text-[11px] font-medium text-slate-500 uppercase">
-                        {link.sub}
-                      </span>
-                      <span className="block text-sm font-bold text-slate-900">{link.title}</span>
-                    </span>
-                  </a>
-                ))}
-              </div>
             </div>
 
-            <div className="hidden lg:flex justify-center">
+            <div className="hidden lg:flex items-center justify-center">
               <img
                 src={karobarHero}
                 alt="Karobar business management app"
-                className="w-full max-w-lg object-contain"
+                className="w-64 md:w-72 object-contain"
               />
             </div>
           </div>
@@ -333,12 +154,14 @@ export default function Karobar() {
               key={feature.title}
               className="group rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-lg"
             >
-              <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
-                <feature.icon size={24} />
-              </span>
-              <h3 className="font-heading text-xl font-semibold text-slate-900 mb-2">
-                {feature.title}
-              </h3>
+              <div className="flex items-center gap-4 mb-5">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
+                  <feature.icon size={24} />
+                </span>
+                <h3 className="font-heading text-lg font-semibold text-slate-900">
+                  {feature.title}
+                </h3>
+              </div>
               <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
             </div>
           ))}
@@ -386,55 +209,61 @@ export default function Karobar() {
         </div>
       </section>
 
-      {/* Download */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20 text-center">
+      {/* Coupon */}
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
-          <p className="text-xs font-bold tracking-[0.25em] uppercase">Get Started</p>
+          <p className="text-xs font-bold tracking-[0.25em] uppercase">Special Offer</p>
           <span className="h-px w-10 bg-primary" />
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
-          Start Using Karobar Today
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">
+          Claim Your Karobar Coupon
         </h2>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-10">
-          Download the Karobar app &amp; digitize your business management for free.
-        </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-5">
-          {storeLinks.map((link) => (
-            <a
-              key={link.title}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-2xl bg-slate-900 px-8 py-4 text-white shadow-xl transition-all duration-200 hover:-translate-y-1 hover:bg-[#0b7be5]"
-            >
-              <link.icon size={30} />
-              <span className="text-left">
-                <span className="block text-xs text-white/70 uppercase">{link.sub}</span>
-                <span className="block text-lg font-bold">{link.title}</span>
+        <div className="relative mx-auto flex max-w-3xl flex-col overflow-hidden rounded-3xl shadow-2xl shadow-primary/20 sm:flex-row">
+          <span className="absolute -left-4 top-1/2 z-10 hidden h-8 w-8 -translate-y-1/2 rounded-full bg-white sm:block" />
+          <span className="absolute -right-4 top-1/2 z-10 hidden h-8 w-8 -translate-y-1/2 rounded-full bg-white sm:block" />
+
+          <div className="relative flex flex-1 items-center justify-center gap-4 bg-gradient-to-br from-[#0b7be5] to-[#0066ff] p-8 text-white sm:p-10">
+            <span
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)',
+                backgroundSize: '18px 18px',
+              }}
+            />
+            <div className="relative text-center sm:text-left">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold tracking-[0.2em] uppercase">
+                <FaTag size={12} />
+                Limited Time Offer
               </span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-[#eef1fb]">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
-          <div className="flex items-center justify-center gap-4 text-primary mb-4">
-            <span className="h-px w-10 bg-primary" />
-            <p className="text-xs font-bold tracking-[0.25em] uppercase">FAQs</p>
-            <span className="h-px w-10 bg-primary" />
+              <p className="mt-4 font-heading text-4xl font-bold tracking-widest sm:text-5xl">
+                KAROBAR10
+              </p>
+              <p className="mt-2 text-sm text-white/90">
+                Get 10% OFF on your Karobar subscription
+              </p>
+            </div>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-3">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-slate-600 text-lg text-center mb-12">
-            Quick answers to the most common questions about Karobar.
-          </p>
 
-          <Faq />
+          <div className="relative flex flex-col items-center justify-center gap-4 border-t-2 border-dashed border-primary-100 bg-white p-8 text-center sm:border-l-2 sm:border-t-0">
+            <p className="max-w-xs text-sm text-slate-600">
+              Enter this code while subscribing to Karobar Pro and unlock exclusive benefits.
+            </p>
+            <button
+              onClick={() => {
+                navigator.clipboard?.writeText('KAROBAR10').catch(() => {})
+                setCouponCopied(true)
+                setTimeout(() => setCouponCopied(false), 2000)
+              }}
+              className="inline-flex items-center gap-2 rounded-full bg-[#0b7be5] px-7 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+            >
+              <FaCopy size={14} />
+              {couponCopied ? 'Copied!' : 'Copy Code'}
+            </button>
+            <p className="text-xs text-slate-400">One code per account · Limited time applicable</p>
+          </div>
         </div>
       </section>
 

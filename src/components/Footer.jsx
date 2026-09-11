@@ -140,10 +140,23 @@ export default function Footer() {
                   <span className="block font-medium text-gray-900">Head Office:</span>
                   Itahari-6, Sky Plaza, 2nd Floor,
                   <br /> Nepal
-                  <span className="mt-2 flex flex-col gap-1">
-                    <FooterLink href="tel:+9779802755605">+977 9802755605</FooterLink>
-                    <FooterLink href="tel:+9779817303073">+977 9817303073</FooterLink>
-                    <FooterLink href="mailto:itahari@bluefox.com.np">itahari@bluefox.com.np</FooterLink>
+                  <span className="mt-2 flex flex-col gap-1.5">
+                    <FooterLink href="tel:+9779802755605">
+                      <FaPhoneAlt className="text-primary mr-1.5" size={12} />
+                      +977 9802755605
+                    </FooterLink>
+                    <FooterLink href="tel:+9779817303073">
+                      <FaPhoneAlt className="text-primary mr-1.5" size={12} />
+                      +977 9817303073
+                    </FooterLink>
+                    <FooterLink href="mailto:itahari@bluefox.com.np">
+                      <FaEnvelope className="text-primary mr-1.5" size={12} />
+                      itahari@bluefox.com.np
+                    </FooterLink>
+                    <FooterLink href="mailto:bluefoxpvtltd@gmail.com">
+                      <FaEnvelope className="text-primary mr-1.5" size={12} />
+                      bluefoxpvtltd@gmail.com
+                    </FooterLink>
                   </span>
                 </span>
               </li>
@@ -153,17 +166,17 @@ export default function Footer() {
                   <span className="block font-medium text-gray-900">Branch Office:</span>
                   Dharan 15 Sadan Road / Everest Line,
                   <br /> Meru Complex
-                  <span className="mt-2 flex flex-col gap-1">
-                    <FooterLink href="tel:+9779802755606">+977 9802755606</FooterLink>
-                    <FooterLink href="mailto:dharan@bluefox.com.np">dharan@bluefox.com.np</FooterLink>
+                  <span className="mt-2 flex flex-col gap-1.5">
+                    <FooterLink href="tel:+9779802755606">
+                      <FaPhoneAlt className="text-primary mr-1.5" size={12} />
+                      +977 9802755606
+                    </FooterLink>
+                    <FooterLink href="mailto:dharan@bluefox.com.np">
+                      <FaEnvelope className="text-primary mr-1.5" size={12} />
+                      dharan@bluefox.com.np
+                    </FooterLink>
                   </span>
                 </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <FaEnvelope className="text-primary shrink-0" size={16} />
-                <FooterLink href="mailto:bluefoxpvtltd@gmail.com">
-                  bluefoxpvtltd@gmail.com
-                </FooterLink>
               </li>
             </ul>
             

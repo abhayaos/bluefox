@@ -70,9 +70,9 @@ export default function Introduction() {
       {/* Who we are */}
       <section className="bg-gradient-to-b from-white to-[#eef2ff] py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Left column */}
-            <div>
+            <div className="flex flex-col justify-center">
               <div className="flex items-center justify-center gap-4 text-primary mb-4">
                 <span className="h-px w-10 bg-primary" />
                 <p className="text-xs font-bold tracking-[0.25em] uppercase">Who We Are</p>
@@ -91,7 +91,7 @@ export default function Introduction() {
                   promote growing businesses digitally.
                 </p>
                 <p>
-                  Located at Itahari-6, Paruhang Chowk, Nepal our B2B (Business to Business)
+                  Located at Itahari-6, Sky Plaza, 2nd Floor, Nepal our B2B (Business to Business)
                   company aims at transforming and updating tech services to deliver quality
                   outputs. Blue Fox is the only choice for your web problems due to brilliant
                   teamwork, passionate team members, and first-class service delivery. Since 2017,
@@ -102,14 +102,14 @@ export default function Introduction() {
             </div>
 
             {/* Right column */}
-            <div>
-              <div className="rounded-2xl bg-white p-8">
+            <div className="flex flex-col justify-center">
+              <div>
                 <div className="flex items-center gap-4 mb-5">
-                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-white shrink-0">
-                  <FaMountain size={24} />
-                </span>
-                <h3 className="font-heading text-xl font-semibold text-slate-900">Our Mission</h3>
-              </div>
+                  <span className="text-primary shrink-0">
+                    <FaMountain size={34} />
+                  </span>
+                  <h3 className="font-heading text-xl font-semibold text-slate-900">Our Mission</h3>
+                </div>
                 <p className="text-slate-600 leading-relaxed">
                   We directly approach our goal and prove to be best with our clients by
                   evaluating their resources in the best possible way. We are in the developing
@@ -121,13 +121,13 @@ export default function Introduction() {
 
               <hr className="mx-auto w-24 border-slate-300 my-6" />
 
-              <div className="rounded-2xl bg-white p-8">
+              <div>
                 <div className="flex items-center gap-4 mb-5">
-                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-white shrink-0">
-                  <FaBullseye size={24} />
-                </span>
-                <h3 className="font-heading text-xl font-semibold text-slate-900">Our Vision</h3>
-              </div>
+                  <span className="text-primary shrink-0">
+                    <FaBullseye size={34} />
+                  </span>
+                  <h3 className="font-heading text-xl font-semibold text-slate-900">Our Vision</h3>
+                </div>
                 <p className="text-slate-600 leading-relaxed">
                   Our effort is endless to make Blue Fox a systematic and qualitative company in
                   the IT sector. Every business requires digital identification in today's era.
@@ -146,7 +146,7 @@ export default function Introduction() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-center gap-4 text-primary mb-4">
             <span className="h-px w-10 bg-primary" />
-            <p className="text-xs font-bold tracking-[0.25em] uppercase">Message from the Managing Director</p>
+            <p className="text-xs font-bold tracking-[0.25em] uppercase">Message from the CEO</p>
             <span className="h-px w-10 bg-primary" />
           </div>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">
@@ -160,12 +160,12 @@ export default function Introduction() {
                 <span className="absolute -bottom-6 -left-6 z-0 h-28 w-28 rounded-full bg-[#a9d6ff]/50" />
                 <img
                   src={mdImage}
-                  alt="Mitra Thapa Magar, Managing Director, Blue Fox Pvt. Ltd."
+                  alt="Mitra Thapa Magar, CEO, Blue Fox Pvt. Ltd."
                   className="relative z-10 rounded-2xl object-cover shadow-xl shadow-primary/10 transition-all duration-300 group-hover:grayscale group-hover:brightness-75 lg:w-full"
                 />
                 <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-center justify-center rounded-b-2xl bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <p className="font-heading text-lg font-bold text-white">Mitra Thapa Magar</p>
-                  <p className="mt-0.5 text-xs text-[#a9d6ff]">Managing Director, Blue Fox Pvt. Ltd.</p>
+                  <p className="mt-0.5 text-xs text-[#a9d6ff]">CEO, Blue Fox Pvt. Ltd.</p>
                 </div>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function Introduction() {
                 <span className="h-12 w-1 rounded-full bg-primary" />
                 <div>
                   <p className="font-heading text-xl font-bold text-slate-900">Mitra Thapa Magar</p>
-                  <p className="text-primary font-medium">Managing Director, Blue Fox Pvt. Ltd.</p>
+                  <p className="text-primary font-medium">CEO, Blue Fox Pvt. Ltd.</p>
                 </div>
               </div>
             </div>

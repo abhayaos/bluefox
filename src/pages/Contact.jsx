@@ -86,6 +86,7 @@ function Contact() {
     message: '',
   })
   const [status, setStatus] = useState('idle')
+  const [errorDetail, setErrorDetail] = useState('')
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -125,6 +126,7 @@ function Contact() {
       })
     } catch (err) {
       setStatus('error')
+      setErrorDetail(err?.text || err?.message || `${err?.status || 'Unknown'} error`)
     }
   }
 
@@ -264,6 +266,9 @@ function Contact() {
           {status === 'error' && (
             <p className="mt-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
               Something went wrong while sending your message. Please try again.
+              {errorDetail && (
+                <span className="mt-1 block font-normal text-red-600/80">Error: {errorDetail}</span>
+              )}
             </p>
           )}
           {status === 'error-not-configured' && (

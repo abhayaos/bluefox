@@ -7,12 +7,12 @@ import anmolImage from '../assets/about/anmol.jpg'
 const members = [
   {
     name: 'Mitra Thapa Magar',
-    role: 'Managing Director',
+    role: 'CEO',
     img: mdImage,
   },
   {
     name: 'Anmol Budhathoki',
-    role: 'CEO',
+    role: 'Managing Director',
     img: anmolImage,
   },
   {
