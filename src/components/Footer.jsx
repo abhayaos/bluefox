@@ -175,6 +175,10 @@ export default function Footer() {
                       <FaEnvelope className="text-primary mr-1.5" size={12} />
                       dharan@bluefox.com.np
                     </FooterLink>
+                    <FooterLink href="mailto:bluefoxpvtltd@gmail.com">
+                      <FaEnvelope className="text-primary mr-1.5" size={12} />
+                      bluefoxpvtltd@gmail.com
+                    </FooterLink>
                   </span>
                 </span>
               </li>
