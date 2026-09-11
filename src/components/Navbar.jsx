@@ -44,7 +44,7 @@ const pricingItems = [
 
 const productsItems = [
   { title: 'Karobar', desc: 'Our business management solution.', link: '/products/karobar' },
-  { title: 'Blue Fox Quiz', desc: 'An interactive quiz platform by Blue Fox.', link: '/products/blue-fox-quiz' },
+  { title: 'Blue Fox Quiz', desc: 'An interactive quiz platform by Blue Fox.', link: 'https://bluefoxquiz.vercel.app/', external: true },
 ]
 
 function NavLink({ to, children }) {
@@ -77,6 +77,8 @@ function Dropdown({ items, grid, plain }) {
           <a
             key={item.title}
             href={item.link}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
             className={`group/opt flex items-start gap-3 p-3 rounded-lg transition-all duration-200 ${plain ? '' : 'hover:bg-primary-50 hover:translate-x-1'}`}
           >
             <div>

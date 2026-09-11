@@ -23,6 +23,16 @@
   --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
   --animate-ping-slow: ping-slow 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
   --animate-slide-in-left: slide-in-left 0.3s ease-out;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
   @keyframes spin-slow {
     to {

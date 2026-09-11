@@ -1,87 +1,84 @@
 import { useState } from 'react'
 import {
-  FaExchangeAlt,
-  FaUsers,
-  FaBoxes,
-  FaChartLine,
-  FaLaptop,
-  FaUserCog,
-  FaImage,
-  FaBell,
   FaWhatsapp,
   FaCheck,
   FaTag,
   FaCopy,
+  FaGift,
+  FaUtensils,
+  FaHeartbeat,
+  FaWrench,
+  FaCarSide,
+  FaMobileAlt,
+  FaCouch,
+  FaShoppingBasket,
+  FaLaptop,
 } from 'react-icons/fa'
-import karobarHero from '../assets/hero-karobar.jpg'
+import karobarHero from '../assets/karobar/hero-karobar.jpg'
+import karobarPreview from '../assets/karobar/karobar.webp'
+import karobarRecord from '../assets/karobar/karobar-record.webp'
+import karobarParties from '../assets/karobar/karobar-parties.webp'
+import karobarInventory from '../assets/karobar/karobar-inventory.webp'
+import karobarInsights from '../assets/karobar/karobar-insights.webp'
+import karobarDesktop from '../assets/karobar/karobar-desktop.webp'
+import karobarMultistaff from '../assets/karobar/karobar-multistaff.webp'
+import karobarUploadbill from '../assets/karobar/karobar-uploadbill.webp'
+import karobarPayment from '../assets/karobar/karobar-payment.webp'
 
-const highlights = [
+const keyFeatures = [
   {
-    stat: '3 Lakhs+',
-    label: 'Businesses Trust Karobar',
-  },
-  {
-    stat: '20+',
-    label: 'Insightful Business Reports',
-  },
-  {
-    stat: '100%',
-    label: 'Works Online & Offline',
-  },
-  {
-    stat: '24/7',
-    label: 'Manage from Anywhere',
-  },
-]
-
-const features = [
-  {
-    icon: FaExchangeAlt,
+    image: karobarRecord,
     title: 'Record Transactions',
-    desc: 'Add sales, purchases & expenses easily and keep a clear snapshot of your cash flow.',
+    desc: 'Add sales, purchases & expenses',
   },
   {
-    icon: FaUsers,
+    image: karobarParties,
     title: 'Manage Parties',
-    desc: 'Manage customers & suppliers ledger with well-organised accounts receivable and payable.',
+    desc: 'Manage customers & suppliers ledger',
   },
   {
-    icon: FaBoxes,
+    image: karobarInventory,
     title: 'Manage Inventory',
-    desc: 'Keep track of products in real time so you never run out of stock or overstock items.',
+    desc: 'Keep track of products in real time',
   },
   {
-    icon: FaChartLine,
+    image: karobarInsights,
     title: 'Business Insights',
-    desc: 'View business performance reports to spot trends and make smarter decisions.',
+    desc: 'View business performance reports',
   },
   {
-    icon: FaLaptop,
+    image: karobarDesktop,
     title: 'Desktop Web Version',
-    desc: 'Manage your business from your computer with a full-featured web version.',
+    desc: 'Manage business from computer',
   },
   {
-    icon: FaUserCog,
+    image: karobarMultistaff,
     title: 'Multi-Staff',
-    desc: 'Add users & manage their access so every team member has the right permissions.',
+    desc: 'Add users & manage their access',
   },
   {
-    icon: FaImage,
+    image: karobarUploadbill,
     title: 'Upload Bill Images',
-    desc: 'Organize paper bills & receipts digitally, ready whenever you need them.',
+    desc: 'Organize paper bills & receipts',
   },
   {
-    icon: FaBell,
+    image: karobarPayment,
     title: 'Send Payment Reminders',
-    desc: 'Send automated reminders via WhatsApp & SMS so you stop chasing payments.',
+    desc: 'Send reminders via WhatsApp & SMS',
   },
 ]
 
-const previews = [
-  { title: 'Sales & Expenses', desc: 'Record every transaction in seconds.' },
-  { title: 'Inventory in Real Time', desc: 'Know exactly what is on the shelf.' },
-  { title: 'Reports & Insights', desc: 'A clear view of business performance.' },
+const businessCategories = [
+  { icon: FaUtensils, label: 'Food & Beverages', bg: 'bg-orange-100', color: 'text-orange-500', hover: 'hover:bg-orange-200' },
+  { icon: FaHeartbeat, label: 'Medical & Healthcare', bg: 'bg-emerald-100', color: 'text-emerald-500', hover: 'hover:bg-emerald-200' },
+  { icon: FaWrench, label: 'Hardware', bg: 'bg-slate-200', color: 'text-slate-600', hover: 'hover:bg-slate-300' },
+  { icon: FaCarSide, label: 'Auto / Parts', bg: 'bg-indigo-100', color: 'text-indigo-500', hover: 'hover:bg-indigo-200' },
+  { icon: FaMobileAlt, label: 'Mobile Pasal', bg: 'bg-pink-100', color: 'text-pink-500', hover: 'hover:bg-pink-200' },
+  { icon: FaCouch, label: 'Furniture', bg: 'bg-amber-100', color: 'text-amber-600', hover: 'hover:bg-amber-200' },
+  { icon: FaShoppingBasket, label: 'Fresh House', bg: 'bg-green-100', color: 'text-green-500', hover: 'hover:bg-green-200' },
+  { icon: FaLaptop, label: 'Computer Services', bg: 'bg-sky-100', color: 'text-sky-500', hover: 'hover:bg-sky-200' },
 ]
+
 export default function Karobar() {
   const [couponCopied, setCouponCopied] = useState(false)
 
@@ -91,21 +88,50 @@ export default function Karobar() {
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-white to-[#eef2ff]">
         <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
           <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
+            <div className="flex flex-col items-center lg:items-start">
               <span className="inline-flex items-center rounded-full bg-primary-50 px-4 py-1.5 text-xs font-bold tracking-[0.2em] text-primary uppercase">
-                Our Product / Karobar
+                Use Coupon: BLUEFOX
               </span>
-              <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mt-5 mb-4">
-                Manage Your Business Anytime, Anywhere
-              </h1>
-              <h2 className="text-xl md:text-2xl font-semibold text-slate-700 mb-4">
-                Your business simple, smart, and stress-free.
-              </h2>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
-                Karobar is Nepal&apos;s most trusted digital khata &amp; business management app.
-                Easily track sales, manage expenses, maintain ledgers, control inventory &amp; more —
-                so you can focus on growing your business.
-              </p>
+
+              <div className="relative mt-8 w-full max-w-sm">
+                <div className="relative flex flex-col overflow-hidden rounded-2xl border-2 border-dashed border-[#0b7be5] bg-white p-6 shadow-lg shadow-primary/10">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
+                        Special Offer
+                      </p>
+                      <p className="mt-1 font-heading text-3xl font-bold tracking-widest text-[#0b7be5]">
+                        BLUEFOX
+                      </p>
+                      <p className="mt-0.5 text-xs text-slate-500">
+                        Get 5% OFF on your Karobar subscription
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard?.writeText('BLUEFOX').catch(() => {})
+                        setCouponCopied(true)
+                        setTimeout(() => setCouponCopied(false), 2000)
+                      }}
+                      className="inline-flex items-center gap-2 rounded-full bg-[#0b7be5] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+                    >
+                      <FaCopy size={14} />
+                      {couponCopied ? 'Copied!' : 'Copy Code'}
+                    </button>
+                  </div>
+                  <a
+                    href="https://open.karobarapp.com/?c=RdZXWp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary-50 px-5 py-2.5 text-sm font-semibold text-[#0b7be5] transition-colors duration-200 hover:bg-primary-100"
+                  >
+                    <FaGift size={14} />
+                    Claim Karobar Pro
+                  </a>
+                </div>
+                <span className="absolute -left-2 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-slate-100" />
+                <span className="absolute -right-2 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-slate-100" />
+              </div>
             </div>
 
             <div className="hidden lg:flex items-center justify-center">
@@ -117,94 +143,37 @@ export default function Karobar() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Stats */}
-      <section className="max-w-6xl mx-auto px-6 pt-16 pb-4">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {highlights.map((item) => (
+        {/* Business categories strip */}
+        <div className="border-t border-primary-100 bg-white/60 backdrop-blur-sm">
+          <div className="max-w-6xl mx-auto px-6 py-6">
+            <p className="text-center text-sm font-bold text-slate-900 mb-5">
+              Built for all growing businesses
+            </p>
             <div
-              key={item.label}
-              className="rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-lg"
+              className="relative overflow-hidden"
+              style={{
+                maskImage:
+                  'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                WebkitMaskImage:
+                  'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              }}
             >
-              <p className="font-heading text-4xl font-bold text-[#0b7be5]">{item.stat}</p>
-              <p className="mt-2 text-sm font-medium text-slate-600">{item.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20">
-        <div className="flex items-center justify-center gap-4 text-primary mb-4">
-          <span className="h-px w-10 bg-primary" />
-          <p className="text-xs font-bold tracking-[0.25em] uppercase">All in One Business App</p>
-          <span className="h-px w-10 bg-primary" />
-        </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
-          Everything your business needs, all in one place
-        </h2>
-        <p className="text-slate-600 text-lg text-center max-w-3xl mx-auto mb-12">
-          Manage your finances, inventory, and clients effortlessly with Karobar.
-        </p>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-lg"
-            >
-              <div className="flex items-center gap-4 mb-5">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
-                  <feature.icon size={24} />
-                </span>
-                <h3 className="font-heading text-lg font-semibold text-slate-900">
-                  {feature.title}
-                </h3>
+              <div className="animate-marquee flex w-max items-center gap-3">
+                {[...businessCategories, ...businessCategories].map((cat, i) => {
+                  const Icon = cat.icon
+                  return (
+                    <span
+                      key={`${cat.label}-${i}`}
+                      className={`inline-flex items-center gap-2 rounded-full ${cat.bg} ${cat.hover} px-4 py-2.5 text-sm font-semibold text-slate-700 transition-colors duration-200 cursor-default`}
+                    >
+                      <Icon size={16} className={cat.color} />
+                      {cat.label}
+                    </span>
+                  )
+                })}
               </div>
-              <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* App preview / screenshots */}
-      <section className="bg-[#a9d6ff]">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
-          <div className="flex items-center justify-center gap-4 text-primary mb-4">
-            <span className="h-px w-10 bg-primary" />
-            <p className="text-xs font-bold tracking-[0.25em] uppercase">App Preview</p>
-            <span className="h-px w-10 bg-primary" />
-          </div>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">
-            A look at the Karobar experience
-          </h2>
-
-          <div className="grid gap-8 sm:grid-cols-3">
-            {previews.map((preview) => (
-              <div key={preview.title} className="flex flex-col items-center">
-                <div className="relative w-64 rounded-[2.2rem] border-[10px] border-slate-900 bg-white p-3 shadow-2xl">
-                  <div className="absolute top-1 left-1/2 h-1.5 w-16 -translate-x-1/2 rounded-full bg-slate-900" />
-                  <div className="flex h-96 w-full flex-col items-center justify-center rounded-[1.6rem] bg-gradient-to-br from-primary via-[#52a1ec] to-primary-200 text-center">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" className="mb-4">
-                      <rect x="3" y="4" width="18" height="16" rx="2" stroke="white" strokeWidth="1.6" />
-                      <path d="M3 9h18" stroke="white" strokeWidth="1.6" />
-                      <circle cx="7" cy="12.5" r="1.2" fill="white" />
-                      <circle cx="7" cy="16" r="1.2" fill="white" />
-                      <rect x="10" y="12" width="8" height="1.6" rx="0.8" fill="white" opacity="0.8" />
-                      <rect x="10" y="15.5" width="5" height="1.6" rx="0.8" fill="white" opacity="0.8" />
-                    </svg>
-                    <p className="px-6 font-heading text-sm font-bold text-white">
-                      {preview.title}
-                    </p>
-                    <p className="mt-1 px-6 text-xs text-white/90">{preview.desc}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-center text-sm font-semibold text-slate-700">
-                  {preview.title}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -239,10 +208,10 @@ export default function Karobar() {
                 Limited Time Offer
               </span>
               <p className="mt-4 font-heading text-4xl font-bold tracking-widest sm:text-5xl">
-                KAROBAR10
+                BLUEFOX
               </p>
               <p className="mt-2 text-sm text-white/90">
-                Get 10% OFF on your Karobar subscription
+                Get 5% OFF on your Karobar subscription
               </p>
             </div>
           </div>
@@ -251,18 +220,256 @@ export default function Karobar() {
             <p className="max-w-xs text-sm text-slate-600">
               Enter this code while subscribing to Karobar Pro and unlock exclusive benefits.
             </p>
-            <button
-              onClick={() => {
-                navigator.clipboard?.writeText('KAROBAR10').catch(() => {})
-                setCouponCopied(true)
-                setTimeout(() => setCouponCopied(false), 2000)
-              }}
-              className="inline-flex items-center gap-2 rounded-full bg-[#0b7be5] px-7 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
-            >
-              <FaCopy size={14} />
-              {couponCopied ? 'Copied!' : 'Copy Code'}
-            </button>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <button
+                onClick={() => {
+                  navigator.clipboard?.writeText('BLUEFOX').catch(() => {})
+                  setCouponCopied(true)
+                  setTimeout(() => setCouponCopied(false), 2000)
+                }}
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[#0b7be5] px-6 py-3 text-sm font-semibold text-[#0b7be5] transition-colors duration-200 hover:bg-primary-50"
+              >
+                <FaCopy size={14} />
+                {couponCopied ? 'Copied!' : 'Copy Code'}
+              </button>
+              <a
+                href="https://open.karobarapp.com/?c=RdZXWp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0b7be5] px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+              >
+                <FaGift size={14} />
+                Claim Karobar Pro
+              </a>
+            </div>
             <p className="text-xs text-slate-400">One code per account · Limited time applicable</p>
+          </div>
+        </div>
+      </section>
+
+      {/* What is Karobar */}
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+          <div className="flex items-center justify-center gap-4 text-primary mb-4">
+            <span className="h-px w-10 bg-primary" />
+            <p className="text-xs font-bold tracking-[0.25em] uppercase">What is Karobar?</p>
+            <span className="h-px w-10 bg-primary" />
+          </div>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-slate-900 text-center mb-6">
+            The simplest way to
+            <span className="block text-[#0b7be5] mt-2">manage your business</span>
+          </h2>
+          <p className="text-slate-600 text-lg text-center max-w-2xl mx-auto leading-relaxed">
+            Karobar is your digital business partner, helping you manage your business accounting
+            and inventory available on both mobile &amp; desktop.
+          </p>
+
+          <div className="mt-14 flex justify-center">
+            <img
+              src={karobarPreview}
+              alt="Karobar app on mobile and desktop"
+              className="w-full max-w-4xl rounded-3xl object-contain"
+            />
+          </div>
+
+          {/* Key features */}
+          <div className="mt-20 text-center">
+            <div className="flex items-center justify-center gap-4 text-primary mb-4">
+              <span className="h-px w-10 bg-primary" />
+              <p className="text-xs font-bold tracking-[0.25em] uppercase">Key Features</p>
+              <span className="h-px w-10 bg-primary" />
+            </div>
+            <h3 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              All in One Business App
+            </h3>
+            <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
+              Manage your finances, inventory, and clients effortlessly with Karobar, everything
+              your business needs, all in one place.
+            </p>
+          </div>
+
+          {/* Feature cards */}
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+            {keyFeatures.map((feature) => {
+              return (
+                <div
+                  key={feature.title}
+                  className="group flex flex-col items-center text-center"
+                >
+                  <div className="w-44 h-44 rounded-3xl overflow-hidden bg-primary-50 flex items-center justify-center">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <h4 className="mt-5 font-heading text-xl font-bold text-slate-900">
+                    {feature.title}
+                  </h4>
+                  <p className="mt-2 text-base text-slate-600 leading-relaxed">{feature.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing plans */}
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+        <div className="flex items-center justify-center gap-4 text-primary mb-4">
+          <span className="h-px w-10 bg-primary" />
+          <p className="text-xs font-bold tracking-[0.25em] uppercase">Karobar Pricing Plans</p>
+          <span className="h-px w-10 bg-primary" />
+        </div>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
+          Choose the plan that suits your business
+        </h2>
+        <p className="text-slate-600 text-lg text-center max-w-2xl mx-auto mb-12">
+          Easy to use, powerful, and the best value for businesses in Nepal.
+        </p>
+
+        <div className="grid gap-8 lg:grid-cols-3">
+          {/* Basic */}
+          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8">
+            <h3 className="font-heading text-2xl font-bold text-slate-900">BASIC</h3>
+            <p className="mt-1 inline-flex w-fit items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary uppercase">
+              Free Forever
+            </p>
+            <p className="mt-6 font-heading text-5xl font-bold text-slate-900">
+              Free <span className="text-lg font-semibold text-slate-400">/forever</span>
+            </p>
+            <a
+              href="https://open.karobarapp.com/?c=RdZXWp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded-full border-2 border-[#0b7be5] px-6 py-3 text-sm font-semibold text-[#0b7be5] transition-colors duration-200 hover:bg-primary-50"
+            >
+              Start Free
+            </a>
+            <div className="mt-8 border-t border-dashed border-slate-200 pt-6">
+              <p className="mb-4 text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
+                What's included
+              </p>
+              <ul className="flex flex-col gap-2.5 text-sm text-slate-600">
+                <li>1 Business + 1 Personal Profile</li>
+                <li>Manage Accounting Easily</li>
+                <li>Manage Inventory Easily</li>
+                <li>Unlimited Transactions</li>
+                <li>Unlimited Parties</li>
+                <li>Unlimited Inventory</li>
+                <li>Works Offline &amp; Online</li>
+                <li>Mobile App Only</li>
+                <li className="rounded-lg bg-amber-50 px-3 py-2 text-amber-700">
+                  ⚠️ Share, Download &amp; Print Transactions up to 100 times only
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Gold */}
+          <div className="flex flex-col rounded-3xl border-2 border-[#0b7be5] bg-white p-8 shadow-xl shadow-primary/10">
+            <div className="flex items-center justify-between">
+              <h3 className="font-heading text-2xl font-bold text-slate-900">GOLD</h3>
+              <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
+                Popular
+              </span>
+            </div>
+            <p className="mt-6">
+              <span className="align-top text-slate-400 line-through">Rs. 4,000</span>
+              <span className="ml-2 font-heading text-4xl font-bold text-[#0b7be5]">Rs. 2,999</span>
+              <span className="text-slate-500">/year</span>
+            </p>
+            <a
+              href="https://open.karobarapp.com/?c=RdZXWp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-[#0b7be5] px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+            >
+              Upgrade to Gold
+            </a>
+            <div className="mt-8 border-t border-dashed border-slate-200 pt-6">
+              <p className="mb-4 text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
+                Everything in Basic, plus
+              </p>
+              <ul className="flex flex-col gap-2.5 text-sm text-slate-600">
+                <li>📱 Mobile App Only — NO DESKTOP</li>
+                <li>3 Business Profiles</li>
+                <li>Add 3 Staff Members</li>
+                <li>Upload Bill Images</li>
+                <li>View &amp; Download Unlimited Reports</li>
+                <li>Multiple Bank Accounts</li>
+                <li>Support Thermal Printer</li>
+                <li>Enable App Lock</li>
+                <li>Works Both Offline &amp; Online</li>
+                <li>Customize Invoices</li>
+                <li>A5 Paper Printing Support</li>
+                <li>Organize Party into Categories</li>
+                <li>Hide App Branding</li>
+                <li>Create &amp; Send Quotations</li>
+                <li>Premium Business Cards</li>
+                <li>Partywise Sales Price</li>
+                <li>Barcode Scan</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Diamond */}
+          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8">
+            <div className="flex items-center justify-between">
+              <h3 className="font-heading text-2xl font-bold text-slate-900">DIAMOND</h3>
+              <div className="flex items-center gap-2">
+                <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-red-500">
+                  🔥 Most Popular
+                </span>
+                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
+                  🏷️ Best Value
+                </span>
+              </div>
+            </div>
+            <p className="mt-6">
+              <span className="align-top text-slate-400 line-through">Rs. 8,000</span>
+              <span className="ml-2 font-heading text-4xl font-bold text-[#0b7be5]">Rs. 5,999</span>
+              <span className="text-slate-500">/year</span>
+            </p>
+            <a
+              href="https://open.karobarapp.com/?c=RdZXWp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-[#0b7be5] px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+            >
+              Upgrade to Diamond
+            </a>
+            <div className="mt-8 border-t border-dashed border-slate-200 pt-6">
+              <p className="mb-4 text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
+                Everything in Gold, plus
+              </p>
+              <ul className="flex flex-col gap-2.5 text-sm text-slate-600">
+                <li className="font-semibold text-[#0b7be5]">
+                  ⭐ Mobile + Desktop/Laptop — DIAMOND ONLY
+                </li>
+                <li>5 Business Profiles — 2 More than Gold Plan</li>
+                <li>Add 5 Staff Members — 2 More than Gold Plan</li>
+                <li>Upload Bill Images</li>
+                <li>View &amp; Download Unlimited Reports</li>
+                <li>Multiple Bank Accounts</li>
+                <li>Support Thermal Printer</li>
+                <li>Enable App Lock</li>
+                <li>Works Both Offline &amp; Online</li>
+                <li>Customize Invoices</li>
+                <li>A5 Paper Printing Support</li>
+                <li>Organize Party into Categories</li>
+                <li>Hide App Branding</li>
+                <li>Create &amp; Send Quotations</li>
+                <li>Premium Business Cards</li>
+                <li>Partywise Sales Price</li>
+                <li className="font-semibold text-[#0b7be5]">
+                  ⭐ Excel Report Download — DIAMOND ONLY
+                </li>
+                <li className="font-semibold text-[#0b7be5]">
+                  ⭐ Barcode Scan &amp; Generate — Diamond Only
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -282,7 +489,7 @@ export default function Karobar() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://api.whatsapp.com/send?phone=9779817303073"
+                href="https://api.whatsapp.com/send?phone=9779802755605"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 font-semibold text-[#0b7be5] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"

@@ -3,6 +3,7 @@ import mdImage from '../assets/about/md.jpg'
 import bdImage from '../assets/about/bd.jpg'
 import abhayaImage from '../assets/about/abhaya.jfif'
 import anmolImage from '../assets/about/anmol.jpg'
+import zeenatImage from '../assets/about/zeenat.jpg'
 
 const members = [
   {
@@ -19,6 +20,11 @@ const members = [
     name: 'Bipin Chapagain',
     role: 'BDO',
     img: bdImage,
+  },
+  {
+    name: 'Zeenat Rai',
+    role: 'Advisor',
+    img: zeenatImage,
   },
   {
     name: 'Abhaya Bikram Shahi',

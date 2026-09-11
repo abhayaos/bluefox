@@ -9,9 +9,6 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaBusinessTime,
-  FaBriefcase,
-  FaLifeRing,
 } from 'react-icons/fa'
 
 const serviceOptions = [
@@ -53,27 +50,6 @@ const infoCards = [
   },
 ]
 
-const quickContacts = [
-  {
-    icon: FaBusinessTime,
-    label: 'For Sales',
-    value: '9802755604',
-    href: 'tel:+9779802755604',
-  },
-  {
-    icon: FaBriefcase,
-    label: 'For Career',
-    value: '9802755603',
-    href: 'tel:+9779802755603',
-  },
-  {
-    icon: FaLifeRing,
-    label: 'For Support',
-    value: '9817303073',
-    href: 'tel:+9779817303073',
-  },
-]
-
 function Contact() {
   const [searchParams] = useSearchParams()
   const selectedPackage = searchParams.get('package') || ''
@@ -108,7 +84,7 @@ function Contact() {
           from_name: form.name,
           from_email: form.email,
           reply_to: form.email,
-          phone: `+977 ${form.phone}`,
+          phone: form.phone,
           service: form.service,
           subject: form.subject || 'Contact Enquiry',
           message: form.message,
@@ -318,33 +294,51 @@ function Contact() {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h3 className="mb-4 font-heading text-lg font-semibold text-slate-900">
-              Quick Contacts
+              Branch Contact
             </h3>
-            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              {quickContacts.map((contact) => (
-                <a
-                  key={contact.label}
-                  href={contact.href}
-                  className="flex items-center gap-3 rounded-xl bg-[#f1f7fd] px-4 py-3 transition-colors duration-200 hover:bg-[#a9d6ff]"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                    <contact.icon size={16} />
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3 rounded-xl bg-[#f1f7fd] px-4 py-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+                  <FaMapMarkerAlt size={16} />
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold text-slate-500 uppercase">Address</span>
+                  <span className="block text-sm font-bold text-slate-900">
+                    Dharan 15 Sadan Road / Everest Line, Meru Complex
                   </span>
-                  <span>
-                    <span className="block text-xs font-semibold text-slate-500 uppercase">
-                      {contact.label}
-                    </span>
-                    <span className="block text-sm font-bold text-slate-900">{contact.value}</span>
-                  </span>
-                </a>
-              ))}
+                </span>
+              </div>
+              <a
+                href="tel:+9779802755606"
+                className="flex items-center gap-3 rounded-xl bg-[#f1f7fd] px-4 py-3 transition-colors duration-200 hover:bg-[#a9d6ff]"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+                  <FaPhoneAlt size={16} />
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold text-slate-500 uppercase">Phone</span>
+                  <span className="block text-sm font-bold text-slate-900">+977 9802755606</span>
+                </span>
+              </a>
+              <a
+                href="mailto:dharan@bluefox.com.np"
+                className="flex items-center gap-3 rounded-xl bg-[#f1f7fd] px-4 py-3 transition-colors duration-200 hover:bg-[#a9d6ff]"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+                  <FaEnvelope size={16} />
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold text-slate-500 uppercase">Email</span>
+                  <span className="block text-sm font-bold text-slate-900">dharan@bluefox.com.np</span>
+                </span>
+              </a>
             </div>
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
             <iframe
               title="Blue Fox Pvt Ltd Location"
-              src="https://maps.google.com/maps?q=28.397455,84.130151&z=16&output=embed"
+              src="https://maps.google.com/maps?q=26.6640614,87.2748195&z=16&output=embed"
               className="h-64 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

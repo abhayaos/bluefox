@@ -58,7 +58,7 @@ export default function Footer() {
               </span>
             </h2>
             <p className="text-slate-600 text-base md:text-lg">
-              We are available from 9:00 AM to 6:00 PM, Monday to Friday.
+              We are available from 9:00 AM to 6:00 PM, Sunday to Friday.
             </p>
           </div>
           <div className="md:border-l md:border-slate-300 md:pl-8">
