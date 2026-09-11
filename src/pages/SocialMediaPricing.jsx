@@ -6,7 +6,7 @@ import { FiChevronDown } from 'react-icons/fi'
 const plans = [
   {
     name: 'Starter',
-    price: 'Rs 15,000',
+    price: 'Rs 8,000',
     period: '/ mon',
     subtitle: 'For marketing newbies and small house teams',
     button: 'Select Plan',
@@ -21,7 +21,7 @@ const plans = [
   },
   {
     name: 'Basic',
-    price: 'Rs 28,000',
+    price: 'Rs 15,000',
     period: '/ mon',
     subtitle: 'For new but established companies seeking to grow',
     button: 'Select Plan',
@@ -44,7 +44,7 @@ const plans = [
   },
   {
     name: 'Standard',
-    price: 'Rs 38,000',
+    price: 'Rs 28,000',
     period: '/ mon',
     subtitle: 'For those looking to grow their business/brand',
     button: 'Select Plan',
@@ -67,7 +67,7 @@ const plans = [
   },
   {
     name: 'Premium',
-    price: 'Rs 55,000',
+    price: 'Rs 32,000',
     period: '/ mon',
     subtitle: 'For those looking to grow their business/brand',
     button: 'Select Plan',

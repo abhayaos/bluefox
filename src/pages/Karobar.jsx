@@ -335,8 +335,8 @@ export default function Karobar() {
             <p className="mt-1 inline-flex w-fit items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary uppercase">
               Free Forever
             </p>
-            <p className="mt-6 font-heading text-5xl font-bold text-slate-900">
-              Free <span className="text-lg font-semibold text-slate-400">/forever</span>
+            <p className="mt-6 font-heading text-3xl font-bold text-slate-900">
+              Free <span className="text-base font-semibold text-slate-400">/forever</span>
             </p>
             <a
               href="https://open.karobarapp.com/?c=RdZXWp"
@@ -375,9 +375,9 @@ export default function Karobar() {
               </span>
             </div>
             <p className="mt-6">
-              <span className="align-top text-slate-400 line-through">Rs. 4,000</span>
-              <span className="ml-2 font-heading text-4xl font-bold text-[#0b7be5]">Rs. 2,999</span>
-              <span className="text-slate-500">/year</span>
+              <span className="align-top text-sm text-slate-400 line-through">Rs. 4,000</span>
+              <span className="ml-2 font-heading text-2xl font-bold text-[#0b7be5]">Rs. 2,999</span>
+              <span className="text-sm text-slate-500">/year</span>
             </p>
             <a
               href="https://open.karobarapp.com/?c=RdZXWp"
@@ -427,9 +427,9 @@ export default function Karobar() {
               </div>
             </div>
             <p className="mt-6">
-              <span className="align-top text-slate-400 line-through">Rs. 8,000</span>
-              <span className="ml-2 font-heading text-4xl font-bold text-[#0b7be5]">Rs. 5,999</span>
-              <span className="text-slate-500">/year</span>
+              <span className="align-top text-sm text-slate-400 line-through">Rs. 8,000</span>
+              <span className="ml-2 font-heading text-2xl font-bold text-[#0b7be5]">Rs. 5,999</span>
+              <span className="text-sm text-slate-500">/year</span>
             </p>
             <a
               href="https://open.karobarapp.com/?c=RdZXWp"
