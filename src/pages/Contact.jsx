@@ -33,8 +33,8 @@ const infoCards = [
   {
     icon: FaPhoneAlt,
     title: 'Our Phone Number',
-    value: '9817303073',
-    href: 'tel:+9779817303073',
+    value: '+977 9802755606',
+    href: 'tel:+9779802755606',
   },
   {
     icon: FaEnvelope,

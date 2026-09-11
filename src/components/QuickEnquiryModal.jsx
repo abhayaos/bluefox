@@ -227,10 +227,10 @@ export default function QuickEnquiryModal({ open, onClose }) {
               <div>
                 <p className="text-sm text-white/70">Our Phone Number</p>
                 <a
-                  href="tel:+9779817303073"
+                  href="tel:+9779802755605"
                   className="font-heading text-xl font-bold text-white hover:underline"
                 >
-                  9817303073
+                  9802755605
                 </a>
               </div>
             </div>

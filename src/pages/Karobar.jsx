@@ -14,7 +14,7 @@ import {
   FaShoppingBasket,
   FaLaptop,
 } from 'react-icons/fa'
-import karobarHero from '../assets/karobar/hero-karobar.jpg'
+import karobarHero from '../assets/hero-karobar.png'
 import karobarPreview from '../assets/karobar/karobar.webp'
 import karobarRecord from '../assets/karobar/karobar-record.webp'
 import karobarParties from '../assets/karobar/karobar-parties.webp'
