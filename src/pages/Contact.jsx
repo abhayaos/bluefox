@@ -48,7 +48,7 @@ const infoCards = [
   {
     icon: FaMapMarkerAlt,
     title: 'Our Office',
-    value: 'Itahari-6, Paruhang Chowk, Nepal',
+    value: 'Itahari-6, Sky Plaza, 2nd Floor, Nepal',
     href: null,
   },
 ]
