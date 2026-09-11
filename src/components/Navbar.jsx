@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FiChevronDown } from 'react-icons/fi'
+import { FiChevronDown, FiTag } from 'react-icons/fi'
 import logo from '../assets/brand/logo.svg'
 import QuickEnquiryModal from './QuickEnquiryModal'
 
@@ -55,6 +55,68 @@ function NavLink({ to, children }) {
     >
       {children}
     </a>
+  )
+}
+
+function WobblyBorder({ id }) {
+  return (
+    <svg
+      className="pointer-events-none absolute inset-0 h-full w-full animate-wiggle"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      fill="none"
+    >
+      <defs>
+        <filter id={id} x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+      <rect
+        x="4"
+        y="4"
+        width="92"
+        height="92"
+        rx="26"
+        stroke="#a9d6ff"
+        strokeWidth="2.5"
+        vectorEffect="non-scaling-stroke"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        filter={`url(#${id})`}
+      />
+    </svg>
+  )
+}
+
+function CouponButton({ id = 'coupon-wobble-desktop' }) {
+  const [copied, setCopied] = useState(false)
+
+  const handleClick = () => {
+    navigator.clipboard?.writeText('BLUEFOX10').catch(() => {})
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  return (
+    <button
+      onClick={handleClick}
+      title="Tap to copy coupon code"
+      className="relative shrink-0 rounded-2xl bg-gradient-to-br from-[#0b7be5] to-[#0066ff] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#0b7be5]/30 transition-transform duration-200 hover:scale-105 active:scale-95"
+    >
+      <WobblyBorder id={id} />
+      <span className="relative z-10 flex items-center gap-2">
+        <FiTag className="text-[#a9d6ff] shrink-0" />
+        {copied ? (
+          <span className="text-xs font-semibold text-[#a9d6ff]">Copied!</span>
+        ) : (
+          <span className="flex flex-col items-start leading-none">
+            <span className="text-[10px] uppercase tracking-wider text-[#a9d6ff]">Blue Fox Coupon Code</span>
+            <span className="mt-1 text-xs font-bold tracking-wide">BLUEFOX10</span>
+          </span>
+        )}
+      </span>
+    </button>
   )
 }
 
@@ -140,6 +202,7 @@ export default function Navbar() {
             </div>
 
             <div className="hidden lg:flex items-center gap-4">
+              <CouponButton />
               <button
                 onClick={() => setEnquiryOpen(true)}
                 className="px-5 py-2.5 rounded-full bg-transparent border-2 border-[#eef1fb] text-[#0b7be5] text-sm font-semibold transition-all duration-200 hover:bg-[#eef1fb] hover:border-[#0b7be5] active:bg-[#0b7be5] active:text-white"
@@ -255,6 +318,8 @@ export default function Navbar() {
                 <a href="/contact" onClick={closeMobile} className="text-gray-700 font-medium hover:text-primary transition-colors">
                   Contact
                 </a>
+
+<CouponButton id="coupon-wobble-mobile" />
 
                 <button
                   onClick={() => {

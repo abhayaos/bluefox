@@ -161,7 +161,7 @@ export default function SocialMediaPricing() {
                   )}
 
                   <Link
-                    to="/contact"
+                    to={`/contact?package=${encodeURIComponent(`SMM ${p.name}`)}`}
                     className="block text-center rounded-full py-3 bg-[#0b7be5] text-white text-sm font-semibold transition-colors mt-auto hover:bg-primary-700"
                   >
                     {p.button}

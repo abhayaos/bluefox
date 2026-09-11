@@ -348,7 +348,7 @@ export default function SeoPricing() {
 
                   <p className="text-xs text-slate-500 mb-4">{p.note}</p>
                   <Link
-                    to="/contact"
+                    to={`/contact?package=${encodeURIComponent(`SEO ${p.name}`)}`}
                     className="block text-center rounded-full py-3 bg-[#0b7be5] text-white text-sm font-semibold transition-colors hover:bg-primary-700"
                   >
                     {p.button}

@@ -23,6 +23,7 @@
   --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
   --animate-ping-slow: ping-slow 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
   --animate-slide-in-left: slide-in-left 0.3s ease-out;
+  --animate-wiggle: wiggle 3.5s ease-in-out infinite;
 
   @keyframes spin-slow {
     to {
@@ -75,6 +76,16 @@
     }
     to {
       transform: translateX(0);
+    }
+  }
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-1.5deg);
+    }
+    50% {
+      transform: rotate(1.5deg);
     }
   }
 

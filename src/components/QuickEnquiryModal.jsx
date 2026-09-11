@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { FaTimes, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
+import { EMAILJS } from '../config/email'
 
 const inputClass =
   'w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[#0b7be5] focus:ring-2 focus:ring-[#0b7be5]/20'
@@ -24,6 +26,7 @@ export default function QuickEnquiryModal({ open, onClose }) {
     service: '',
     message: '',
   })
+  const [status, setStatus] = useState('idle')
 
   if (!open) return null
 
@@ -31,13 +34,34 @@ export default function QuickEnquiryModal({ open, onClose }) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(form.service ? `Enquiry: ${form.service}` : 'Quick Enquiry')
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: +977 ${form.phone}\nService: ${form.service}\n\n${form.message}`
-    )
-    window.location.href = `mailto:bluefoxpvtltd@gmail.com?subject=${subject}&body=${body}`
+    if (!EMAILJS.serviceId || !EMAILJS.templateId || !EMAILJS.publicKey) {
+      setStatus('error-not-configured')
+      return
+    }
+    setStatus('sending')
+    try {
+      await emailjs.send(
+        EMAILJS.serviceId,
+        EMAILJS.templateId,
+        {
+          to_email: EMAILJS.toEmail,
+          from_name: form.name,
+          from_email: form.email,
+          reply_to: form.email,
+          phone: `+977 ${form.phone}`,
+          service: form.service,
+          subject: form.service ? `Enquiry: ${form.service}` : 'Quick Enquiry',
+          message: form.message,
+        },
+        { publicKey: EMAILJS.publicKey }
+      )
+      setStatus('success')
+      setForm({ name: '', email: '', phone: '', service: '', message: '' })
+    } catch (err) {
+      setStatus('error')
+    }
   }
 
   return (
@@ -153,11 +177,29 @@ export default function QuickEnquiryModal({ open, onClose }) {
               />
             </div>
 
+            {status === 'success' && (
+              <p className="rounded-xl bg-green-50 px-4 py-3 text-sm font-semibold text-green-700">
+                Thank you! Your enquiry has been sent successfully.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+                Something went wrong while sending your enquiry. Please try again.
+              </p>
+            )}
+            {status === 'error-not-configured' && (
+              <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+                Email service is not configured yet. Please add your EmailJS credentials in
+                src/config/email.js.
+              </p>
+            )}
+
             <button
               type="submit"
-              className="w-full rounded-full bg-[#0b7be5] px-8 py-3.5 font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+              disabled={status === 'sending'}
+              className="w-full rounded-full bg-[#0b7be5] px-8 py-3.5 font-semibold text-white transition-colors duration-200 hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Submit
+              {status === 'sending' ? 'Sending...' : 'Submit'}
             </button>
           </div>
         </form>

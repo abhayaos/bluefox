@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 import PhoneInput from 'react-phone-number-input'
 import flags from 'react-phone-number-input/flags'
 import 'react-phone-number-input/style.css'
+import { EMAILJS } from '../config/email'
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -10,6 +13,24 @@ import {
   FaBriefcase,
   FaLifeRing,
 } from 'react-icons/fa'
+
+const serviceOptions = [
+  'Website Development',
+  'App Development',
+  'System / Software Development',
+  'UI/UX Design',
+  'SEO Standard',
+  'SEO Professional',
+  'SEO Premium',
+  'SEO Premium Plus',
+  'SMM Starter',
+  'SMM Basic',
+  'SMM Standard',
+  'SMM Premium',
+  'Graphic Design',
+  'Content Writing',
+  'Other',
+]
 
 const infoCards = [
   {
@@ -54,25 +75,57 @@ const quickContacts = [
 ]
 
 function Contact() {
+  const [searchParams] = useSearchParams()
+  const selectedPackage = searchParams.get('package') || ''
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
     subject: '',
+    service: selectedPackage,
     message: '',
   })
+  const [status, setStatus] = useState('idle')
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(form.subject || 'Contact Enquiry')
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: +977 ${form.phone}\n\n${form.message}`
-    )
-    window.location.href = `mailto:bluefoxpvtltd@gmail.com?subject=${subject}&body=${body}`
+    if (!EMAILJS.serviceId || !EMAILJS.templateId || !EMAILJS.publicKey) {
+      setStatus('error-not-configured')
+      return
+    }
+    setStatus('sending')
+    try {
+      await emailjs.send(
+        EMAILJS.serviceId,
+        EMAILJS.templateId,
+        {
+          to_email: EMAILJS.toEmail,
+          from_name: form.name,
+          from_email: form.email,
+          reply_to: form.email,
+          phone: `+977 ${form.phone}`,
+          service: form.service,
+          subject: form.subject || 'Contact Enquiry',
+          message: form.message,
+        },
+        { publicKey: EMAILJS.publicKey }
+      )
+      setStatus('success')
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        service: form.service,
+        message: '',
+      })
+    } catch (err) {
+      setStatus('error')
+    }
   }
 
   const inputClass =
@@ -101,6 +154,13 @@ function Contact() {
           <p className="mb-8 text-base text-gray-600">
             Send us a message and we&apos;ll get back to you shortly.
           </p>
+
+          {selectedPackage && (
+            <div className="mb-6 flex items-center gap-2 rounded-xl bg-primary-50 px-4 py-3 text-sm font-semibold text-[#0b7be5]">
+              <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+              Selected Package: {selectedPackage}
+            </div>
+          )}
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
@@ -162,6 +222,27 @@ function Contact() {
 
           <div className="mt-5">
             <label className="mb-1.5 block text-sm font-semibold text-slate-700">
+              Service Type
+            </label>
+            <select
+              name="service"
+              value={form.service}
+              onChange={handleChange}
+              className={`${inputClass} ${form.service ? 'text-slate-900' : 'text-slate-400'}`}
+            >
+              <option value="" disabled>
+                Select the service / package you need
+              </option>
+              {serviceOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="mt-5">
+            <label className="mb-1.5 block text-sm font-semibold text-slate-700">
               Message <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -175,11 +256,29 @@ function Contact() {
             />
           </div>
 
+          {status === 'success' && (
+            <p className="mt-5 rounded-xl bg-green-50 px-4 py-3 text-sm font-semibold text-green-700">
+              Thank you! Your message has been sent successfully. We&apos;ll get back to you shortly.
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="mt-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+              Something went wrong while sending your message. Please try again.
+            </p>
+          )}
+          {status === 'error-not-configured' && (
+            <p className="mt-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+              Email service is not configured yet. Please add your EmailJS credentials in
+              src/config/email.js.
+            </p>
+          )}
+
           <button
             type="submit"
-            className="mt-7 w-full rounded-full bg-[#0b7be5] px-8 py-3.5 font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+            disabled={status === 'sending'}
+            className="mt-7 w-full rounded-full bg-[#0b7be5] px-8 py-3.5 font-semibold text-white transition-colors duration-200 hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Submit
+            {status === 'sending' ? 'Sending...' : 'Submit'}
           </button>
         </form>
 
