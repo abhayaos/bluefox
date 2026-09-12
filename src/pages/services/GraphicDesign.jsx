@@ -85,7 +85,7 @@ const portfolio = [
   { name: 'Branding Design', img: dishImg },
   { name: 'Grilled Sekuwa', img: sekuwaImg },
   { name: 'Labour Day', img: labourDayImg },
-  { name: 'Mafer', img: maferImg },
+  { name: 'Wafer', img: maferImg },
   { name: 'Study Campaign', img: studyImg },
   { name: 'Store Design', img: storeImg },
 ]
@@ -196,7 +196,7 @@ const sections = (
               {[...row, ...row, ...row].map((word, i) => (
                 <span
                   key={`${word}-${rowIndex}-${i}`}
-                  className="whitespace-nowrap font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-slate-200 transition-colors duration-200 hover:text-primary"
+                  className="whitespace-nowrap font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-primary/70 transition-colors duration-200 hover:text-primary"
                 >
                   {word}
                 </span>

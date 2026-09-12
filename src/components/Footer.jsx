@@ -22,7 +22,6 @@ const marketingLinks = [
   { label: 'Social Media Marketing (SMM)', to: '/services/social-media-marketing' },
   { label: 'Graphic Design', to: '/services/graphic-design' },
   { label: 'Content Writing', to: '/services/content-writing' },
-  { label: 'Digital Marketing', to: '/services/digital-marketing' },
 ]
 
 function FooterLink({ to, href, children }) {
