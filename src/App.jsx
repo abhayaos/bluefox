@@ -55,7 +55,7 @@ export default function App() {
   }, [pathname])
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col overflow-x-clip">
       <Routes>
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />

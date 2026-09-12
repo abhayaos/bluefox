@@ -9,6 +9,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
+  FaInfoCircle,
 } from 'react-icons/fa'
 
 const serviceOptions = [
@@ -70,9 +71,31 @@ function Contact() {
   })
   const [status, setStatus] = useState('idle')
   const [errorDetail, setErrorDetail] = useState('')
+  const [notice, setNotice] = useState(() =>
+    selectedPackage
+      ? {
+          title: 'Package Added to Message',
+          body: `The package "${selectedPackage}" has been added to your message. Please keep it — it is temporary and helps us understand exactly what you need.`,
+        }
+      : null
+  )
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleServiceChange = (e) => {
+    const svc = e.target.value
+    setForm((prev) => {
+      const line = `I would like to enquire about ${svc}.`
+      const userMessage = (prev.message || '').replace(/^I would like to enquire about[^\n]*\n?/i, '')
+      const message = [line, userMessage.trim()].filter(Boolean).join('\n')
+      return { ...prev, service: svc, message }
+    })
+    setNotice({
+      title: 'Service Added to Message',
+      body: `"${svc}" has been added to your message. Please keep it — it is temporary and helps us understand exactly what you need.`,
+    })
   }
 
   const handleSubmit = async (e) => {
@@ -117,7 +140,7 @@ function Contact() {
 
   return (
     <section className="flex-1 bg-white pb-20">
-      <div className="max-w-6xl mx-auto px-6 pt-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Contact Us</p>
@@ -212,7 +235,7 @@ function Contact() {
             <select
               name="service"
               value={form.service}
-              onChange={handleChange}
+              onChange={handleServiceChange}
               className={`${inputClass} ${form.service ? 'text-slate-900' : 'text-slate-400'}`}
             >
               <option value="" disabled>
@@ -358,38 +381,64 @@ function Contact() {
               </a>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-              <p className="border-b border-slate-200 bg-[#f1f7fd] px-4 py-3 font-heading text-sm font-semibold text-slate-900">
-                Head Office — Itahari
-              </p>
-              <iframe
-                title="Blue Fox Pvt Ltd Itahari Location"
-                src="https://maps.google.com/maps?q=26.6640614,87.2748195&z=16&output=embed"
-                className="h-64 w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-              <p className="border-b border-slate-200 bg-[#f1f7fd] px-4 py-3 font-heading text-sm font-semibold text-slate-900">
-                Branch Office — Dharan
-              </p>
-              <iframe
-                title="Blue Fox Pvt Ltd Dharan Location"
-                src="https://maps.google.com/maps?q=26.8113469,87.2905885&z=16&output=embed"
-                className="h-64 w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
-          </div>
+      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+          <p className="border-b border-slate-200 bg-[#f1f7fd] px-4 py-3 font-heading text-sm font-semibold text-slate-900">
+            Head Office — Itahari
+          </p>
+          <iframe
+            title="Blue Fox Pvt Ltd Itahari Location"
+            src="https://maps.google.com/maps?q=26.6640614,87.2748195&z=16&output=embed"
+            className="h-64 w-full border-0 md:h-80"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+          <p className="border-b border-slate-200 bg-[#f1f7fd] px-4 py-3 font-heading text-sm font-semibold text-slate-900">
+            Branch Office — Dharan
+          </p>
+          <iframe
+            title="Blue Fox Pvt Ltd Dharan Location"
+            src="https://maps.google.com/maps?q=26.8113469,87.2905885&z=16&output=embed"
+            className="h-64 w-full border-0 md:h-80"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
       </div>
     </div>
+
+      {notice && (
+        <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4" role="dialog" aria-modal="true">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setNotice(null)} />
+          <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+            <div className="flex items-start gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary">
+                <FaInfoCircle size={18} />
+              </span>
+              <div className="min-w-0">
+                <h3 className="font-heading text-lg font-bold text-gray-900">{notice.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">{notice.body}</p>
+              </div>
+            </div>
+            <p className="mt-4 rounded-xl bg-[#e0f1f2] px-4 py-3 text-xs font-medium text-slate-600">
+              Don&apos;t remove the generated message from the Message box — it stays until you send the enquiry.
+            </p>
+            <button
+              onClick={() => setNotice(null)}
+              className="mt-5 w-full rounded-full bg-[#0b7be5] px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

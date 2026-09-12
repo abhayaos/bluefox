@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import logo from '../assets/brand/logo.svg'
 import QuickEnquiryModal from './QuickEnquiryModal'
@@ -102,17 +102,24 @@ export default function Navbar() {
 
   const closeMobile = () => setMobileOpen(false)
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
   return (
     <>
       {/* Main navigation */}
       <nav className="border-b border-slate-200/60 bg-white/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between gap-6 py-3.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between gap-4 py-3.5">
             <a href="/" className="flex items-center gap-3 shrink-0">
-              <img src={logo} alt="Blue Fox" className="h-10 w-auto" />
+              <img src={logo} alt="Blue Fox" className="h-9 sm:h-10 w-auto" />
             </a>
 
-            <div className="hidden lg:flex items-center gap-7">
+            <div className="hidden lg:flex items-center gap-5 xl:gap-6">
               <NavLink to="/">Home</NavLink>
 
               <div className="relative group">
@@ -152,19 +159,20 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen((prev) => !prev)}
-              className="lg:hidden flex items-center justify-center px-5 h-11 rounded-full bg-primary text-white text-sm font-semibold transition-colors hover:bg-primary-700"
+              className="lg:hidden flex items-center justify-center gap-2 px-4 sm:px-5 h-10 rounded-full bg-primary text-white text-sm font-semibold transition-colors hover:bg-primary-700"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             >
               {mobileOpen ? 'Close' : 'Menu'}
             </button>
           </div>
         </div>
+      </nav>
 
-        {mobileOpen && (
-          <div className="lg:hidden fixed inset-0 z-[999]">
+      {mobileOpen && (
+          <div className="fixed inset-0 z-[999] lg:hidden">
             <div className="absolute inset-0 bg-black/50" onClick={closeMobile} />
 
-            <div className="absolute inset-y-0 left-0 flex w-full flex-col bg-white shadow-2xl animate-slide-in-left">
+            <div className="absolute inset-y-0 left-0 flex max-h-full w-[85%] max-w-md flex-col bg-white shadow-2xl animate-slide-in-left">
               <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
                 <span className="flex h-11 items-center">
                   <img src={logo} alt="Blue Fox" className="h-9 w-auto" />
@@ -271,7 +279,6 @@ export default function Navbar() {
             </div>
           </div>
         )}
-      </nav>
 
       <QuickEnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} />
     </>

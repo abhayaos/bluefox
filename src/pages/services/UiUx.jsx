@@ -195,7 +195,7 @@ function Faq() {
 
 const sections = (
   <>
-    <section className="max-w-6xl mx-auto px-6 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Industries We Serve</p>
@@ -229,7 +229,7 @@ const sections = (
       </div>
     </section>
 
-    <section className="max-w-6xl mx-auto px-6 pt-10 pb-16">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-16">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Other Services</p>
@@ -260,7 +260,7 @@ const sections = (
       </div>
     </section>
 
-    <section className="max-w-6xl mx-auto px-6 pt-10 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Valued Partners</p>
@@ -282,7 +282,7 @@ const sections = (
       </div>
     </section>
 
-    <section className="max-w-6xl mx-auto px-6 pb-24">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24">
       <div className="flex items-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">FAQs</p>

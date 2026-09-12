@@ -68,15 +68,16 @@ export default function QuickEnquiryModal({ open, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[9999] overflow-y-auto overscroll-contain"
       role="dialog"
       aria-modal="true"
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
 
-      <div className="relative z-10 grid w-full max-w-5xl overflow-hidden rounded-xl bg-white shadow-2xl md:grid-cols-[1.3fr_1fr]">
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 md:p-8">
+      <div className="relative flex min-h-full items-end justify-center sm:items-center sm:p-4">
+        <div className="relative z-10 grid w-full max-w-5xl overflow-hidden rounded-t-2xl bg-white shadow-2xl sm:rounded-xl md:grid-cols-[1.3fr_1fr]">
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="p-5 pt-6 sm:p-8">
           <button
             onClick={onClose}
             aria-label="Close"
@@ -212,7 +213,7 @@ export default function QuickEnquiryModal({ open, onClose }) {
         </form>
 
         {/* Contact info */}
-        <div className="bg-[#0b7be5] p-6 text-white md:p-8">
+        <div className="bg-[#0b7be5] p-5 text-white sm:p-8">
           <p className="font-heading text-xl font-bold leading-snug">
             We would love to
             <br /> hear from you
@@ -263,6 +264,7 @@ export default function QuickEnquiryModal({ open, onClose }) {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -132,7 +132,7 @@ const partnerships = [
 const sections = (
   <>
     {/* Services */}
-    <section className="max-w-6xl mx-auto px-6 pt-16 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Services</p>
@@ -176,7 +176,7 @@ const sections = (
     </section>
 
     {/* Marquee Words */}
-    <section className="max-w-6xl mx-auto px-6 pt-4 pb-8">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-4 pb-8">
       <div className="flex flex-col gap-5">
         {marqueeWords.map((row, rowIndex) => (
           <div
@@ -207,7 +207,7 @@ const sections = (
       </div>
     </section>
     <section className="bg-[#a9d6ff]">
-      <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Work Flow</p>
@@ -252,7 +252,7 @@ const sections = (
     </section>
 
     {/* Portfolio */}
-    <section className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Portfolio</p>
@@ -286,7 +286,7 @@ const sections = (
     </section>
 
     {/* Why Choose Us */}
-    <section className="max-w-6xl mx-auto px-6 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Why Choose Us</p>
@@ -321,7 +321,7 @@ const sections = (
     </section>
 
     {/* Other Services */}
-    <section className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Other Services</p>
@@ -353,7 +353,7 @@ const sections = (
     </section>
 
     {/* Partners */}
-    <section className="max-w-6xl mx-auto px-6 pt-10 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Valued Partners</p>

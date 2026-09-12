@@ -6,7 +6,7 @@ export default function ServiceLayout({ service, showDetails = true, showCta = t
     <main className="flex-1">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-white to-[#eef2ff]">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-left">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16 text-left">
           <div className={heroImage ? 'grid items-center gap-10 lg:grid-cols-2' : ''}>
             <div>
               <p className="text-primary font-medium text-sm tracking-wide uppercase mb-4">
@@ -36,7 +36,7 @@ export default function ServiceLayout({ service, showDetails = true, showCta = t
 
       {/* Feature boxes */}
       {features.length > 0 && (
-        <section className="max-w-6xl mx-auto px-6 pb-6 pt-16">
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-6 pt-16">
           <div className="grid gap-6 md:grid-cols-3">
             {features.map((feature) => (
               <div

@@ -414,7 +414,7 @@ const partnerships = [
 const sections = (
   <>
     {/* Stats bar */}
-    <section className="max-w-6xl mx-auto px-6 pt-10">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-10">
       <div className="grid grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-primary/10">
         {stats.map((stat, i) => (
           <div
@@ -436,7 +436,7 @@ const sections = (
     </section>
 
     {/* Feature boxes */}
-    <section className="max-w-6xl mx-auto px-6 pb-6 pt-16">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-6 pt-16">
       <div className="grid gap-6 md:grid-cols-3">
         {features.map((feature) => (
           <div
@@ -456,7 +456,7 @@ const sections = (
     </section>
 
     {/* Industries */}
-    <section className="max-w-6xl mx-auto px-6 pt-16 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Industries We Serve</p>
@@ -491,7 +491,7 @@ const sections = (
     </section>
 
     {/* Pricing */}
-    <section className="max-w-6xl mx-auto px-6 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Pricing Plan</p>
@@ -506,7 +506,7 @@ const sections = (
 
     {/* Roadmap */}
     <section className="bg-[#a9d6ff]">
-      <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Roadmap</p>
@@ -551,7 +551,7 @@ const sections = (
     </section>
 
     {/* Partners */}
-    <section className="max-w-6xl mx-auto px-6 pt-20 pb-24">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-24">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Valued Partners</p>

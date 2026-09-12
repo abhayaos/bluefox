@@ -44,7 +44,7 @@ export default function Career() {
     <main className="flex-1 mb-16">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-white to-[#eef2ff]">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-left">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16 text-left">
           <div className="flex items-center justify-start gap-4 text-primary">
             <span className="h-px w-10 bg-primary" />
             <p className="text-xs font-bold tracking-[0.25em] uppercase">Career</p>
@@ -73,7 +73,7 @@ export default function Career() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
 
         <div className="mt-16">
           <p className="text-center text-primary font-medium uppercase tracking-wide mb-2">Open Roles</p>

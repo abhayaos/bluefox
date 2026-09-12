@@ -89,7 +89,7 @@ export default function Karobar() {
     <main className="flex-1">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-white to-[#eef2ff]">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className="flex flex-col items-center lg:items-start">
               <div className="relative mt-8 w-full max-w-sm">
@@ -154,7 +154,7 @@ export default function Karobar() {
 
         {/* Business categories strip */}
         <div className="border-t border-primary-100 bg-white/60 backdrop-blur-sm">
-          <div className="max-w-6xl mx-auto px-6 py-6">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
             <p className="text-center text-sm font-bold text-slate-900 mb-5">
               Built for all growing businesses
             </p>
@@ -187,7 +187,7 @@ export default function Karobar() {
       </section>
 
       {/* Coupon */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Special Offer</p>
@@ -257,7 +257,7 @@ export default function Karobar() {
 
       {/* What is Karobar */}
       <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-20">
           <div className="flex items-center justify-center gap-4 text-primary mb-4">
             <span className="h-px w-10 bg-primary" />
             <p className="text-xs font-bold tracking-[0.25em] uppercase">What is Karobar?</p>
@@ -323,7 +323,7 @@ export default function Karobar() {
       </section>
 
       {/* Pricing plans */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Karobar Pricing Plans</p>
@@ -483,7 +483,7 @@ export default function Karobar() {
       </section>
 
       {/* Contact CTA */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-24">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-24">
         <div className="relative overflow-hidden rounded-3xl bg-[#0b7be5] px-8 py-16 text-center shadow-2xl shadow-primary/30 md:px-16">
           <div className="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-white/10" />
           <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-white/10" />

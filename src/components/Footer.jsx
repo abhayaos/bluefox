@@ -47,7 +47,7 @@ export default function Footer() {
     <footer className="bg-[#f8f9ff] text-slate-500 border-t border-slate-200">
       {/* Top banner */}
       <div className="bg-[#e0f1f2]">
-        <div className="max-w-6xl mx-auto py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-10">
           <div className="md:max-w-2xl">
             <h2 className="font-heading text-3xl md:text-5xl font-bold leading-snug mb-4 flex items-center gap-5">
               <span className="w-2 self-stretch rounded-full bg-gradient-to-b from-primary via-primary-200 to-white/40" />
@@ -72,13 +72,13 @@ export default function Footer() {
                 <span className="w-12 h-12 rounded-2xl bg-white border border-slate-300 flex items-center justify-center shrink-0">
                   <FaPhoneAlt className="text-primary" size={18} />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">
                     Reach out now!
                   </p>
                   <a
                     href="tel:+9779802755605"
-                    className="block font-heading text-3xl md:text-4xl font-bold text-primary hover:text-primary-700 transition-colors"
+                    className="block whitespace-nowrap font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-primary hover:text-primary-700 transition-colors"
                   >
                     +977 9802755605
                   </a>
@@ -91,8 +91,8 @@ export default function Footer() {
 
       <hr className="border-slate-200" />
 
-      <div className="max-w-6xl mx-auto py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12">
           {/* Development services */}
           <div>
             <h3 className="text-gray-900 font-semibold mb-5 font-heading">Development services</h3>
@@ -135,7 +135,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-primary shrink-0 mt-0.5" size={16} />
-                <span className="text-sm">
+                <span className="text-sm min-w-0 flex-1">
                   <span className="block font-medium text-gray-900">Head Office:</span>
                   Itahari-6, Sky Plaza, 2nd Floor,
                   <br /> Nepal
@@ -161,7 +161,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-primary shrink-0 mt-0.5" size={16} />
-                <span className="text-sm">
+                <span className="text-sm min-w-0 flex-1">
                   <span className="block font-medium text-gray-900">Branch Office:</span>
                   Dharan 15 Sadan Road / Everest Line,
                   <br /> Meru Complex
@@ -188,7 +188,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-8 flex w-full flex-wrap items-center justify-between gap-6 bg-[#0b7be5] py-4">
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-6">
+        <div className="mx-auto flex w-full max-w-6xl px-4 sm:px-6 flex-wrap items-center justify-between gap-6">
           <p className="text-sm font-medium text-white">
             © 2024 Blue Fox Pvt Ltd. All Rights Reserved.
           </p>

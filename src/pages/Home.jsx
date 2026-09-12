@@ -186,10 +186,10 @@ export default function Home() {
     <main className="flex-1">
       {/* lefted hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#f8f9ff] to-white">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-14">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-14">
+          <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
             <div className="text-left">
-              <h1 className="font-heading text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 mb-7">
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 mb-7">
                 Transform Your Vision Into A{' '}
                 <span className="relative inline-block text-primary">
                   Digital Reality
@@ -198,7 +198,7 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
+              <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
                 We deliver enterprise custom software, resilient cloud architecture, cutting-edge
                 mobile apps, and hyper-growth performance engineering designed to scale your
                 business across borders.
@@ -207,7 +207,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-start gap-4 mb-8">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center rounded-full bg-primary text-white px-9 py-3.5 font-semibold shadow-md shadow-primary/30 hover:bg-primary-700 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                  className="inline-flex items-center rounded-full bg-primary text-white px-8 sm:px-9 py-3.5 font-semibold shadow-md shadow-primary/30 hover:bg-primary-700 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
                 >
                   Let's Get Started
                 </Link>
@@ -219,7 +219,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-2.5 shadow-sm">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-slate-200 bg-white px-4 sm:px-5 py-2.5 shadow-sm">
                 <span className="text-[10px] font-bold text-slate-400 tracking-widest">INSTANT CONSULTATION</span>
                 <a href="tel:+9779817303073" className="flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
                   <FaPhoneAlt size={12} />
@@ -229,13 +229,13 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center">
-              <img src={heroImg} alt="Blue Fox hero illustration" className="w-full max-w-lg object-contain" />
+              <img src={heroImg} alt="Blue Fox hero illustration" className="w-full max-w-[260px] sm:max-w-sm md:max-w-md lg:max-w-lg object-contain" />
             </div>
           </div>
         </div>
 
         {/* Metrics bar */}
-        <div className="max-w-5xl mx-auto px-6 pb-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-14">
           <div className="grid grid-cols-2 lg:grid-cols-4 bg-white rounded-2xl border border-slate-200 shadow-xl shadow-primary/10 overflow-hidden">
             {metrics.map((metric, i) => (
               <div
@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="max-w-6xl mx-auto px-6 pb-20">
+      <section id="services" className="max-w-6xl mx-auto px-4 sm:px-6 pb-20 scroll-mt-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Services</p>
@@ -267,7 +267,7 @@ export default function Home() {
         <h2 className="font-heading text-3xl md:text-5xl 2xl:text-6xl font-bold text-slate-900 text-center mb-4">
           Exceptional Services For Your Business Growth
         </h2>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto text-center mb-12">
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto text-center mb-12">
           Discover our wide range of digital solutions to enhance your online presence.{' '}
           <Link to="/services" className="font-semibold text-[#0b7be5] hover:underline">
             See all
@@ -293,7 +293,7 @@ export default function Home() {
       </section>
 
       {/* Our Expertise */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Expertise</p>
@@ -340,7 +340,7 @@ export default function Home() {
       </section>
 
       {/* How We Work */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">How We Work</p>
@@ -374,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 text-left">
             <div className="flex items-center gap-4 text-primary mb-4">
@@ -401,16 +401,16 @@ export default function Home() {
               <span className="absolute -bottom-12 -left-10 z-0 h-52 w-52 rounded-full bg-primary/20" />
               <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 h-72 w-72 rounded-full bg-[#a9d6ff]/50" />
 
-              <div className="relative z-10 rounded-3xl bg-white p-8 shadow-xl shadow-primary/10">
+              <div className="relative z-10 rounded-3xl bg-white p-6 md:p-8 shadow-xl shadow-primary/10">
                 {whoStats.map((stat) => (
                   <div
                     key={stat.label}
                     className="flex items-center justify-between gap-6 border-b border-slate-100 py-6 first:pt-0 last:border-0 last:pb-0"
                   >
-                    <span className="font-heading text-5xl font-bold bg-gradient-to-r from-primary to-primary-200 bg-clip-text text-transparent">
+                    <span className="font-heading text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary to-primary-200 bg-clip-text text-transparent">
                       {stat.value}
                     </span>
-                    <span className="text-slate-700 font-medium leading-snug max-w-[60%]">{stat.label}</span>
+                    <span className="text-sm sm:text-base text-slate-700 font-medium leading-snug max-w-[55%]">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -420,7 +420,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Testimonials</p>
@@ -432,7 +432,7 @@ export default function Home() {
       </section>
 
       {/* Our Valued Partners */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Valued Partners</p>

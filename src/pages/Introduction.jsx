@@ -23,10 +23,10 @@ export default function Introduction() {
   return (
     <main className="flex-1">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-white to-[#eef2ff]">
-        <div className="max-w-6xl mx-auto px-6 py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
-              <h1 className="font-heading text-5xl font-bold text-gray-900 mb-8">
+              <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-8">
                 Make It Possible with{' '}
                 <span className="relative inline-block text-primary">
                   Blue Fox
@@ -52,7 +52,7 @@ export default function Introduction() {
 
       {/* Why choose us */}
       <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-center gap-4 text-primary mb-4">
             <span className="h-px w-10 bg-primary" />
             <p className="text-xs font-bold tracking-[0.25em] uppercase">Why Choose Us</p>
@@ -91,7 +91,7 @@ export default function Introduction() {
 
       {/* Who we are */}
       <section className="bg-gradient-to-b from-white to-[#eef2ff] py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Left column */}
             <div className="flex flex-col justify-center">
@@ -165,7 +165,7 @@ export default function Introduction() {
 
       {/* MD message */}
       <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-center gap-4 text-primary mb-4">
             <span className="h-px w-10 bg-primary" />
             <p className="text-xs font-bold tracking-[0.25em] uppercase">Message from the CEO</p>
@@ -215,7 +215,7 @@ export default function Introduction() {
 
       {/* Stats */}
       <section className="border-t border-slate-100 bg-gradient-to-b from-white to-[#eef2ff] py-16">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
           {stats.map((stat) => (
             <div key={stat.label} className="border-r border-slate-200 last:border-r-0">
               <p className="font-heading text-4xl md:text-5xl font-bold text-gray-900">

@@ -58,7 +58,7 @@ export default function Work() {
     <main className="flex-1 mb-16">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#f1f7fd]">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <div className="flex items-center gap-4 text-primary mb-4">
@@ -89,7 +89,7 @@ export default function Work() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid gap-x-16 lg:grid-cols-2">
           {steps.map((item) => (
             <div key={item.title} className="group relative border-t border-slate-200 py-9 transition-colors duration-300 hover:border-[#0b7be5]">

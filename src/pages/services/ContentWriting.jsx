@@ -45,7 +45,7 @@ const goals = [
 const sections = (
   <>
     {/* Content Writing for your Needs */}
-    <section className="max-w-6xl mx-auto px-6 pt-16 pb-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-20">
       <div className="flex items-center justify-center gap-4 text-primary mb-4">
         <span className="h-px w-10 bg-primary" />
         <p className="text-xs font-bold tracking-[0.25em] uppercase">Content Writing strategy &amp; research</p>
@@ -85,7 +85,7 @@ const sections = (
 
     {/* Goals Of Content Writing */}
     <section className="bg-[#a9d6ff]">
-      <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">
           <span className="h-px w-10 bg-primary" />
           <p className="text-xs font-bold tracking-[0.25em] uppercase">Our Goals</p>
