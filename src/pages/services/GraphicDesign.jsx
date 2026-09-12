@@ -82,7 +82,7 @@ const workflow = [
 ]
 
 const portfolio = [
-  { name: 'Graphic Design Portfolio', img: dishImg },
+  { name: 'Social Media Post', img: dishImg },
   { name: 'Grilled Sekuwa', img: sekuwaImg },
   { name: 'Labour Day', img: labourDayImg },
   { name: 'Wafer', img: maferImg },
