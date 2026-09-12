@@ -5,31 +5,49 @@ import abhayaImage from '../assets/about/abhaya.jfif'
 import anmolImage from '../assets/about/anmol.jpg'
 import zeenatImage from '../assets/about/zeenat.jpg'
 
-const members = [
+const teams = [
   {
-    name: 'Mitra Thapa Magar',
-    role: 'CEO',
-    img: mdImage,
+    name: 'Itahari Team',
+    icon: '🏢',
+    members: [
+      {
+        name: 'Mitra Thapa Magar',
+        role: 'CEO',
+        img: mdImage,
+      },
+      {
+        name: 'Anmol Budhathoki',
+        role: 'Managing Director',
+        img: anmolImage,
+      },
+      {
+        name: 'Bipin Chapagain',
+        role: 'BDO',
+        img: bdImage,
+      },
+    ],
   },
   {
-    name: 'Anmol Budhathoki',
-    role: 'Managing Director',
-    img: anmolImage,
+    name: 'Dharan Team',
+    icon: '🏢',
+    members: [
+      {
+        name: 'Zeenat Rai',
+        role: 'Advisor',
+        img: zeenatImage,
+      },
+    ],
   },
   {
-    name: 'Bipin Chapagain',
-    role: 'BDO',
-    img: bdImage,
-  },
-  {
-    name: 'Zeenat Rai',
-    role: 'Advisor',
-    img: zeenatImage,
-  },
-  {
-    name: 'Abhaya Bikram Shahi',
-    role: 'Full Stack Developer',
-    img: abhayaImage,
+    name: 'Remote Team',
+    icon: '🌐',
+    members: [
+      {
+        name: 'Abhaya Bikram Shahi',
+        role: 'Full Stack Developer',
+        img: abhayaImage,
+      },
+    ],
   },
 ]
 
@@ -103,9 +121,27 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {members.map((member, index) => (
-            <MemberCard key={member.name} member={member} index={index} />
+        <div className="space-y-20">
+          {teams.map((team, teamIndex) => (
+            <div key={team.name}>
+              <div className="text-center mb-10">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-slate-900 inline-flex items-center gap-3">
+                  <span className="text-primary">{team.icon}</span>
+                  {team.name}
+                </h2>
+                <span className="mt-3 block h-px w-24 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
+              </div>
+
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {team.members.map((member, index) => (
+                  <MemberCard
+                    key={member.name}
+                    member={member}
+                    index={teamIndex * 3 + index}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
