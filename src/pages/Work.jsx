@@ -6,6 +6,7 @@ import {
   FaRocket,
   FaLifeRing,
 } from 'react-icons/fa'
+import workImg from '../assets/home/Website_Creator-pana.svg'
 
 const steps = [
   {
@@ -57,23 +58,34 @@ export default function Work() {
     <main className="flex-1 mb-16">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#f1f7fd]">
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-left">
-          <div className="flex items-center gap-4 text-primary mb-4">
-            <span className="h-px w-10 bg-primary" />
-            <p className="text-xs font-bold tracking-[0.25em] uppercase">We Make It Happen</p>
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <div className="flex items-center gap-4 text-primary mb-4">
+                <span className="h-px w-10 bg-primary" />
+                <p className="text-xs font-bold tracking-[0.25em] uppercase">We Make It Happen</p>
+              </div>
+              <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4 max-w-3xl">
+                Working Steps We{' '}
+                <span className="relative inline-block text-primary">
+                  Follow
+                  <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-primary-200" />
+                </span>
+              </h1>
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+                We follow the sequential and systematic work process that results in a desirable and
+                meaningful output. The series of patterns describe how something goes from being
+                undone to done.
+              </p>
+            </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <img
+                src={workImg}
+                alt="Blue Fox work process illustration"
+                className="w-full max-w-md object-contain"
+              />
+            </div>
           </div>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4 max-w-3xl">
-            Working Steps We{' '}
-            <span className="relative inline-block text-primary">
-              Follow
-              <span aria-hidden className="absolute left-0 -bottom-2 h-2 w-full -rotate-1 rounded-[50%] bg-primary-200" />
-            </span>
-          </h1>
-          <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
-            We follow the sequential and systematic work process that results in a desirable and
-            meaningful output. The series of patterns describe how something goes from being undone
-            to done.
-          </p>
         </div>
       </section>
 

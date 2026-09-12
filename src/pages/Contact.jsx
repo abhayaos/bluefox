@@ -26,6 +26,7 @@ const serviceOptions = [
   'SMM Premium',
   'Graphic Design',
   'Content Writing',
+  'Internship',
   'Other',
 ]
 
@@ -39,8 +40,10 @@ const infoCards = [
   {
     icon: FaEnvelope,
     title: 'Our Email',
-    value: 'bluefoxpvtltd@gmail.com',
-    href: 'mailto:bluefoxpvtltd@gmail.com',
+    values: [
+      { value: 'bluefoxpvtltd@gmail.com', href: 'mailto:bluefoxpvtltd@gmail.com' },
+      { value: 'itahari@bluefox.com.np', href: 'mailto:itahari@bluefox.com.np' },
+    ],
   },
   {
     icon: FaMapMarkerAlt,
@@ -53,13 +56,17 @@ const infoCards = [
 function Contact() {
   const [searchParams] = useSearchParams()
   const selectedPackage = searchParams.get('package') || ''
+  const extraOptions = selectedPackage && !serviceOptions.includes(selectedPackage) ? [selectedPackage] : []
+  const allOptions = [...serviceOptions, ...extraOptions]
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
     subject: '',
     service: selectedPackage,
-    message: '',
+    message: selectedPackage
+      ? `I would like to enquire about ${selectedPackage}.`
+      : '',
   })
   const [status, setStatus] = useState('idle')
   const [errorDetail, setErrorDetail] = useState('')
@@ -216,6 +223,11 @@ function Contact() {
                   {option}
                 </option>
               ))}
+              {extraOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option} (Other)
+                </option>
+              ))}
             </select>
           </div>
 
@@ -276,7 +288,19 @@ function Contact() {
                 <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
                   {card.title}
                 </h3>
-                {card.href ? (
+                {card.values ? (
+                  <div className="flex flex-col gap-1">
+                    {card.values.map(({ value, href }) => (
+                      <a
+                        key={value}
+                        href={href}
+                        className="mt-1 block break-all font-heading text-lg font-semibold text-slate-900 transition-colors duration-200 hover:text-[#0b7be5]"
+                      >
+                        {value}
+                      </a>
+                    ))}
+                  </div>
+                ) : card.href ? (
                   <a
                     href={card.href}
                     className="mt-2 block font-heading text-lg font-semibold text-slate-900 transition-colors duration-200 hover:text-[#0b7be5]"

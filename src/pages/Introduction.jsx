@@ -1,5 +1,7 @@
 import { FaQuoteLeft, FaCogs, FaTrophy, FaPuzzlePiece, FaUserTie, FaCalendarCheck, FaHeadset, FaMountain, FaBullseye } from 'react-icons/fa'
 import mdImage from '../assets/about/md.jpg'
+import heroImg from '../assets/home/Website_Creator-pana.svg'
+import whyChooseImg from '../assets/home/Programmer-amico.svg'
 
 const stats = [
   { value: '80+', label: 'Team Members' },
@@ -21,19 +23,30 @@ export default function Introduction() {
   return (
     <main className="flex-1">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f8f9ff] via-white to-[#eef2ff]">
-        <div className="max-w-6xl mx-auto px-6 py-24 text-left">
-          <h1 className="font-heading text-5xl font-bold text-gray-900 mb-8">
-            Make It Possible with{' '}
-            <span className="relative inline-block text-primary">
-              Blue Fox
-              <span aria-hidden className="absolute left-0 -bottom-2 h-2.5 w-full -rotate-1 rounded-[50%] bg-primary-200" />
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl leading-relaxed text-left">
-            Step into the future of IT solutions with Blue Fox. We offer you a wide range of
-            services, including Web Development, SEO, Mobile App Development, and Digital
-            Marketing! Let us be your trusted guide to navigate the dynamic digital landscape!
-          </p>
+        <div className="max-w-6xl mx-auto px-6 py-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h1 className="font-heading text-5xl font-bold text-gray-900 mb-8">
+                Make It Possible with{' '}
+                <span className="relative inline-block text-primary">
+                  Blue Fox
+                  <span aria-hidden className="absolute left-0 -bottom-2 h-2.5 w-full -rotate-1 rounded-[50%] bg-primary-200" />
+                </span>
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl leading-relaxed text-left">
+                Step into the future of IT solutions with Blue Fox. We offer you a wide range of
+                services, including Web Development, SEO, Mobile App Development, and Digital
+                Marketing! Let us be your trusted guide to navigate the dynamic digital landscape!
+              </p>
+            </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <img
+                src={heroImg}
+                alt="Blue Fox IT solutions illustration"
+                className="w-full max-w-md object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -49,20 +62,29 @@ export default function Introduction() {
             Empowering Businesses with Prominent IT Solutions
           </h2>
 
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="group rounded-2xl bg-white p-8 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
-              >
-                <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-200">
-                  <feature.icon size={24} />
-                </span>
-                <h3 className="font-heading text-lg font-semibold text-slate-900">
-                  {feature.title}
-                </h3>
-              </div>
-            ))}
+          <div className="mt-14 grid lg:grid-cols-2 gap-12 items-center">
+            <div className="hidden lg:flex items-center justify-center order-2 lg:order-1">
+              <img
+                src={whyChooseImg}
+                alt="Why choose Blue Fox illustration"
+                className="w-full max-w-md object-contain"
+              />
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6 order-1 lg:order-2">
+              {features.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="group rounded-2xl bg-white p-8 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+                >
+                  <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-200">
+                    <feature.icon size={24} />
+                  </span>
+                  <h3 className="font-heading text-lg font-semibold text-slate-900">
+                    {feature.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -46,6 +46,16 @@ const subServices = [
   { icon: FaImage, title: 'Social Media Banners' },
   { icon: FaPaintBrush, title: 'Illustrations' },
   { icon: FaPrint, title: 'Print Designs' },
+  { icon: FaDesktop, title: 'UX/UI Design' },
+  { icon: FaImage, title: 'Apparels Design' },
+  { icon: FaPenNib, title: 'Labeling Design' },
+  { icon: FaGem, title: 'Packaging Design' },
+  { icon: FaCheck, title: 'Product Design' },
+]
+
+const marqueeWords = [
+  ['Copywriting', 'Motion Graphics', 'Re-Branding', 'Package Design', 'Branding', 'Video Editing'],
+  ['Digital Marketing', 'Brand Landing Pages', 'Social Media', 'Print Design', 'Brand Visibility', 'Trainings'],
 ]
 
 const workflow = [
@@ -165,7 +175,37 @@ const sections = (
         </div>
     </section>
 
-    {/* Work Flow */}
+    {/* Marquee Words */}
+    <section className="max-w-6xl mx-auto px-6 pt-4 pb-8">
+      <div className="flex flex-col gap-5">
+        {marqueeWords.map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className="relative overflow-hidden py-2"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              WebkitMaskImage:
+                'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            }}
+          >
+            <div
+              className={`flex w-max items-center gap-10 ${
+                rowIndex === 1 ? 'animate-marquee-reverse' : 'animate-marquee'
+              }`}
+            >
+              {[...row, ...row, ...row].map((word, i) => (
+                <span
+                  key={`${word}-${rowIndex}-${i}`}
+                  className="whitespace-nowrap font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-slate-200 transition-colors duration-200 hover:text-primary"
+                >
+                  {word}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
     <section className="bg-[#a9d6ff]">
       <div className="max-w-6xl mx-auto px-6 pt-20 pb-20">
         <div className="flex items-center justify-center gap-4 text-primary mb-4">

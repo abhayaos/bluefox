@@ -31,14 +31,17 @@ export default function OurWork() {
         </p>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 pb-24 w-full">
-        <div className="grid gap-6 md:grid-cols-2">
+      <section className="max-w-4xl mx-auto px-6 pb-24 w-full">
+        <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
-            <div key={`project-${index}`} className="group overflow-hidden bg-white">
+            <div
+              key={`project-${index}`}
+              className="group flex h-72 items-center justify-center overflow-hidden bg-white md:h-96"
+            >
               <img
                 src={project.img}
                 alt={`Project ${index + 1}`}
-                className="w-full transition-all duration-300 group-hover:grayscale group-hover:brightness-90 group-hover:saturate-50"
+                className="h-full w-full object-contain transition-all duration-300 group-hover:grayscale group-hover:brightness-90 group-hover:saturate-50"
               />
             </div>
           ))}
