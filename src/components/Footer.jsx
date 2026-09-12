@@ -13,7 +13,6 @@ const quickLinks = [
   { label: 'About Us', to: '/about/introduction' },
   { label: 'Our Services', to: '/#services' },
   { label: 'Contact Us', to: '/contact' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Career', to: '/career' },
   { label: 'Our Work', to: '/our-work' },
 ]
@@ -78,10 +77,10 @@ export default function Footer() {
                     Reach out now!
                   </p>
                   <a
-                    href="tel:+9779817303073"
+                    href="tel:+9779802755605"
                     className="block font-heading text-3xl md:text-4xl font-bold text-primary hover:text-primary-700 transition-colors"
                   >
-                    9817303073
+                    +977 9802755605
                   </a>
                 </div>
               </div>

@@ -359,15 +359,33 @@ function Contact() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-            <iframe
-              title="Blue Fox Pvt Ltd Location"
-              src="https://maps.google.com/maps?q=26.6640614,87.2748195&z=16&output=embed"
-              className="h-64 w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+              <p className="border-b border-slate-200 bg-[#f1f7fd] px-4 py-3 font-heading text-sm font-semibold text-slate-900">
+                Head Office — Itahari
+              </p>
+              <iframe
+                title="Blue Fox Pvt Ltd Itahari Location"
+                src="https://maps.google.com/maps?q=26.6640614,87.2748195&z=16&output=embed"
+                className="h-64 w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+              <p className="border-b border-slate-200 bg-[#f1f7fd] px-4 py-3 font-heading text-sm font-semibold text-slate-900">
+                Branch Office — Dharan
+              </p>
+              <iframe
+                title="Blue Fox Pvt Ltd Dharan Location"
+                src="https://maps.google.com/maps?q=26.8113469,87.2905885&z=16&output=embed"
+                className="h-64 w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </div>
