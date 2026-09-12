@@ -259,7 +259,7 @@ const sections = (
         <span className="h-px w-10 bg-primary" />
       </div>
       <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 text-center mb-6">
-        Social Media Posts
+        Graphic Design Portfolio
       </h2>
 
       <div className="grid gap-8 md:grid-cols-2">
