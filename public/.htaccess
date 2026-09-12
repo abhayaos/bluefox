@@ -1,0 +1,20 @@
+# Route all requests to the SPA entry point so sub-pages (e.g. /services/*, /contact) don't 404
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Don't rewrite existing files or directories (assets, images, etc.)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Everything else goes to index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Force HTTPS (optional, uncomment if your SSL is active and you want to force it)
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
