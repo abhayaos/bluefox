@@ -1,3 +1,19 @@
+import amalawholeImg from '../assets/our-work/amalawhole.jfif'
+import mohambattiImg from '../assets/our-work/mohambatti.jfif'
+import rocksugarImg from '../assets/our-work/rocksugar.jfif'
+
+const projects = [
+  {
+    img: amalawholeImg,
+  },
+  {
+    img: mohambattiImg,
+  },
+  {
+    img: rocksugarImg,
+  },
+]
+
 export default function OurWork() {
   return (
     <main className="flex flex-1 flex-col bg-gradient-to-b from-[#f8f9ff] to-white">
@@ -16,8 +32,16 @@ export default function OurWork() {
       </section>
 
       <section className="max-w-6xl mx-auto px-6 pb-24 w-full">
-        <div className="flex items-center justify-center py-24 px-6 text-center">
-          <p className="text-xl text-slate-500">No work available yet</p>
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <div key={`project-${index}`} className="group overflow-hidden bg-white">
+              <img
+                src={project.img}
+                alt={`Project ${index + 1}`}
+                className="w-full transition-all duration-300 group-hover:grayscale group-hover:brightness-90 group-hover:saturate-50"
+              />
+            </div>
+          ))}
         </div>
       </section>
     </main>

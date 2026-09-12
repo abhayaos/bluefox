@@ -24,6 +24,7 @@
   --animate-ping-slow: ping-slow 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
   --animate-slide-in-left: slide-in-left 0.3s ease-out;
   --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 32s linear infinite;
 
   @keyframes marquee {
     from {
@@ -31,6 +32,15 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
     }
   }
 
@@ -117,17 +127,17 @@ body {
   }
 }
 
-.phone-input .PhoneInput {
+.phone-input.PhoneInput {
   display: flex;
   width: 100%;
   border: 1px solid #cbd5e1;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   background: #fff;
   overflow: hidden;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.phone-input .PhoneInput:focus-within {
+.phone-input.PhoneInput:focus-within {
   border-color: #0b7be5;
   box-shadow: 0 0 0 2px rgb(11 123 229 / 0.2);
 }

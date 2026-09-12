@@ -81,10 +81,9 @@ function Contact() {
         EMAILJS.templateId,
         {
           to_email: EMAILJS.toEmail,
-          from_name: form.name,
-          from_email: form.email,
-          reply_to: form.email,
-          phone: form.phone,
+          name: form.name,
+          email: form.email,
+          phoneNum: form.phone,
           service: form.service,
           subject: form.subject || 'Contact Enquiry',
           message: form.message,
@@ -177,6 +176,7 @@ function Contact() {
                 international
                 defaultCountry="NP"
                 flags={flags}
+                placeholder="98XXXXXXXX"
                 value={form.phone}
                 onChange={(value) => setForm({ ...form, phone: value || '' })}
                 className="phone-input"

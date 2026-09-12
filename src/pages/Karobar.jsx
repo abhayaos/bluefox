@@ -5,6 +5,7 @@ import {
   FaTag,
   FaCopy,
   FaGift,
+  FaTimes,
   FaUtensils,
   FaHeartbeat,
   FaWrench,
@@ -15,6 +16,7 @@ import {
   FaLaptop,
 } from 'react-icons/fa'
 import karobarHero from '../assets/hero-karobar.png'
+import karobarAppQr from '../assets/appqr.jpg'
 import karobarPreview from '../assets/karobar/karobar.webp'
 import karobarRecord from '../assets/karobar/karobar-record.webp'
 import karobarParties from '../assets/karobar/karobar-parties.webp'
@@ -81,6 +83,7 @@ const businessCategories = [
 
 export default function Karobar() {
   const [couponCopied, setCouponCopied] = useState(false)
+  const [qrOpen, setQrOpen] = useState(false)
 
   return (
     <main className="flex-1">
@@ -89,57 +92,62 @@ export default function Karobar() {
         <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className="flex flex-col items-center lg:items-start">
-              <span className="inline-flex items-center rounded-full bg-primary-50 px-4 py-1.5 text-xs font-bold tracking-[0.2em] text-primary uppercase">
-                Use Coupon: BLUEFOX
-              </span>
-
               <div className="relative mt-8 w-full max-w-sm">
-                <div className="relative flex flex-col overflow-hidden rounded-2xl border-2 border-dashed border-[#0b7be5] bg-white p-6 shadow-lg shadow-primary/10">
-                  <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="relative flex flex-col rounded-2xl border-2 border-dashed border-[#0b7be5] bg-white p-7 pb-12 shadow-lg shadow-primary/10">
+                  <span className="inline-flex w-fit items-center rounded-full bg-white px-4 py-1.5 text-sm font-bold tracking-[0.2em] text-primary uppercase mb-5">
+                    Use Cupon Code
+                  </span>
+                  <div className="flex flex-col items-start gap-4">
                     <div>
-                      <p className="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
-                        Special Offer
-                      </p>
-                      <p className="mt-1 font-heading text-3xl font-bold tracking-widest text-[#0b7be5]">
+                      <p className="font-heading text-4xl font-bold tracking-widest text-[#0b7be5]">
                         BLUEFOX
                       </p>
-                      <p className="mt-0.5 text-xs text-slate-500">
-                        Get 5% OFF on your Karobar subscription
+                      <p className="mt-1.5 text-base text-slate-500">
+                        Get 5% Flat disscount on Premium Subscription
                       </p>
                     </div>
-                    <button
-                      onClick={() => {
-                        navigator.clipboard?.writeText('BLUEFOX').catch(() => {})
-                        setCouponCopied(true)
-                        setTimeout(() => setCouponCopied(false), 2000)
-                      }}
-                      className="inline-flex items-center gap-2 rounded-full bg-[#0b7be5] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
-                    >
-                      <FaCopy size={14} />
-                      {couponCopied ? 'Copied!' : 'Copy Code'}
-                    </button>
                   </div>
-                  <a
-                    href="https://open.karobarapp.com/?c=RdZXWp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary-50 px-5 py-2.5 text-sm font-semibold text-[#0b7be5] transition-colors duration-200 hover:bg-primary-100"
+                  <button
+                    onClick={() => {
+                      navigator.clipboard?.writeText('BLUEFOX').catch(() => {})
+                      setCouponCopied(true)
+                      setTimeout(() => setCouponCopied(false), 2000)
+                    }}
+                    className="absolute bottom-0 left-1/2 z-10 inline-flex -translate-x-1/2 translate-y-1/2 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#0b7be5] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-700"
                   >
-                    <FaGift size={14} />
-                    Claim Karobar Pro
-                  </a>
+                    <FaCopy size={16} />
+                    {couponCopied ? 'Copied!' : 'Copy Code'}
+                  </button>
                 </div>
                 <span className="absolute -left-2 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-slate-100" />
                 <span className="absolute -right-2 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-slate-100" />
               </div>
+              <div className="mt-8 flex w-full max-w-sm gap-3">
+                <a
+                  href="https://karobarapp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#0b7be5] px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-primary-700"
+                >
+                  Visit Website
+                </a>
+                <button
+                  onClick={() => setQrOpen(true)}
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0b7be5] px-5 py-3 text-sm font-semibold text-[#0b7be5] transition-colors duration-200 hover:bg-primary-50"
+                >
+                  Download App
+                </button>
+              </div>
             </div>
 
             <div className="hidden lg:flex items-center justify-center">
-              <img
-                src={karobarHero}
-                alt="Karobar business management app"
-                className="w-64 md:w-72 object-contain"
-              />
+              <div className="w-64 md:w-72 aspect-square overflow-hidden rounded-full bg-[#0b7be5] shadow-2xl shadow-primary/30 ring-8 ring-primary-100">
+                <img
+                  src={karobarHero}
+                  alt="Karobar business management app"
+                  className="h-full w-full rounded-full object-contain p-1"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -211,7 +219,7 @@ export default function Karobar() {
                 BLUEFOX
               </p>
               <p className="mt-2 text-sm text-white/90">
-                Get 5% OFF on your Karobar subscription
+                Get 5% Flat disscount on Premium Subscription
               </p>
             </div>
           </div>
@@ -330,7 +338,7 @@ export default function Karobar() {
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Basic */}
-          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8">
+          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8" style={{ height: '850px' }}>
             <h3 className="font-heading text-2xl font-bold text-slate-900">BASIC</h3>
             <p className="mt-1 inline-flex w-fit items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary uppercase">
               Free Forever
@@ -367,7 +375,7 @@ export default function Karobar() {
           </div>
 
           {/* Gold */}
-          <div className="flex flex-col rounded-3xl border-2 border-[#0b7be5] bg-white p-8 shadow-xl shadow-primary/10">
+          <div className="flex flex-col rounded-3xl border-2 border-[#0b7be5] bg-white p-8 shadow-xl shadow-primary/10" style={{ height: '850px' }}>
             <div className="flex items-center justify-between">
               <h3 className="font-heading text-2xl font-bold text-slate-900">GOLD</h3>
               <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
@@ -414,7 +422,7 @@ export default function Karobar() {
           </div>
 
           {/* Diamond */}
-          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8">
+          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8" style={{ height: '850px' }}>
             <div className="flex items-center justify-between">
               <h3 className="font-heading text-2xl font-bold text-slate-900">DIAMOND</h3>
               <div className="flex items-center gap-2">
@@ -508,6 +516,32 @@ export default function Karobar() {
           </div>
         </div>
       </section>
+
+      {qrOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setQrOpen(false)} />
+          <div className="relative z-10 w-full max-w-sm rounded-2xl bg-white p-8 text-center shadow-2xl">
+            <button
+              onClick={() => setQrOpen(false)}
+              aria-label="Close"
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-colors hover:bg-slate-200"
+            >
+              <FaTimes size={15} />
+            </button>
+            <h3 className="font-heading text-2xl font-bold text-slate-900">Download Karobar App</h3>
+            <p className="mt-1 mb-6 text-sm text-slate-500">Scan the QR code to download</p>
+            <img
+              src={karobarAppQr}
+              alt="Karobar App QR code"
+              className="mx-auto w-56 rounded-xl border border-slate-200 p-2"
+            />
+          </div>
+        </div>
+      )}
     </main>
   )
 }

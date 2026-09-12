@@ -12,6 +12,12 @@ import seoImg from '../../assets/home/SEO_analytics_team-amico.svg'
 import smmImg from '../../assets/home/Mobile_Marketing-pana.svg'
 import contentImg from '../../assets/home/Content Writing.svg'
 import designerGirl from '../../assets/graphic/Designer_Girl.svg'
+import dishImg from '../../assets/graphic-design/dish.avif'
+import sekuwaImg from '../../assets/graphic-design/grilled sekuwa.avif'
+import labourDayImg from '../../assets/graphic-design/labour day.avif'
+import maferImg from '../../assets/graphic-design/mafer.avif'
+import studyImg from '../../assets/graphic-design/study.avif'
+import storeImg from '../../assets/graphic-design/zgvpvmZsK0aRQapQLmoxtDJFL8.avif'
 
 const service = services.find((s) => s.slug === 'graphic-design')
 
@@ -65,12 +71,13 @@ const workflow = [
   },
 ]
 
-const portfolioCategories = ['Logo Design', 'Brochure/Flyer', 'Social Media Design', 'Branding']
-
 const portfolio = [
-  { name: 'Infinity', initials: 'IN' },
-  { name: 'Kwabahal', initials: 'KB' },
-  { name: 'Provision', initials: 'PR' },
+  { name: 'Branding Design', img: dishImg },
+  { name: 'Grilled Sekuwa', img: sekuwaImg },
+  { name: 'Labour Day', img: labourDayImg },
+  { name: 'Mafer', img: maferImg },
+  { name: 'Study Campaign', img: studyImg },
+  { name: 'Store Design', img: storeImg },
 ]
 
 const whyChooseUs = [
@@ -125,19 +132,37 @@ const sections = (
         Our Graphic Design Services
       </h2>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {subServices.map((item) => (
-          <div
-            key={item.title}
-            className="group rounded-2xl border border-slate-200 bg-white p-8 text-center transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-lg"
-          >
-            <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
-              <item.icon size={22} />
-            </span>
-            <h3 className="font-heading text-xl font-semibold text-slate-900">{item.title}</h3>
-          </div>
-        ))}
-      </div>
+      <div className="flex flex-col gap-8">
+          {[subServices.slice(0, 3), subServices.slice(3)].map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="relative overflow-hidden"
+              style={{
+                maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                WebkitMaskImage:
+                  'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              }}
+            >
+              <div
+                className={`flex w-max items-stretch gap-6 ${
+                  rowIndex === 1 ? 'animate-marquee-reverse' : 'animate-marquee'
+                }`}
+              >
+                {[...row, ...row].map((item, i) => (
+                  <div
+                    key={`${item.title}-${rowIndex}-${i}`}
+                    className="group w-72 rounded-2xl border border-slate-200 bg-white p-8 text-center transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-lg"
+                  >
+                    <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
+                      <item.icon size={22} />
+                    </span>
+                    <h3 className="font-heading text-xl font-semibold text-slate-900">{item.title}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
     </section>
 
     {/* Work Flow */}
@@ -197,41 +222,24 @@ const sections = (
         Graphic Design Portfolio
       </h2>
 
-      <div className="mb-12 flex flex-wrap items-center justify-center gap-3">
-        {portfolioCategories.map((category) => (
-          <span
-            key={category}
-            className="rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 transition-colors duration-200 hover:border-primary hover:text-primary"
-          >
-            {category}
-          </span>
-        ))}
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2">
         {portfolio.map((project) => (
           <div
             key={project.name}
-            className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
+            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-white/60 hover:shadow-2xl hover:shadow-primary/20"
           >
-            <div className="flex h-44 items-center justify-center bg-gradient-to-br from-primary-50 to-[#a9d6ff]/40">
-              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-700 font-heading text-2xl font-bold text-white shadow-lg">
-                {project.initials}
-              </span>
+            <div className="h-56 overflow-hidden bg-gradient-to-br from-primary-50 to-[#a9d6ff]/40 md:h-64">
+              <img
+                src={project.img}
+                alt={project.name}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
-            <div className="p-6">
-              <h3 className="font-heading text-xl font-semibold text-slate-900">{project.name}</h3>
-              <p className="mt-1 text-sm font-semibold text-[#0b7be5]">Graphic Design Project</p>
+            <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="m-4 w-full rounded-2xl border border-white/30 bg-white/20 p-4 backdrop-blur-xl">
+                <h3 className="font-heading text-lg font-semibold text-white">{project.name}</h3>
+              </div>
             </div>
-          </div>
-        ))}
-        {Array.from({ length: 6 - portfolio.length }).map((_, i) => (
-          <div
-            key={`placeholder-${i}`}
-            className="flex h-full min-h-[272px] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-slate-200 bg-white p-6 text-center"
-          >
-            <FaPaintBrush className="mb-3 text-slate-300" size={32} />
-            <p className="font-heading text-lg font-semibold text-slate-400">Coming Soon</p>
           </div>
         ))}
       </div>
@@ -315,16 +323,25 @@ const sections = (
         Trusted by Top-Rated Companies
       </h2>
 
-      <div className="flex flex-wrap items-center justify-center gap-6">
-        {partnerships.map((partner) => (
-          <div
-            key={partner.alt}
-            className="flex h-24 w-56 items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 transition-colors duration-300 hover:bg-[#a9d6ff]"
-          >
+      <div
+          className="relative overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage:
+              'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+          }}
+        >
+          <div className="animate-marquee flex w-max items-stretch gap-6">
+            {[...partnerships, ...partnerships].map((partner, i) => (
+              <div
+                key={`${partner.alt}-${i}`}
+                className="flex h-24 w-56 items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 transition-colors duration-300 hover:bg-[#a9d6ff]"
+              >
             <img src={partner.img} alt={partner.alt} className="h-14 object-contain" />
           </div>
         ))}
-      </div>
+        </div>
+        </div>
     </section>
   </>
 )

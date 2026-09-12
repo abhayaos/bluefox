@@ -442,15 +442,33 @@ export default function Home() {
           Trusted by Top-Rated Companies
         </h2>
 
-        <div className="flex flex-wrap items-center justify-center gap-6">
-          <div className="flex h-24 w-56 items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 transition-colors duration-300 hover:bg-[#a9d6ff]">
-            <img src={nvaImg} alt="NVA" className="h-14 object-contain" />
-          </div>
-          <div className="flex h-24 w-56 items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 transition-colors duration-300 hover:bg-[#a9d6ff]">
-            <img src={imImg} alt="IM" className="h-14 object-contain" />
-          </div>
-          <div className="flex h-24 w-56 items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 transition-colors duration-300 hover:bg-[#a9d6ff]">
-            <img src={aceomeImg} alt="Aceome" className="h-14 object-contain" />
+        <div
+          className="relative overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage:
+              'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+          }}
+        >
+          <div className="animate-marquee flex w-max items-center gap-6">
+            {[
+              { img: nvaImg, alt: 'NVA' },
+              { img: imImg, alt: 'IM' },
+              { img: aceomeImg, alt: 'Aceome' },
+            ]
+              .concat([
+                { img: nvaImg, alt: 'NVA' },
+                { img: imImg, alt: 'IM' },
+                { img: aceomeImg, alt: 'Aceome' },
+              ])
+              .map((partner, i) => (
+                <div
+                  key={`${partner.alt}-${i}`}
+                  className="flex h-24 w-56 items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 transition-colors duration-300 hover:bg-[#a9d6ff]"
+                >
+                  <img src={partner.img} alt={partner.alt} className="h-14 object-contain" />
+                </div>
+              ))}
           </div>
         </div>
       </section>
