@@ -338,7 +338,7 @@ export default function Karobar() {
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Basic */}
-          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8" style={{ height: '850px' }}>
+          <div className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-8">
             <h3 className="font-heading text-2xl font-bold text-slate-900">BASIC</h3>
             <p className="mt-1 inline-flex w-fit items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary uppercase">
               Free Forever
@@ -354,7 +354,7 @@ export default function Karobar() {
             >
               Start Free
             </a>
-            <div className="mt-8 border-t border-dashed border-slate-200 pt-6">
+            <div className="flex-1 mt-8 border-t border-dashed border-slate-200 pt-6">
               <p className="mb-4 text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
                 What's included
               </p>
@@ -375,7 +375,7 @@ export default function Karobar() {
           </div>
 
           {/* Gold */}
-          <div className="flex flex-col rounded-3xl border-2 border-[#0b7be5] bg-white p-8 shadow-xl shadow-primary/10" style={{ height: '850px' }}>
+          <div className="flex h-full flex-col rounded-3xl border-2 border-[#0b7be5] bg-white p-8 shadow-xl shadow-primary/10">
             <div className="flex items-center justify-between">
               <h3 className="font-heading text-2xl font-bold text-slate-900">GOLD</h3>
               <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
@@ -395,7 +395,7 @@ export default function Karobar() {
             >
               Upgrade to Gold
             </a>
-            <div className="mt-8 border-t border-dashed border-slate-200 pt-6">
+            <div className="flex-1 mt-8 border-t border-dashed border-slate-200 pt-6">
               <p className="mb-4 text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
                 Everything in Basic, plus
               </p>
@@ -422,7 +422,7 @@ export default function Karobar() {
           </div>
 
           {/* Diamond */}
-          <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8" style={{ height: '850px' }}>
+          <div className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-8">
             <div className="flex items-center justify-between">
               <h3 className="font-heading text-2xl font-bold text-slate-900">DIAMOND</h3>
               <div className="flex items-center gap-2">
@@ -447,7 +447,7 @@ export default function Karobar() {
             >
               Upgrade to Diamond
             </a>
-            <div className="mt-8 border-t border-dashed border-slate-200 pt-6">
+            <div className="flex-1 mt-8 border-t border-dashed border-slate-200 pt-6">
               <p className="mb-4 text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
                 Everything in Gold, plus
               </p>
